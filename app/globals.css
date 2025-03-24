@@ -1,5 +1,108 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(5px, 1.8vw, 15px);
 }
 
+.profile-img {
+  width: 320px;
+  overflow: hidden;
+}
+.lower-part {
+  background: linear-gradient(to right, rgb(161, 95, 189), rgb(161, 72, 193));
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(238, 238, 238);
+  height: 25%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  aspect-ratio: 0.7;
+  border-radius: 20px;
+  width: 90%; /* Reduce width for smaller cards */
+  max-width: 250px; /* Set a maximum width */
+  height: auto; /* Keep height responsive */
+  overflow: hidden;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.name {
+  margin-top: -10px;
+}
+
+.cd {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1100px;
+  gap: 20px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
+  row-gap: 15px; /* Reduce space between cards */
+  width: 90%; /* Adjust width for responsiveness */
+  margin-top: 20px;
+  padding-bottom: 80px;
+}
+
+.top-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
+  row-gap: 10px; /* Reduce space between cards */
+  width: 90%; /* Adjust width for responsiveness */
+  margin-top: 20px;
+  padding-bottom: 80px;
+}
+.top-3x3grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
+  row-gap: 15px; /* Reduce space between cards */
+  width: 90%; /* Adjust width for responsiveness */
+  margin-top: 20px;
+  padding-bottom: 80px;
+}
+.top-rest {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Responsive grid */
+  row-gap: 15px; /* Reduce space between cards */
+  width: 90%; /* Adjust width for responsiveness */
+  margin-top: 20px;
+  padding-bottom: 80px;
+}
+.top-3-main {
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 100%; /* Ensure images fit within the card */
+  height: auto;
+}
+
+.headname-card-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the HeadNameCard */
+  width: 100%;
+  margin-bottom: 20px; /* Add spacing below the HeadNameCard */
+  padding: 10px;
+}
