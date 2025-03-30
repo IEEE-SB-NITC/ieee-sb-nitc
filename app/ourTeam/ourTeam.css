@@ -1,0 +1,225 @@
+/* body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  *{
+    font-family: "Poppins";
+  }
+  
+  .logo{
+    width: 200px;
+    margin-top: 30px;
+  }
+  
+  button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 17px;
+    margin-left: 10px;
+  }
+  .main{
+    padding-top: 30px;
+    display: flex;
+    margin-top: 150px;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1100px;
+  
+  }
+  .meet{
+    color: white;
+    font-size: 60px;
+    font-weight: 450;
+  }
+  .meet-first{
+    display: inline-block;
+    background: linear-gradient(to right, #cc89f1,rgb(125, 74, 122)); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .meet-second{
+    display: inline-block;
+    background: linear-gradient(to right,rgb(150, 97, 146),rgb(100, 100, 195)); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+ 
+  
+  
+  .name{
+    margin-top: -10px;
+    }
+    
+    .cd{
+        margin-top: 180px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1100px;
+        gap: 20px;
+        }
+        
+  */
+  .card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+  } 
+*{
+    color: white;
+  font-family: "Poppins";
+
+}
+body{
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 17px;
+    margin-left: 10px;
+  }
+.cd{
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* margin-left: 00px; */
+    /* flex-wrap: wrap; */
+    /* width: 1100px; */
+    /* gap: 20px; */
+    max-width: 1100px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .ieee{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .main{
+    padding-top: 30px;
+    display: flex;
+    margin-top: 150px;
+    align-items: center;
+    justify-content: space-between;
+    width:95%;
+    max-width: 1100px;
+  
+  }
+  .meet{
+    color: white;
+    font-size: 60px;
+    font-weight: 450;
+  }
+  .meet-first{
+    display: inline-block;
+    background: linear-gradient(to right, #cc89f1,rgb(125, 74, 122)); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .meet-second{
+    display: inline-block;
+    background: linear-gradient(to right,rgb(150, 97, 146),rgb(100, 100, 195)); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+
+  .header{
+    background: linear-gradient(to bottom, #623a89,rgb(169, 113, 119),black); 
+    gap: 30px;
+    scale: 1.3;
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: white;
+    padding-bottom: 80px;
+    margin-bottom: 100px;
+  }
+  
+
+  .profile-img{
+    width: 320px;
+    height: 380px;
+    /* overflow: hidden; */
+  }
+
+  .lower-part{
+    background: linear-gradient(to right, #8e5fbd,rgb(233, 177, 252)); 
+    margin-top: -45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(238, 238, 238);
+    height: 105px;
+  }
+
+
+  .sub{
+    margin-top: 100px;
+    background: linear-gradient(to right, #8e5fbd,rgb(233, 177, 252)); 
+    width: 700px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    border-radius:20px;
+    /* margin-left: ; */
+    margin-bottom: 0px;
+    }
+      
+    .logo{
+        width: 200px;
+        margin-top: 30px;
+      }    
+
+.name{
+    margin-top: -10px;
+    padding-bottom: 10px;
+}      
+
+/* .position{
+     margin-bottom: 0px; 
+} */
+
+.moto{
+    text-align: center;
+}
