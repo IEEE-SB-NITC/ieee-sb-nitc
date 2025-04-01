@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(5px, 1.8vw, 15px);
+  font-size: clamp(4px, 1vw, 15px);
 }
 
 .profile-img {
@@ -27,17 +27,16 @@ body {
   flex-direction: column;
   justify-content: center;
   aspect-ratio: 0.7;
-  border-radius: 20px;
   width: 90%; /* Reduce width for smaller cards */
   max-width: 250px; /* Set a maximum width */
   height: auto; /* Keep height responsive */
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 15%;
   margin: auto;
 }
 
 .name {
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .cd {
@@ -70,7 +69,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
   row-gap: 10px; /* Reduce space between cards */
-  width: 90%; /* Adjust width for responsiveness */
+  width: 70%; /* Adjust width for responsiveness */
   margin-top: 20px;
   padding-bottom: 80px;
 }
@@ -78,7 +77,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
   row-gap: 15px; /* Reduce space between cards */
-  width: 90%; /* Adjust width for responsiveness */
+  width: 70%; /* Adjust width for responsiveness */
   margin-top: 20px;
   padding-bottom: 80px;
 }
