@@ -31,7 +31,7 @@ body {
   max-width: 250px; /* Set a maximum width */
   height: auto; /* Keep height responsive */
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0.5pc;
   margin: auto;
 }
 
@@ -60,8 +60,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
   row-gap: 15px; /* Reduce space between cards */
+  column-gap: 5%;
   width: 90%; /* Adjust width for responsiveness */
-  margin-top: 20px;
+  /* margin-top: 20px; */
   padding-bottom: 80px;
 }
 
@@ -71,16 +72,16 @@ body {
   row-gap: 10px; /* Reduce space between cards */
   width: 70%; /* Adjust width for responsiveness */
   margin-top: 20px;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
 }
 .top-3x3grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
   row-gap: 15px; /* Reduce space between cards */
-  column-gap: 35px;
+  column-gap: 5%;
   width: 80%; /* Adjust width for responsiveness */
   margin-top: 20px;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
 }
 .top-rest {
   display: grid;
@@ -88,7 +89,7 @@ body {
   row-gap: 15px; /* Reduce space between cards */
   width: 90%; /* Adjust width for responsiveness */
   margin-top: 20px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 .top-3-main {
   transform: scale(1.1);
@@ -105,5 +106,5 @@ body {
   justify-content: center; /* Horizontally center the HeadNameCard */
   width: 100%;
   margin-bottom: 20px; /* Add spacing below the HeadNameCard */
-  padding: 10px;
+  /* padding: 10px; */
 }
