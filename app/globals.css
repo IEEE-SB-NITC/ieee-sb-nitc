@@ -57,13 +57,18 @@ body {
 }
 
 .cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
-  row-gap: 15px; /* Reduce space between cards */
-  column-gap: 5%;
-  width: 90%; /* Adjust width for responsiveness */
-  /* margin-top: 20px; */
-  padding-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 90%;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  justify-content: center; /* Center last row items */
+}
+.cards-grid > * {
+  flex: 1 1 calc(33.33% - 15px); /* 4 items per row with gap compensation */
+  max-width: calc(33.33% - 15px);
+  box-sizing: border-box;
 }
 
 .top-3 {
@@ -74,23 +79,35 @@ body {
   margin-top: 20px;
   /* padding-bottom: 80px; */
 }
+
 .top-3x3grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Responsive grid */
-  row-gap: 15px; /* Reduce space between cards */
-  column-gap: 5%;
-  width: 80%; /* Adjust width for responsiveness */
-  margin-top: 20px;
-  /* padding-bottom: 80px; */
-}
-.top-rest {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* Responsive grid */
-  row-gap: 15px; /* Reduce space between cards */
-  width: 90%; /* Adjust width for responsiveness */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 90%;
   margin-top: 20px;
   padding-bottom: 50px;
+  justify-content: center; /* Center last row items */
 }
+.top-3x3grid > * {
+  flex: 1 1 calc(33.33% - 15px); /* 4 items per row with gap compensation */
+  max-width: calc(33.33% - 15px);
+  box-sizing: border-box;
+}
+.top-rest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  justify-content: center; /* Center last row items */
+}
+.top-rest > * {
+  flex: 1 1 calc(25% - 15px); /* 4 items per row with gap compensation */
+  /* max-width: calc(25% - 15px); */
+  box-sizing: border-box;
+}
+
 .top-3-main {
   transform: scale(1.1);
   margin-bottom: -100%;

@@ -32,7 +32,7 @@ const ourTeam = () => {
     },
     {
       imageSrc: "/img.jpg",
-      name: "John Doe",
+      name: "Shikari Shambu",
       position: "Software Engineer",
     },
     {
@@ -45,11 +45,6 @@ const ourTeam = () => {
       name: "John Doe",
       position: "Software Engineer",
     },
-    // {
-    //   imageSrc: "/img.jpg",
-    //   name: "John Doe",
-    //   position: "Software Engineer",
-    // },
   ];
   return (
     <div className="home-container">
