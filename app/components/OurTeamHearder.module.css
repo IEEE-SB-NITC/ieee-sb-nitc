@@ -9,6 +9,7 @@
   height: 300px;
   color: white;
   margin-top: -10px;
+  margin-bottom: 20px;
 }
 .main {
   display: flex;

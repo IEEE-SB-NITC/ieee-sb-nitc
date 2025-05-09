@@ -17,10 +17,11 @@
 
 .name {
   margin-top: -5px;
-  font-size: 150%;
+  padding-bottom: 10px;
+  font-size: 2em;
 }
 .position {
-  font-size: 150%;
+  font-size: 2em;
 }
 
 .lowerPart {

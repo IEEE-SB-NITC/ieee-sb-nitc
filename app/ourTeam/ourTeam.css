@@ -61,6 +61,7 @@
 .top-3-main {
   transform: scale(1.1);
   margin-bottom: -100%;
+  overflow: hidden;
 }
 
 .card img {
