@@ -1,12 +1,13 @@
 
 import React from "react";
 import styles from "./info.module.css";
-import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
+// import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 
 const Info = ()=>{
     return(
         <>
-        <h1>Our Legacy of Impact</h1>
+        <h1 className={styles.heading}>Our Legacy of Impact</h1>
+
         <br></br>
     <div className={styles.container}>
         

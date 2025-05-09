@@ -1,5 +1,11 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #303030;
+  --foreground: #2e2e2e;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  box-sizing: border-box;
+}
