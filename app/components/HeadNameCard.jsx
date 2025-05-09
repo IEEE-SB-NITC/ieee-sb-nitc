@@ -8,7 +8,8 @@ function HeadNameCard({ text }) {
       justifyContent: "center",
       alignItems: "center",
       color: "rgb(238, 238, 238)",
-      height: "50px",
+      height: "80px",
+      borderRadius: "15px",
     },
     card: {
       display: "flex",
