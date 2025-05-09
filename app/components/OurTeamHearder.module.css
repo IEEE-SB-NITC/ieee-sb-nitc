@@ -1,0 +1,60 @@
+.header {
+  background: linear-gradient(to bottom, #623a89, rgb(169, 113, 119), black);
+  gap: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  margin-top: -10px;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1100px;
+}
+
+.btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 170%;
+  margin-left: 10px;
+}
+
+.moto {
+  text-align: center;
+}
+
+.ieee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 400%;
+  font-weight: 600;
+}
+
+.meet {
+  color: white;
+  font-size: 600%;
+  font-weight: 450;
+}
+.meetFirst {
+  display: inline-block;
+  background: linear-gradient(to right, #cc89f1, rgb(125, 74, 122));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.meetSecond {
+  display: inline-block;
+  background: linear-gradient(to right, rgb(150, 97, 146), rgb(100, 100, 195));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

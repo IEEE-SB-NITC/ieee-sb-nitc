@@ -1,12 +1,16 @@
+import styles from "./Card.module.css";
+
 function Card({ data }) {
   return (
-    <div>
-      <div className="card">
-        <img className="profile-img" src={data.imageSrc} alt={data.name} />
-        <div className="lower-part">
-          <h2 className="position">{data.position}</h2>
-          <p className="name">{data.name}</p>
-        </div>
+    <div className={styles.card}>
+      <img
+        // className={styles.profileImg}
+        src={data.imageSrc}
+        alt={data.name}
+      />
+      <div className={styles.lowerPart}>
+        <h2 className={styles.position}>{data.position}</h2>
+        <p className={styles.name}>{data.name}</p>
       </div>
     </div>
   );

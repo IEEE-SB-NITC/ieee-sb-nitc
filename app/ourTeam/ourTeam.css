@@ -1,0 +1,114 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 90%;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+.cards-grid > * {
+  flex: 1 1 calc(33.33% - 15px);
+  max-width: calc(33.33% - 15px);
+  box-sizing: border-box;
+}
+
+.top-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  width: 90%;
+  margin-top: 5%;
+  padding-bottom: 80px;
+}
+
+.top-3x3grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 90%;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+.top-3x3grid > * {
+  flex: 1 1 calc(33.33% - 15px);
+  max-width: calc(33.33% - 15px);
+  box-sizing: border-box;
+}
+.top-rest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 90%;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  justify-content: center;
+}
+.top-rest > * {
+  flex: 1 1 calc(25% - 15px);
+  box-sizing: border-box;
+}
+
+.top-3-main {
+  transform: scale(1.1);
+  margin-bottom: -100%;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.headname-card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
+@media (max-width: 650px) {
+  .cards-grid > * {
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+  .top-3x3grid > * {
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+
+  .top-rest > * {
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+  .top-3 {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "first"
+      "third";
+  }
+  .top-3 > :nth-child(1) {
+    grid-area: first;
+    font-size: medium;
+  }
+  .top-3-main {
+    grid-area: main;
+    margin-bottom: 10%;
+    font-size: medium;
+  }
+  .top-3 > :nth-child(3) {
+    grid-area: third;
+    font-size: medium;
+  }
+}

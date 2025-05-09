@@ -2,7 +2,7 @@ import React from "react";
 import "./ourTeam.css";
 import HeadNameCard from "../components/HeadNameCard";
 import Card from "../components/Card";
-import Header from "../components/header";
+import Header from "../components/OurTeamHeader";
 
 const ourTeam = () => {
   let datas = [

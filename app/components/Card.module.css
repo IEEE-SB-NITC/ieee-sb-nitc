@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  aspect-ratio: 0.7;
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 5% 5%;
+  margin: auto;
+}
+
+.profileImg {
+  width: 320px;
+  overflow: hidden;
+}
+
+.name {
+  margin-top: -5px;
+  font-size: 150%;
+}
+.position {
+  font-size: 150%;
+}
+
+.lowerPart {
+  background: linear-gradient(to right, #602a77, #ff8585);
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(238, 238, 238);
+  height: 25%;
+}

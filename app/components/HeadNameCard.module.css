@@ -1,0 +1,16 @@
+.container {
+  background: linear-gradient(to right, rgb(161, 95, 189), rgb(93, 177, 255));
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(238, 238, 238);
+  height: 80px;
+  border-radius: 15px;
+}
+
+.mainText {
+  margin: 0;
+  font-weight: bold;
+}
