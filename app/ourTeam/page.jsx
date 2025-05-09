@@ -2,6 +2,7 @@ import React from "react";
 import "./ourTeam.css";
 import HeadNameCard from "../components/HeadNameCard";
 import Card from "../components/Card";
+import Header from "../components/header";
 
 const ourTeam = () => {
   let datas = [
@@ -48,17 +49,7 @@ const ourTeam = () => {
   ];
   return (
     <div className="home-container">
-      <div
-        style={{
-          background: "rgb(93, 177, 255)",
-          width: "100%",
-          height: "100px",
-          padding: "20px",
-          marginBottom: "20px",
-        }}
-      >
-        <p>IEEE</p>
-      </div>
+      <Header></Header>
 
       {/* the top 3 */}
       <div className="top-3">
