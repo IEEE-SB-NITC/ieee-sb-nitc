@@ -1,76 +1,13 @@
-/* body{
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  *{
-    font-family: "Poppins";
-  }
-  
-  .logo{
-    width: 200px;
-    margin-top: 30px;
-  }
-  
-  button{
-    background: none;
-    border: none;
-    color: white;
-    font-size: 17px;
-    margin-left: 10px;
-  }
-  .main{
-    padding-top: 30px;
-    display: flex;
-    margin-top: 150px;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1100px;
-  
-  }
-  .meet{
-    color: white;
-    font-size: 60px;
-    font-weight: 450;
-  }
-  .meet-first{
-    display: inline-block;
-    background: linear-gradient(to right, #cc89f1,rgb(125, 74, 122)); 
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .meet-second{
-    display: inline-block;
-    background: linear-gradient(to right,rgb(150, 97, 146),rgb(100, 100, 195)); 
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
+
  
-  
-  
-  .name{
-    margin-top: -10px;
-    }
-    
-    .cd{
-        margin-top: 180px;
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 1100px;
-        gap: 20px;
-        }
-        
-  */
+
+
+
   .card-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 70px;
   } 
 *{
@@ -222,4 +159,76 @@ button{
 
 .moto{
     text-align: center;
+}
+
+.items{
+  /* width: 100vw; */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width:1200px){
+    .items{
+      scale: 0.85;
+    }
+}
+@media screen and (max-width:1000px){
+    .items{
+      /* display: none; */
+      margin-left: -70px;
+      scale: 0.65;
+    }
+}
+@media screen and (max-width:800px){
+    .items{
+      display: none;
+      /* margin-left: -70px; */
+      /* scale: 0.65; */
+    }
+}
+@media screen and (max-width:700px){
+
+  .sub{
+   width: 400px;
+  }
+  /* .card-container {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  } */
+
+ .meet{
+  scale: 0.81;
+ }
+
+ .items{
+  display:none ;
+ }
+
+ .logo{
+  margin-bottom: -30px;
+  scale: 0.8;
+  margin-left: -10px;
+ }
+ 
+ .ieee{
+  scale: 0.85;
+  text-align: center;
+ }
+
+ .moto{
+  scale: 0.85;
+ }
+
+ .meet{
+  /* padding-bottom: -2100px; */
+  /* margin-bottom: 100px; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ }
+
+ .cd{
+  margin-top: 110px
+ }
 }
