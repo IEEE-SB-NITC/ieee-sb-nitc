@@ -1,36 +1,38 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end; /* pushes lowerPart to bottom */
+  transform: scale(0.8);
   aspect-ratio: 0.7;
   width: 90%;
   height: auto;
   overflow: hidden;
-  border-radius: 5% 5%;
-  margin: auto;
-}
-
-.profileImg {
-  width: 320px;
-  overflow: hidden;
-}
-
-.name {
-  margin-top: -5px;
-  padding-bottom: 10px;
-  font-size: 2em;
-}
-.position {
-  font-size: 2em;
+  border-radius: 8% 8%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 .lowerPart {
-  background: linear-gradient(to right, #602a77, #ff8585);
-  margin-top: -10px;
+  background: linear-gradient(to right, #602a77, #e49fe6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: rgb(238, 238, 238);
   height: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.position {
+  font-size: clamp(1rem, 2vw, 2rem); /* responsive scaling */
+  text-align: center;
+  word-break: break-word;
+  margin: 0;
+}
+
+.name {
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: clamp(0.4rem, 2vw, 1rem); /* responsive scaling */
 }

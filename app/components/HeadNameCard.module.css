@@ -1,16 +1,20 @@
 .container {
   background: linear-gradient(to right, rgb(161, 95, 189), rgb(93, 177, 255));
   display: flex;
-  width: 70%;
+  width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: rgb(238, 238, 238);
-  height: 80px;
+  height: 60px;
   border-radius: 15px;
+  margin-top: 80px;
 }
 
 .mainText {
   margin: 0;
+  font-size: large;
   font-weight: bold;
+  text-align: center;
+  word-break: break-word;
 }

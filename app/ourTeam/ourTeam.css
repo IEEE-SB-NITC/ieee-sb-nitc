@@ -9,14 +9,14 @@
 .cards-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   width: 90%;
   margin-top: 20px;
   padding-bottom: 50px;
   justify-content: center;
 }
 .cards-grid > * {
-  flex: 1 1 calc(33.33% - 15px);
+  flex: 0 0 calc(33.33% - 15px);
   max-width: calc(33.33% - 15px);
   box-sizing: border-box;
 }
@@ -27,28 +27,29 @@
   row-gap: 10px;
   width: 90%;
   margin-top: 5%;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
+  place-items: center;
 }
 
 .top-3x3grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  width: 90%;
+  gap: 20px;
+  width: 95%;
   margin-top: 20px;
   padding-bottom: 50px;
   justify-content: center;
 }
 .top-3x3grid > * {
-  flex: 1 1 calc(33.33% - 15px);
+  flex: 0 0 calc(33.33% - 15px);
   max-width: calc(33.33% - 15px);
   box-sizing: border-box;
 }
 .top-rest {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  width: 90%;
+  gap: 10px;
+  width: 100%;
   margin-top: 20px;
   padding-bottom: 50px;
   justify-content: center;
@@ -60,8 +61,9 @@
 
 .top-3-main {
   transform: scale(1.1);
-  margin-bottom: -100%;
-  overflow: hidden;
+  margin-bottom: 10%;
+  width: 100%;
+  place-items: center;
 }
 
 .card img {
