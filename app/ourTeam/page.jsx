@@ -34,7 +34,7 @@ const ourTeam = () => {
     {
       imageSrc: "/img.jpg",
       name: "Shikari Shambu",
-      position: "Software Engineer",
+      position: "Safari guide",
     },
     {
       imageSrc: "/img.jpg",
@@ -55,7 +55,7 @@ const ourTeam = () => {
       <div className="top-3">
         <Card key={0} data={datas[0]} />
         <div className="top-3-main">
-          <Card key={1} data={datas[0]} />
+          <Card key={1} data={datas[5]} />
         </div>
         <Card key={2} data={datas[0]} />
       </div>
