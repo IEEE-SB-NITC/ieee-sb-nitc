@@ -1,7 +1,8 @@
 import "./landingPage.css"
+import App from "../src/App";
 
 export default function Home() {
   return (
-    <div>Landing Page</div>
+    <div><App/></div>
   );
 }
