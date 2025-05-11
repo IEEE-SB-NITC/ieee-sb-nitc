@@ -25,7 +25,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 90%;
-  transform: scale(1.1);
+  transform: scale(1.15);
   margin-top: 5%;
   padding-bottom: 20px;
   place-items: center;
