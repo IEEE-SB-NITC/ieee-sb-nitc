@@ -24,8 +24,8 @@
 .top-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 10px;
   width: 90%;
+  transform: scale(1.1);
   margin-top: 5%;
   padding-bottom: 20px;
   place-items: center;
@@ -95,6 +95,7 @@
     max-width: calc(50% - 15px);
   }
   .top-3 {
+    transform: scale(1);
     grid-template-columns: 1fr;
     grid-template-areas:
       "main"
