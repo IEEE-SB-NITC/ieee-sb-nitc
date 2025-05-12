@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
+
+
+/* Embla */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+/* Embla */
+
+body{
+    background-color: rgb(3, 3, 3);
+}
+
+*{
+    color: white;
+}
+
+.Header{
+    gap: 20px;
+    font-size: 48px;
+    font-family: Outfit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sub{
+    /* display: flex; */
+    font-size: 28px;
+    /* justify-content: center; */
+    /* gap: 10px; */
+    text-align: center;
+}
+
+
+.cass{
+    margin-top: -15px;
+}
+
+.embla{
+    margin-top: 48px;
+    height: 424px;
+    background-color: rgb(5, 5, 5);
+    /* max-width: 40px; */
+    border: 2px;
+}
+
+.embla__container{
+    height: full;
+}
+
+*{
+    font-family: Outfit;
+}
+
+.UpcomingEvents{
+    font-family: Outfit;
+    font-size: 22px;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+.embla__slide{
+    color: black;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+}
+
+.SectionComponent{
+    width: 55%;
+
+}
+
+.card-container{
+    display: flex;
+    gap: 44px;
+    scale: 0.8;
+}
+
+.Section{
+    margin-top: 5px;
+    gap: 20px;
+    /* display: flex; */
+    text-align: center;
+    /* font-size: 2px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.Card{
+    max-width: 200px;
+    color: rgb(42, 203, 203);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+button{
+    background: white;
+    /* width: 100px; */
+    border-radius: 30px;
+    height: 35px;
+    width: 140px;
+    color: black;
+    border: none;
+}
+
+.head{
+    background-color: rgb(136, 52, 149);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: 10px white;
+    width: 240px;
+    margin-bottom: 100px;
+    border-radius: 30px;
+}
+
+/* .head{
+    background-color: aqua;
+    border-radius: 30px;
+    width: 270px;
+    height: 300px;
+} */
