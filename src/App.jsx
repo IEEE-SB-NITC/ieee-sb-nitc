@@ -1,10 +1,6 @@
 import Card from "./components/Card";
-import "../public/styles.css"
+import "../src/styles.css"
 import contacts from './contacts';
-import image1 from "./assets/robospark.jpg"
-import image2 from "./assets/cybersecurity.jpg"
-
-
 
 function App() {
   return(

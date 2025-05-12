@@ -1,4 +1,3 @@
-import tiqrevent from "../assets/tiqrr.png"
 import { FaLocationDot } from "react-icons/fa6";
 import { MdWorkHistory } from "react-icons/md";
 
@@ -8,7 +7,6 @@ function Card(props) {
       <div className="top">
         <img className="circle-img" src={props.img} alt="avatar_img" />
       </div>
-      {/* ss */}
       <div className="bottom"></div>
       <div className="event-details">
         <div>
@@ -24,7 +22,7 @@ function Card(props) {
         </div>
         <button className="register-button">
           <span className="register-text">Register Now</span>
-          {/* <img className="tiqr" src={tiqrevent} alt=""/> */}
+          {/* <img className="tiqr" src="/tiqrr.png" alt=""/> */}
         </button>
       </div>
     </div>
