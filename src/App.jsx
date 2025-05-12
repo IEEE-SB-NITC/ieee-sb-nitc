@@ -21,6 +21,25 @@ function App() {
           date={contacts[1].date}
           location={contacts[1].location}
         />
+        <Card
+          img={contacts[2].imgURL}
+          title={contacts[2].title}
+          date={contacts[2].date}
+          location={contacts[2].location}
+        />
+        <Card
+          img={contacts[3].imgURL}
+          title={contacts[3].title}
+          date={contacts[3].date}
+          location={contacts[3].location}
+        />
+        <Card
+          img={contacts[4].imgURL}
+          title={contacts[4].title}
+          date={contacts[4].date}
+          location={contacts[4].location}
+        />
+        
       </div>
    </div>
   );
