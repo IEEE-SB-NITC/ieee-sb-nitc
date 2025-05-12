@@ -23,43 +23,63 @@ body {
     font-size: 45px;
     line-height: 100%;
     letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
+    text-align: left;
+    vertical-align: left;
   }
+      
+  .heading {
+    text-align: left;
+    font-size: 2em;
+    color: #2d3436;
+    margin: 20px 0 30px;
+  }
+  
   
   .ak {
     display: grid;
     gap: var(--size-3);
     grid-auto-flow: column;
     grid-auto-columns: 70%;
-    /* overflow-x: auto;
-    overscroll-behavior-inline: contain; */
-    width: 660.0970458984375px;
+    overflow-x: auto;
+
+    overscroll-behavior-inline: contain;
+
+    width: 550.0970458984375px;
     top: 1585.04px;
     left: 390px;
     border-width: 1px;
     align-items:center;
   }
-  
-  .heading {
-    text-align: center;
-    font-size: 2em;
-    color: #2d3436;
-    margin: 20px 0 30px;
+
+  .ak::-webkit-scrollbar {
+  width: 1em;
+  height: 1em;
   }
-  
-  .card {
+
+  .ak::-webkit-scrollbar-track {
+    background: hsl(120, 25%, 94%);
+    border-radius: 100vw;
+    margin-block: 0.5em;
+  }
+
+  .ak::-webkit-scrollbar-thumb {
+    background: hsl(120, 4%, 5%);
+    border: 0.25em solid hsl(120, 24%, 6%);
+    border-radius: 100vw;
+  }
+
+  .ak::-webkit-scrollbar-thumb:hover {
+    background: hsl(120, 2%, 12%);
+  }
+  .card{
     border-radius: 25px;
     position: relative;
     padding: 29px 15px;
-  
     margin: 50px 0;
     height: 469px;
     width: 316px;
-    box-shadow: 0 2px 5px #ffffff;
-    text-align: left;
     background: #04020563;
-    
+    box-shadow: 0 2px 5px #ffffff;
   }
   
   .top {
@@ -93,7 +113,7 @@ body {
     left: 432px;
   }
   .bottom {
-    width: 316px;
+    width: 319px;
     top: 1332.5px;
     left: 379px;
     border-width: 1px;
@@ -120,6 +140,7 @@ body {
     height: 31.88612174987793px;
     top: 1349px;
     left: 401.78px;
+    text-align: left;
   }
   .detail-item {
     color: #ffffff;
@@ -183,9 +204,9 @@ body {
     width: 50px;
     height: 15px;
   }
-  /* .register-button:hover {
+  .register-button:hover {
     background-color: #e0e0e0;
-  } */
+  }
   
   .logo {
     height: 24px;
@@ -198,4 +219,3 @@ body {
     top: 1469px;
     left: 533px;
   }
-  
