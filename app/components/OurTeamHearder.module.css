@@ -29,6 +29,7 @@
 
 .moto {
   text-align: center;
+  font-size: 200%;
 }
 
 .ieee {
@@ -58,4 +59,16 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .ieee {
+    font-size: 300%;
+  }
+  .moto {
+    font-size: 250%;
+  }
+  .meet {
+    font-size: 800%;
+  }
 }
