@@ -15,6 +15,22 @@
 }
 /* Embla */
 
+.text1{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.dots{
+margin-top: 13px;
+}
+
+.fleex-col{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
 body{
     background-color: rgb(3, 3, 3);
 }
@@ -49,13 +65,40 @@ body{
 .embla{
     margin-top: 5px;
     height: 424px;
-    background-color: rgb(5, 5, 5);
-    /* max-width: 40px; */
+    background-color: rgb(1, 1, 1);
+    /* max-width: 400px; */
     border: 2px;
 }
 
 .embla__container{
     height: full;
+    width: 450px;
+}
+
+@media screen and (max-width:900px){
+    .embla__container{
+    width: 350px;
+}
+}
+@media screen and (max-width:600px){
+    .embla__container{
+    width: 450px;
+}
+}
+@media screen and (max-width:450px){
+    .embla__container{
+    width: 400px;
+}
+}
+@media screen and (max-width:380px){
+    .embla__container{
+    width: 350px;
+}
+}
+@media screen and (max-width:320px){
+    .embla__container{
+    width: 300px;
+}
 }
 
 *{
@@ -72,6 +115,7 @@ body{
 .embla__slide{
     color: black;
     display:flex ;
+    
     align-items: center;
     justify-content: center;
 }

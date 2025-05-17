@@ -10,9 +10,11 @@ export default function EmblaCarousel({data}) {
   return (
     <div className="embla" ref={emblaRef}>
       <div className="embla__container">
-        <div className="embla__slide"><Card data={data} /></div>
-        <div className="embla__slide">Slide 2</div>
-        <div className="embla__slide">Slide 3</div>
+       {
+         data.map((d,index)=>(
+          <div className="embla__slide"><Card image={d.imageSrc} heading={d.heading} venue={d.venue} date={d.date}/></div>
+        ))
+       }
       </div>
     </div>
   )
