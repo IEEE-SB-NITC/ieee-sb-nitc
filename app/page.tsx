@@ -1,5 +1,5 @@
 import "./landingPage.css"
-import App from "../src/App";
+import App from "../components/slider/slider";
 
 export default function Home() {
   return (

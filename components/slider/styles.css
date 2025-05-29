@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0 auto;
     padding: 25px;
-    max-width: 400px;
+    max-width: 60vw;
     min-width: 400px;
     background: linear-gradient(
       91.9deg,
@@ -15,7 +15,7 @@ body {
   .mango {
     color: #ffffff;
     width: 499px;
-    height: 98px;
+    /* height: 98px; */
     top: 931px;
     left: 20px;
     font-family: Geist;
@@ -37,14 +37,14 @@ body {
   
   .ak {
     display: grid;
-    gap: var(--size-3);
+    gap: 150px;
     grid-auto-flow: column;
-    grid-auto-columns: 70%;
+    /* grid-auto-columns: 70%; */
     overflow-x: auto;
 
     overscroll-behavior-inline: contain;
 
-    width: 550.0970458984375px;
+    /* width: 550.0970458984375px; */
     top: 1585.04px;
     left: 390px;
     border-width: 1px;

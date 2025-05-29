@@ -1,5 +1,5 @@
-import Card from "./components/Card";
-import "../src/styles.css"
+import Card from "./Card/Card";
+import "./styles.css"
 import contacts from './contacts';
 
 function createEntry(contacts) {
