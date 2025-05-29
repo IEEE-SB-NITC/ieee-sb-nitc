@@ -9,11 +9,11 @@ const CASS = () => {
 
   const data = [
     { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-01-2005" },
-    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-01-2005" },
-    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-01-2005" },
-    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-01-2005" },
-    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-01-2005" },
-    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-01-2005" },
+    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-02-2005" },
+    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-03-2005" },
+    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-04-2005" },
+    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-05-2005" },
+    { heading: "CONTROL SYSTEM APPLICATION IN LAUNCH VEHICLES ", venue: "Software Engineer", imageSrc: "/assets/img.jpg", date:"24-06-2005" },
     // { heading: "Bob Smith", venue: "Product Manager", imageSrc:  "/assets/img.jpeg", date:"24-01-2005" },
     // { heading: "Charlie Brown", venue: "UI/UX Designer", imageSrc:  "/assets/img.jpeg", date:"24-01-2005" },
     // { heading: "David Lee", venue: "Backend Developer", imageSrc:  "/assets/img.jpeg", date:"24-01-2005" },
