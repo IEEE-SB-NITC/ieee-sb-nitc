@@ -41,10 +41,14 @@
   font-weight: 600;
 }
 
+.ieee2 {
+  font-weight: 350;
+}
+
 .meet {
   color: white;
   font-size: 600%;
-  font-weight: 450;
+  font-weight: 700;
 }
 .meetFirst {
   display: inline-block;

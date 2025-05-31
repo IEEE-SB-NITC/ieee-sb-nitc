@@ -26,16 +26,16 @@ function Header() {
         </div>
       </div>
       <div className={styles.ieee}>
-        <span>IEEE SB NITC</span>
-        <span>EXECOM 2025-26</span>
+        <span className={styles.ieee1}>IEEE SB NITC</span>
+        <span className={styles.ieee2}>EXECOM 2025-26</span>
       </div>
       <div className={styles.moto}>
         "Where Passion meets technology, we pave the way for engineering
         excellence"
       </div>
       <div className={styles.meet}>
-        <span className={styles.meetFirst}>Meet</span> Our{" "}
-        <span className={styles.meetSecond}>Team</span>
+        <span className={styles.meetFirst}>MEET</span> OUR{" "}
+        <span className={styles.meetSecond}>TEAM</span>
       </div>
     </div>
   );
