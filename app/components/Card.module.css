@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* pushes lowerPart to bottom */
-  transform: scale(0.8);
   aspect-ratio: 0.7;
   width: 90%;
   height: auto;

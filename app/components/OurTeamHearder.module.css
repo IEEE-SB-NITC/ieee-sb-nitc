@@ -6,9 +6,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  height: auto;
   color: white;
-  /* margin-top: 100px; */
+  padding-top: 80px;
   margin-bottom: 5%;
 }
 .main {
@@ -30,6 +30,7 @@
 .moto {
   text-align: center;
   font-size: 200%;
+  margin: 5%;
 }
 
 .ieee {
@@ -67,7 +68,7 @@
 
 @media (max-width: 600px) {
   .ieee {
-    font-size: 300%;
+    font-size: 500%;
   }
   .moto {
     font-size: 250%;
