@@ -6,9 +6,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 40vh;
   color: white;
-  margin-top: -10px;
+  /* margin-top: 100px; */
   margin-bottom: 5%;
 }
 .main {

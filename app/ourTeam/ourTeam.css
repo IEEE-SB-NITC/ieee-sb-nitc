@@ -37,21 +37,6 @@
   box-sizing: border-box;
 }
 
-.top-3x3grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 95%;
-  margin-top: 20px;
-  padding-bottom: 50px;
-  justify-content: center;
-  align-items: flex-start;
-}
-.top-3x3grid > * {
-  flex: 0 0 calc(33.33% - 15px);
-  max-width: calc(33.33% - 15px);
-  box-sizing: border-box;
-}
 .top-rest {
   display: flex;
   flex-wrap: wrap;
@@ -91,11 +76,6 @@
 @media (max-width: 650px) {
   .cards-grid > * {
     flex: 0 0 calc(50% - 15px);
-    max-width: calc(50% - 15px);
-  }
-
-  .top-3x3grid > * {
-    flex: 1 1 calc(50% - 15px);
     max-width: calc(50% - 15px);
   }
 
