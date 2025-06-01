@@ -14,6 +14,7 @@
   margin-top: 20px;
   padding-bottom: 50px;
   justify-content: center;
+  align-items: flex-start;
 }
 .cards-grid > * {
   flex: 0 0 calc(33.33% - 15px);
@@ -21,25 +22,14 @@
   box-sizing: border-box;
 }
 
-/* .top-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 90%;
-  transform: scale(1.1);
-  margin-top: 5%;
-  padding-bottom: 20px;
-  place-items: center;
-} */
-
 .top-3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   width: 100%;
   margin-top: 5%;
   padding-bottom: 20px;
-  flex-wrap: wrap; /* allow wrapping on small screens */
+  flex-wrap: wrap;
 }
 .top-3 > * {
   flex: 0 0 30%;
@@ -55,6 +45,7 @@
   margin-top: 20px;
   padding-bottom: 50px;
   justify-content: center;
+  align-items: flex-start;
 }
 .top-3x3grid > * {
   flex: 0 0 calc(33.33% - 15px);
@@ -69,6 +60,7 @@
   margin-top: 20px;
   padding-bottom: 50px;
   justify-content: center;
+  align-items: flex-start;
 }
 .top-rest > * {
   flex: 1 1 calc(25% - 15px);
@@ -98,9 +90,10 @@
 
 @media (max-width: 650px) {
   .cards-grid > * {
-    flex: 1 1 calc(50% - 15px);
+    flex: 0 0 calc(50% - 15px);
     max-width: calc(50% - 15px);
   }
+
   .top-3x3grid > * {
     flex: 1 1 calc(50% - 15px);
     max-width: calc(50% - 15px);
@@ -110,26 +103,6 @@
     flex: 1 1 calc(50% - 15px);
     max-width: calc(50% - 15px);
   }
-  /* .top-3 {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "main"
-      "first"
-      "third";
-  }
-  .top-3 > :nth-child(1) {
-    grid-area: first;
-    font-size: medium;
-  }
-  .top-3-main {
-    grid-area: main;
-    margin-bottom: 10%;
-    font-size: medium;
-  }
-  .top-3 > :nth-child(3) {
-    grid-area: third;
-    font-size: medium;
-  } */
 
   .top-3 {
     flex-direction: column;
@@ -144,16 +117,17 @@
   }
 
   .top-3 > :nth-child(1) {
-    order: 2; /* "first" */
+    order: 2;
   }
 
   .top-3-main {
-    order: 1; /* "main" on top */
+    order: 1;
     transform: scale(1.1);
     margin-bottom: 10%;
+    margin-top: -40%;
   }
 
   .top-3 > :nth-child(3) {
-    order: 3; /* "third" */
+    order: 3;
   }
 }

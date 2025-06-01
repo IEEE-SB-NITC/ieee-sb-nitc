@@ -5,48 +5,6 @@ import Card from "../components/Card";
 import Header from "../components/OurTeamHeader";
 
 const ourTeam = () => {
-  let datas = [
-    {
-      imageSrc: "/DR Shihabudheen KV.png",
-      name: "John Doe",
-      position: "Software Engineer",
-    },
-    {
-      imageSrc: "/AJAY SURESH.jpg",
-      name: "John Doe",
-      position: "Software Engineer",
-    },
-    {
-      imageSrc: "/gokhul g.jpg",
-      name: "John Doe",
-      position: "Software Engineer",
-    },
-    {
-      imageSrc: "/.jpg",
-      name: "John Doe",
-      position: "Software Engineer",
-    },
-    {
-      imageSrc: "/img.jpg",
-      name: "John Doe",
-      position: "Software Engineer",
-    },
-    {
-      imageSrc: "/img.jpg",
-      name: "Shikari Shambu",
-      position: "Safari guide",
-    },
-    {
-      imageSrc: "/img.jpg",
-      name: "John Doe",
-      position: "Software Engineer",
-    },
-    {
-      imageSrc: "/img.jpg",
-      name: "John Doe",
-      position: "Software Engineer",
-    },
-  ];
   const top3Datas = [
     {
       imageSrc: "/images/DR Shihabudheen KV.png",
@@ -120,7 +78,7 @@ const ourTeam = () => {
       position: "WebMaster",
     },
     {
-      imageSrc: "/images/insert image here.gif",
+      imageSrc: "/images/insert image here.gif", //--------insert image---------------------------------------------
       name: "Aditya Krishnan",
       position: "Technical Consultant",
     },
@@ -140,7 +98,7 @@ const ourTeam = () => {
       position: "Project Head",
     },
     {
-      imageSrc: "/images/insert image here.gif",
+      imageSrc: "/images/insert image here.gif", //--------insert image---------------------------------------------
       name: "Adwaith P",
       position: "Project Head",
     },
@@ -178,7 +136,7 @@ const ourTeam = () => {
       position: "Joint Secretary",
     },
     {
-      imageSrc: "/images/insert image here.gif",
+      imageSrc: "/images/insert image here.gif", //--------insert image---------------------------------------------
       name: "Milan V Raj",
       position: "Technical Coordinator",
     },
@@ -186,7 +144,7 @@ const ourTeam = () => {
 
   const CommunicationSocietyDatas = [
     {
-      imageSrc: "/images/insert image here.gif",
+      imageSrc: "/images/insert image here.gif", //--------insert image---------------------------------------------
       name: "Alok Sukumaran",
       position: "Chairperson",
     },
@@ -214,7 +172,7 @@ const ourTeam = () => {
 
   const ComputerSocietyDatas = [
     {
-      imageSrc: "/images/insert image here.gif",
+      imageSrc: "/images/insert image here.gif", //--------insert image---------------------------------------------
       name: "Anjay Krishna PJ",
       position: "Chairperson",
     },
@@ -224,7 +182,7 @@ const ourTeam = () => {
       position: "Vice Chair",
     },
     {
-      imageSrc: "/images/insert image here.gif",
+      imageSrc: "/images/insert image here.gif", //--------insert image---------------------------------------------
       name: "Uparapu Jayachandra",
       position: "Secretary",
     },
@@ -247,7 +205,7 @@ const ourTeam = () => {
 
   const ControlSystemsSocietyDatas = [
     {
-      imageSrc: "/images/insert image here.gif",
+      imageSrc: "/images/insert image here.gif", //--------insert image---------------------------------------------
       name: "Anjay Krishna PJ",
       position: "Chairperson",
     },
@@ -272,7 +230,7 @@ const ourTeam = () => {
       </div>
 
       {/* the 3x3 grid */}
-      <div className="top-3x3grid">
+      <div className="cards-grid">
         {top3GridDatas.map((data, index) => (
           <Card key={index} data={data} />
         ))}
