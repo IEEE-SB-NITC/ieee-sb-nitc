@@ -205,34 +205,29 @@ const ourTeam = () => {
 
   const ControlSystemsSocietyDatas = [
     {
-      imageSrc: "/images/anjay_krishna_pj.jpg",
-      name: "Anjay Krishna PJ",
+      imageSrc: "/images/dona_binu.jpg",
+      name: "Dona Binu",
       position: "Chairperson",
     },
     {
-      imageSrc: "/images/sabin_binu.jpg",
-      name: "Sabin Binu",
+      imageSrc: "/images/riyan_varghese.jpg",
+      name: "Riyan Varghese",
       position: "Vice Chair",
     },
     {
-      imageSrc: "/images/mohammed_ryan_m.jpg",
-      name: "Mohammed Ryan M",
+      imageSrc: "/images/alok_krishna.jpg",
+      name: "Alok Krishna",
       position: "Secretary",
     },
     {
-      imageSrc: "/images/manu_paulson.jpg",
-      name: "Manu Paulson",
+      imageSrc: "/images/rithwik_d.jpg",
+      name: "Rithwik D",
       position: "Joint Secretary",
     },
     {
-      imageSrc: "/images/uparapu_jayachandra.jpg",
-      name: "Uparapu Jayachandra",
+      imageSrc: "/images/thrinath_s_ashok.jpg",
+      name: "Thrinath S Ashok",
       position: "Technical Coordinator",
-    },
-    {
-      imageSrc: "/images/manisha_john_varghese.jpg",
-      name: "Manisha John Varghese",
-      position: "WIC",
     },
   ];
 
