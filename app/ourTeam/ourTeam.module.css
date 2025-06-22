@@ -1,4 +1,4 @@
-.home-container {
+.homecontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.cards-grid {
+.cardsgrid {
   display: flex;
   flex-wrap: wrap;
   /* gap: 20px; */
@@ -16,14 +16,14 @@
   justify-content: center;
   align-items: flex-start;
 }
-.cards-grid > * {
+.cardsgrid > * {
   flex: 0 0 calc(33.33% - 15px);
   max-width: calc(33.33% - 15px);
   transform: scale(0.8);
   box-sizing: border-box;
 }
 
-.top-3 {
+.top3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,14 +32,14 @@
   padding-bottom: 20px;
   flex-wrap: wrap;
 }
-.top-3 > * {
+.top3 > * {
   flex: 0 0 30%;
   max-width: 30%;
   transform: scale(0.8);
   box-sizing: border-box;
 }
 
-.top-rest {
+.toprest {
   display: flex;
   flex-wrap: wrap;
   /* gap: 10px; */
@@ -49,13 +49,13 @@
   justify-content: center;
   align-items: flex-start;
 }
-.top-rest > * {
+.toprest > * {
   flex: 1 1 calc(25% - 15px);
   transform: scale(0.91);
   box-sizing: border-box;
 }
 
-.top-3-main {
+.top3main {
   transform: scale(1.05);
   width: 100%;
   margin-bottom: 5%;
@@ -77,44 +77,44 @@
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
 @media (max-width: 650px) {
-  .cards-grid {
+  .cardsgrid {
     width: 100%;
   }
-  .cards-grid > * {
+  .cardsgrid > * {
     flex: 0 0 calc(50% - 15px);
     max-width: calc(50% - 15px);
     transform: scale(0.91);
   }
 
-  .top-rest > * {
+  .toprest > * {
     flex: 1 1 calc(50% - 15px);
     max-width: calc(50% - 15px);
   }
 
-  .top-3 {
+  .top3 {
     flex-direction: column;
     align-items: center;
     transform: scale(0.9);
   }
 
-  .top-3 > * {
+  .top3 > * {
     flex: 0 0 auto;
     max-width: 100%;
     font-size: medium;
   }
 
-  .top-3 > :nth-child(1) {
+  .top3 > :nth-child(1) {
     order: 2;
   }
 
-  .top-3-main {
+  .top3main {
     order: 1;
     transform: scale(1);
     margin-bottom: 10%;
     margin-top: -20%;
   }
 
-  .top-3 > :nth-child(3) {
+  .top3 > :nth-child(3) {
     order: 3;
   }
 }

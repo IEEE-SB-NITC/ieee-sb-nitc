@@ -1,8 +1,8 @@
 import React from "react";
-import "./ourTeam.css";
 import HeadNameCard from "../components/HeadNameCard";
 import Card from "../components/Card";
 import Header from "../components/OurTeamHeader";
+import styles from "./ourTeam.module.css";
 
 const ourTeam = () => {
   const top3Datas = [
@@ -438,104 +438,104 @@ const ourTeam = () => {
   ];
 
   return (
-    <div className="home-container">
+    <div className={styles.homecontainer}>
       <Header></Header>
 
       {/* the top 3 */}
-      <div className="top-3">
+      <div className={styles.top3}>
         <Card key={0} data={top3Datas[1]} />
-        <div className="top-3-main">
+        <div className={styles.top3main}>
           <Card key={1} data={top3Datas[0]} />
         </div>
         <Card key={2} data={top3Datas[2]} />
       </div>
 
       {/* the 3x3 grid */}
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {top3GridDatas.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       {/* the rest */}
-      <div className="top-rest">
+      <div className={styles.toprest}>
         {topRestDatas.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Circuits And Systems Society" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {CircuitsAndSystemsSocietyDatas.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Communication Society" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {CommunicationSocietyDatas.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Computer Society" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {ComputerSocietyDatas.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Control Systems Society" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {ControlSystemsSocietyDatas.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Electron Device Society  (EDS)" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {ElectronDeviceSociety.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Education Society (EdSoc)" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {EducationSociety.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Industry Application Society  (IAS)" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {IndustryApplicationsSociety.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Robotics and Automation Society  (RAS)" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {RoboticsAndAutomationSociety.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Special Interest Group on Humanitarian Technology (SIGHT)" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {SpecialInterestGroupOnHumanitarianTechnology.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Signal Processing Society (SPS)" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {SignalProcessingSociety.map((data, index) => (
           <Card key={index} data={data} />
         ))}
       </div>
 
       <HeadNameCard text="Signal Processing Society (SPS)" />
-      <div className="cards-grid">
+      <div className={styles.cardsgrid}>
         {WomenInEngineering.map((data, index) => (
           <Card key={index} data={data} />
         ))}

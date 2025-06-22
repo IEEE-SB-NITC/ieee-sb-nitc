@@ -1,5 +1,4 @@
 // import logo from "./assets/logo.png";
-import Image from "next/image";
 import styles from "./OurTeamHearder.module.css";
 function Header() {
   return (
