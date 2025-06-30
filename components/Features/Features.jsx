@@ -6,7 +6,7 @@ import image3 from "@/public/features-3.png";
 import styles from "./Features.module.css";
 const Features = () => {
   return (
-    <div className={styles.section}>
+    <div className={`${styles.section} autoShow`}>
       <div className={styles.left}>
         <h2>WHY IEEE?</h2>
         <h6>

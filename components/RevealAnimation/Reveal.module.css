@@ -1,0 +1,7 @@
+.scrollReveal {
+    opacity: 0;
+    transform: translateY(200px) scale(0.3);
+    will-change: opacity, transform;
+    z-index: 1;
+    transition: none;
+}
