@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
 
+.emblaDad {
+  width: 60%;
+  margin: 0 auto; /* Center horizontally */
+  position: relative;
+}
+
 
 /* Embla */
 .embla {
   overflow: hidden;
   position: relative;
+  /* margin-right: 20px; */
 }
 .embla__container {
   display: flex;
+  /* margin-right: -20px; */
 }
+.embla__viewport {
+  padding-right: 10px; /* 👈 tweak this value as needed */
+}
+
 .embla__slide {
     /* background-color: aqua; */
-  flex: 0 0 100%;
+  flex: 0 0 84%;
   min-width: 0;
 }
 /* Embla */
@@ -30,6 +42,17 @@ margin-top: 13px;
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    position: absolute;
+    padding-top: 0px; 
+    top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.fleex-col .text1{
+    background-color: rgb(3, 3, 3);
+
 }
 
 body{
@@ -157,14 +180,34 @@ body{
 
 .embla__container{
     height: full;
+
     width: 490px;
 }
 
-@media screen and (max-width:900px){
+ @media screen and (max-width:900px){
     .embla__container{
-    width: 350px;
+    /* width: 340px; */
+    /* margin-left: -75px; */
+    /* padding-left: -90px; */
+    /* scale: 0.8; */
+    
+}
+
+.embla__slide {
+    /* background-color: aqua; */
+  flex: 0 0 75%;
+  /* gap: 20px; */
+  min-width: 0;
+}
+
+ .emblaDad {
+  width: 100%;
+  margin: 0 auto; /* Center horizontally */
+  position: relative;
+
 }
 }
+/*
 @media screen and (max-width:600px){
     .embla__container{
     width: 450px;
@@ -184,7 +227,7 @@ body{
     .embla__container{
     width: 300px;
 }
-}
+} */
 
 *{
     font-family: Outfit;
@@ -206,8 +249,8 @@ body{
 }
 
 .SectionComponent{
-    width: 55%;
-
+    width: 48%;
+    height: 30%;
 }
 
 .card-container{
@@ -225,14 +268,31 @@ body{
 }
 
 .Section{
-    margin-top: 5px;
+    margin-top: 70px;
     gap: 20px;
     /* display: flex; */
     text-align: center;
     /* font-size: 2px; */
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border-top:rgb(173, 169, 169) 1px dashed; */
+    border-bottom: rgb(204, 198, 198) 1px dashed;
 }
+@media screen and (max-width:600px){
+    .Section{
+        border-bottom: none;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .SectionComponent{
+        width: 100vw;
+        /* height: 50vh; */
+    }
+}
+
+
 
 .Card{
     max-width: 200px;
@@ -257,6 +317,7 @@ button{
 }
 .embla__prev{
     width: 50px;
+    pointer-events: auto;
     /* background-color: #5F2E7F; */
     transform: rotate(180deg);
     background: linear-gradient(110deg, #461B54 45.24%, #6C4560 120.81%);
@@ -265,6 +326,7 @@ button{
 }
 
 .embla__next{
+    pointer-events: auto;
     border: 2px solid rgb(247, 246, 246);
     /* margin-left: 20px; */
     background: linear-gradient(110deg, #461B54 45.24%, #6C4560 120.81%);
@@ -282,20 +344,18 @@ button{
     
 }
 
-.embla__button{
-    /* background-color: #5F2E7F; */
-    position: absolute;
-     top: 190;
-  left: 10;
-    width: 95vw;
-    /* margin-left: 80px; */
-    margin-top: 0px;
-    display: flex;
-justify-content: space-between;
-    gap: 30px;
-    z-index: 20;
-    cursor: pointer;
-    margin-bottom: 30px;
+.embla__button {
+  position: absolute;
+  top: 50%;
+  left: -10;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .head{
@@ -337,23 +397,58 @@ justify-content: space-between;
     /* transform: matrix(-1, 0.01,0.01,1,0,0); */
     /* scale: 1.055; */
     background-image: url('Ellipse.png');
-    background-size: 80vw;       /* Makes sure the image covers the entire div */
+    background-size: 56vw;       /* Makes sure the image covers the entire div */
     background-position: center;  /* Center the image within the div */
     background-repeat: no-repeat;
     position: relative;
-    width: 100%;
+    text-align: center;
+    /* width: 50%; */
     /* max-width: 800px; */
-    /* height: 250px; */
+    height: 290px;
     /* margin: auto; */
     /* overflow: hidden; */
+}
+
+@media screen and (max-width:600px){
+    .SectionComponent{
+        background-size: 115vw;
+    height: 250px;
+               /* Makes sure the image covers the entire div */
+    }
+
+}
+@media screen and (max-width:450px){
+    .SectionComponent{
+        background-size: 130vw;
+    height: 250px;
+               /* Makes sure the image covers the entire div */
+    }
+
+}
+@media screen and (max-width:400px){
+    .SectionComponent{
+    height: 250px;
+        background-size: 150vw;       /* Makes sure the image covers the entire div */
+    }
+
 }
 
 .front{
     /* position:relative; */
      /* z-index: 2; */
      /* background: transparent; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 
+.text2cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* margin-top: ; */
+}
 /* .back{
    position: absolute;
   top: 0;
@@ -366,3 +461,21 @@ justify-content: space-between;
   transform: matrix(-1, 0.01, 0.01, 1, 0, 0);
 
 } */
+
+.dots{
+    border-top:rgb(173, 169, 169) 1px dashed;
+    padding-top: 65px;
+    width: 100%;
+    text-align: center;
+}
+@media screen and (max-width:600px){
+    .dots{
+        padding-top: 40px;
+    }
+}
+
+
+
+.secondSection{
+    padding-top: 70px;
+}

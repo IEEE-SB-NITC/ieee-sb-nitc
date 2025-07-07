@@ -30,7 +30,7 @@ const CASS = () => {
         {/* <Card data={data}></Card> */}
         <div className='Section'>
             <Section text1={'Our Mission'} text2={'The IEEE Communications Society promotes technological innovation and fosters creation and sharing of information among  the global technical community. The Society provides services to members for their technical and professional advancement and forums for technical exchanges among professionals in academia, industry, and public institutions.'}/>
-            <Section text1={'Our vision'} text2={'To bring the world together in harmony through communications and networking technology research, application, education, and incubation of new ideas.'}/>
+            <Section className="secondSection" text1={'Our vision'} text2={'To bring the world together in harmony through communications and networking technology research, application, education, and incubation of new ideas.'}/>
         </div>
     </div>
   )

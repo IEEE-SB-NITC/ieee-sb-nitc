@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Section = ({text1,text2}) => {
+const Section = ({text1,text2,className}) => {
   return (
     <div className='SectionComponent'>
         {/* <div className="back">
@@ -11,10 +11,13 @@ const Section = ({text1,text2}) => {
           <p className='text1' >{text1}</p>
           {/* <p  className='dots'>.............................</p> */}
           </div>
-          <p>{text2}</p>
+          <div className="text2cont">
+            <p className={`dots ${className || ''}`}>{text2}</p>
+          </div>
         </div>
     </div>
   )
 }
+
 
 export default Section
