@@ -139,37 +139,37 @@
 
 @media (min-width: 1025px) and (max-width: 1280px) {
     .background {
-        width: 100%;
+        width: 100vw;
         overflow: hidden;
         position: absolute;
     }
 
     .image1 {
-        width: 160vw;
+        width: 100vw;
         min-height: 240vh;
         background-position: center top;
-        background-size: 60% auto;
+        background-size: cover;
         top: -20px;
-        left: -30vw;
+        left: 0;
         position: relative;
-        transform: rotate(-1deg);
+        transform: none;
         background-repeat: no-repeat;
         opacity: 0.9;
         overflow: hidden;
     }
 
     .image2 {
-        width: 140vw;
+        width: 100vw;
         min-height: 200vh;
         background-position: center top;
-        background-size: 75% auto;
+        background-size: cover;
         background-repeat: no-repeat;
-        top: 230vh;
-        left: -20vw;
+        top: 220vh;
+        left: 0;
         z-index: -1;
         opacity: 0.9;
         position: absolute;
-        transform: rotate(-0.6deg);
+        transform: none;
         overflow: hidden;
     }
 
@@ -212,36 +212,36 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .background {
-        width: 100%;
+        width: 100vw;
         overflow: hidden;
         position: absolute;
     }
 
     .image1 {
-        width: 170vw;
-        min-height: 180vh;
+        width: 100vw;
+        min-height: 200vh;
         background-position: center top;
-        background-size: 70% auto;
+        background-size: cover;
         background-repeat: no-repeat;
-        top: 20px;
-        left: -30vw;
+        top: 0;
+        left: 0;
         position: relative;
-        transform: rotate(-1.8deg);
+        transform: none;
         opacity: 0.9;
     }
 
     .image2 {
-        width: 170vw;
-        min-height: 160vh;
+        width: 100vw;
+        min-height: 180vh;
         background-position: center top;
-        background-size: 70% auto;
+        background-size: cover;
         background-repeat: no-repeat;
-        top: 150vh;
-        left: -35vw;
+        top: 180vh;
+        left: 0;
         z-index: -1;
         opacity: 0.8;
         position: absolute;
-        transform: rotate(-0.6deg);
+        transform: none;
     }
 
     .main {
@@ -285,43 +285,42 @@
 
 @media (width<=768px) {
     .background {
-        width: 100%;
+        width: 100vw;
         height: 450vh;
-        overflow-x: hidden;
-        position: absolute;
-      }
-      .image1,
-      .image2 {
-          opacity: 0.75;
-          pointer-events: none; 
-      }
-
-    .image1 {
-        width: 200vw;
-        height: auto;
-        min-height: 210vh;
-        background-position: center top;
-        background-size: 120% auto;
-        background-repeat: no-repeat;
-        top: -20px;
-        left: -160px;
-        position: relative;
-
-      }
-
-    .image2 {
-        width: 160vw;
-        height: auto;
-        min-height: 140vh;
-        background-position: center top;
-        background-size: 140vw auto;
-        transform: scale(1.8);
-        left: -20vw;
-        top: 100%;
-        z-index: -1;
         overflow: hidden;
+        position: absolute;
+    }
+    .image1,
+    .image2 {
+        opacity: 0.75;
+        pointer-events: none;
     }
 
+    .image1 {
+        width: 100vw;
+        height: auto;
+        min-height: 220vh;
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: -20px;
+        left: 0;
+        position: relative;
+    }
+
+    .image2 {
+        width: 100vw;
+        height: auto;
+        min-height: 180vh;
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 0;
+        top: 200vh;
+        z-index: -1;
+        position: absolute;
+        transform: none;
+    }
 
     .main {
         right: 0;
