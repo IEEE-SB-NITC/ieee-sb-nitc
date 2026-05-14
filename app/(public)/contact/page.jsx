@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./contact.module.css";
-import ComingSoonDesign from "../../components/Elements/CommingSoon/CommingSoon";
+import ComingSoonDesign from "../../../components/Elements/CommingSoon/CommingSoon";
 const page = () => {
   return (
     <div>
