@@ -6,7 +6,7 @@ import Count from "@/components/Elements/Count/Count"
 import Scroll from "@/components/Elements/Scroll/Scroll"
 import Info from "@/components/Elements/Info/Info"
 import Carousel from "@/components/Elements/Latest_events/event-carousel"
-import Reveal from "../../components/RevealAnimation/Reveal";
+import Reveal from "../../../components/RevealAnimation/Reveal";
 
 const page = () => {
     return (

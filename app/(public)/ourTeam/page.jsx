@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ourTeam.module.css";
-import HeadNameCard from "../../components/meetOurTeam/HeadNameCard";
-import Card from "../../components/meetOurTeam/Card";
-import Header from "../../components/meetOurTeam/OurTeamHeader";
+import HeadNameCard from "../../../components/meetOurTeam/HeadNameCard";
+import Card from "../../../components/meetOurTeam/Card";
+import Header from "../../../components/meetOurTeam/OurTeamHeader";
 
 const ourTeam = () => {
     const top3Datas = [
