@@ -1,26 +1,31 @@
 "use client";
 
-import { useState } from "react";
-
-// Temporary mockup data to see how the events will render visually
-const mockEvents = [
-  {
-    id: 1,
-    name: "Tathva '26 Inauguration",
-    images: ["https://picsum.photos/400/300?random=1", "https://picsum.photos/400/300?random=2"]
-  },
-  {
-    id: 2,
-    name: "Robotics Workshop",
-    images: ["https://picsum.photos/400/300?random=3", "https://picsum.photos/400/300?random=4"]
-  }
-];
+import { useState, useEffect } from "react";
 
 export default function GalleryPage() {
-  const [events, setEvents] = useState(mockEvents);
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
- return (
-    <div style={{ padding: "4rem 2rem", maxWidth: "1200px", margin: "0 auto", color: "#fff" }}>
+  useEffect(() => {
+    async function fetchGallery() {
+      try {
+        // Fetching with an absolute cache-busting timestamp to avoid getting empty states
+        const res = await fetch(`/api/gallery?t=${Date.now()}`);
+        if (res.ok) {
+          const data = await res.json();
+          setEvents(Array.isArray(data) ? data : []);
+        }
+      } catch (err) {
+        console.error("Failed to load gallery entries:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchGallery();
+  }, []);
+
+  return (
+    <div style={{ padding: "4rem 2rem", maxWidth: "1200px", margin: "0 auto", color: "#fff", minHeight: "100vh" }}>
       
       {/* Header */}
       <header style={{ marginBottom: "5rem", textAlign: "center" }}>
@@ -28,31 +33,39 @@ export default function GalleryPage() {
         <p style={{ color: "#aaa" }}>Take a look at memories from our past events and initiatives</p>
       </header>
 
-      {/* Events Grid Wrapper - Increased gap to 8rem for a bigger visual break */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "8rem" }}>
-        {events.map((event) => (
-          <div key={event.id} style={{ borderBottom: "1px solid #222", paddingBottom: "4rem" }}>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "2rem", color: "#e2e8f0" }}>{event.name}</h2>
-            
-            {/* Images layout container */}
-            <div style={{ 
-              display: "grid", 
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", 
-              gap: "2rem" 
-            }}>
-              {event.images.map((imgUrl, index) => (
-                <div key={index} style={{ overflow: "hidden", borderRadius: "8px", aspectRatio: "4/3", backgroundColor: "#222" }}>
-                  <img 
-                    src={imgUrl} 
-                    alt={`${event.name} photo ${index + 1}`} 
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }} 
-                  />
-                </div>
-              ))}
+      {loading ? (
+        <p style={{ textAlign: "center", color: "#aaa" }}>Loading gallery memories...</p>
+      ) : events.length === 0 ? (
+        <p style={{ textAlign: "center", color: "#aaa" }}>No events uploaded yet.</p>
+      ) : (
+        /* Events Grid Wrapper */
+        <div style={{ display: "flex", flexDirection: "column", gap: "6rem" }}>
+          {events.map((event) => (
+            <div key={event.id || Math.random()} style={{ borderBottom: "1px solid #222", paddingBottom: "4rem" }}>
+              <h2 style={{ fontSize: "1.75rem", marginBottom: "2rem", color: "#e2e8f0", textTransform: "capitalize" }}>
+                {event.name}
+              </h2>
+              
+              {/* Images layout container */}
+              <div style={{ 
+                display: "grid", 
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", 
+                gap: "2rem" 
+              }}>
+                {event.images && event.images.map((imgUrl, index) => (
+                  <div key={index} style={{ overflow: "hidden", borderRadius: "8px", aspectRatio: "4/3", backgroundColor: "#222" }}>
+                    <img 
+                      src={imgUrl} 
+                      alt={`${event.name} photo ${index + 1}`} 
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
- )
+  );
 }
