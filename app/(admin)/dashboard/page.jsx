@@ -7,6 +7,15 @@ const sections = ["Events", "Legacies", "Gallery", "Blog"];
 
 export default function DashboardPage() {
   const [activeSection, setActiveSection] = useState("Events");
+  const [eventName, setEventName] = useState("");
+  const [selectedImages, setSelectedImages] = useState(null);
+
+  const handleGallerySubmit = (e) => {
+    e.preventDefault();
+    // TODO: Implement image upload and API routing logic here
+    console.log("Event Name:", eventName);
+    console.log("Selected Files:", selectedImages);
+  };
 
   return (
     <div className={styles.container}>
@@ -84,7 +93,35 @@ export default function DashboardPage() {
             </p>
 
             <div className={styles.workspace}>
-              Gallery management workspace
+              <form onSubmit={handleGallerySubmit} className={styles.galleryForm}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="eventName">Event Name</label>
+                  <input
+                    type="text"
+                    id="eventName"
+                    value={eventName}
+                    onChange={(e) => setEventName(e.target.value)}
+                    placeholder="e.g. Tathva '26 Inauguration"
+                    required
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label htmlFor="imageUpload">Select Images</label>
+                  <input
+                    type="file"
+                    id="imageUpload"
+                    multiple
+                    accept="image/*"
+                    onChange={(e) => setSelectedImages(e.target.files)}
+                    required
+                  />
+                </div>
+
+                <button type="submit" className={styles.uploadButton}>
+                  Upload Gallery Event
+                </button>
+              </form>
             </div>
           </section>
         )}
