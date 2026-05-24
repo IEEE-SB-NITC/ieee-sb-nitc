@@ -10,11 +10,43 @@ export default function DashboardPage() {
   const [eventName, setEventName] = useState("");
   const [selectedImages, setSelectedImages] = useState(null);
 
-  const handleGallerySubmit = (e) => {
+  const handleGallerySubmit = async (e) => {
     e.preventDefault();
-    // TODO: Implement image upload and API routing logic here
-    console.log("Event Name:", eventName);
-    console.log("Selected Files:", selectedImages);
+    
+    if (!eventName || !selectedImages || selectedImages.length === 0) {
+      alert("Please provide an event name and select at least one image.");
+      return;
+    }
+
+    // Pack text inputs and files securely into standard FormData
+    const formData = new FormData();
+    formData.append("eventName", eventName);
+    
+    Array.from(selectedImages).forEach((file) => {
+      formData.append("images", file);
+    });
+
+    try {
+      const response = await fetch("/api/gallery", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Gallery event uploaded successfully!");
+        // Reset state values to clear the text and file inputs smoothly
+        setEventName("");
+        setSelectedImages(null);
+        e.target.reset();
+      } else {
+        alert(`Upload failed: ${data.error || "Unknown backend error"}`);
+      }
+    } catch (error) {
+      console.error("Network error during upload:", error);
+      alert("Network error: Could not reach the upload server.");
+    }
   };
 
   return (
