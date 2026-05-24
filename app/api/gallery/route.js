@@ -40,7 +40,8 @@ export async function GET() {
 export async function POST(request) {
   try {
     const formData = await request.formData();
-    const eventName = formData.get("eventName");
+    // Supporting both 'eventName' and 'name' to keep it entirely safe
+    const eventName = formData.get("eventName") || formData.get("name");
     const files = formData.getAll("images");
 
     if (!eventName || files.length === 0) {
@@ -67,7 +68,8 @@ export async function POST(request) {
 
     const currentDb = readDatabase();
     const newEventEntry = {
-      id: Date.now(),
+      // CRITICAL FIX: Save ID explicitly as a String to match our URL search params perfectly
+      id: Date.now().toString(),
       name: eventName,
       images: uploadedImageUrls,
     };
@@ -79,5 +81,29 @@ export async function POST(request) {
   } catch (error) {
     console.error("Cloudinary route crashed:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+  }
+}
+
+// DELETE: Handle removal of an event collection by ID string
+export async function DELETE(req) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json({ error: "Missing event ID" }, { status: 400 });
+    }
+
+    const galleryData = readDatabase();
+
+    // CRITICAL FIX: Double checking equality by converting both values to strings
+    const updatedData = galleryData.filter((event) => event.id.toString() !== id.toString());
+
+    writeDatabase(updatedData);
+
+    return NextResponse.json({ success: true, message: "Event deleted successfully" });
+  } catch (error) {
+    console.error("Delete Error:", error);
+    return NextResponse.json({ error: "Failed to delete event" }, { status: 500 });
   }
 }

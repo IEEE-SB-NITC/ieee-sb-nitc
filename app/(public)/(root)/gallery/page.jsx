@@ -9,8 +9,15 @@ export default function GalleryPage() {
   useEffect(() => {
     async function fetchGallery() {
       try {
-        // Fetching with an absolute cache-busting timestamp to avoid getting empty states
-        const res = await fetch(`/api/gallery?t=${Date.now()}`);
+        // Force the browser and Next.js to ignore cached copies entirely on refresh
+        const res = await fetch(`/api/gallery?t=${Date.now()}`, {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache'
+          }
+        });
+        
         if (res.ok) {
           const data = await res.json();
           setEvents(Array.isArray(data) ? data : []);
