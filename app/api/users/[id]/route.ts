@@ -5,8 +5,9 @@ import { canManage } from "@/lib/roles"
 
 export async function DELETE(
   _req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params
   const session = await auth()
   const callerRole = session?.user?.role
 
@@ -18,7 +19,7 @@ export async function DELETE(
   const { data: target } = await supabase
     .from("users")
     .select("role, society_id, email")
-    .eq("id", params.id)
+    .eq("id", id)
     .single()
 
   if (!target) return NextResponse.json({ error: "User not found" }, { status: 404 })
@@ -35,7 +36,7 @@ export async function DELETE(
     return NextResponse.json({ error: "Cannot remove users from other societies" }, { status: 403 })
   }
 
-  const { error } = await supabase.from("users").delete().eq("id", params.id)
+  const { error } = await supabase.from("users").delete().eq("id", id)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ success: true })
 }

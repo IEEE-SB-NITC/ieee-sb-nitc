@@ -37,6 +37,31 @@
     cursor: pointer;
 }
 
+.loginButton {
+    min-width: 80px;
+    height: 39px;
+    border-radius: 50px;
+    color: white;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    font-size: 1.1rem;
+    font-family: var(--inter);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.2rem;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+    z-index: 2;
+}
+
+.loginButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
 .menuIcon {
     display: none;
 }

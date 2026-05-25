@@ -102,7 +102,14 @@ function TransferModal({ users, onClose, onTransferred }) {
 function UsersSection({ session }) {
   const [users, setUsers] = useState([])
   const [societies, setSocieties] = useState([])
+  const isSocietyAdmin = session.user.role === "society_admin"
   const [form, setForm] = useState({ email: "", name: "", role: "", society_id: "" })
+
+  useEffect(() => {
+    if (isSocietyAdmin && session.user.societyId) {
+      setForm((f) => ({ ...f, society_id: session.user.societyId }))
+    }
+  }, [isSocietyAdmin, session.user.societyId])
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
   const [showTransfer, setShowTransfer] = useState(false)
@@ -127,7 +134,11 @@ function UsersSection({ session }) {
     const res = await fetch("/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...form, name: form.name || null }),
+      body: JSON.stringify({
+        ...form,
+        name: form.name || null,
+        society_id: isSocietyAdmin ? session.user.societyId : form.society_id,
+      }),
     })
     const data = await res.json()
     if (!res.ok) {
@@ -216,20 +227,23 @@ function UsersSection({ session }) {
         {needsSociety && (
           <div className="flex flex-col gap-1">
             <label className="text-xs text-slate-500 font-medium">Society</label>
-            <select
-              required
-              value={form.society_id}
-              onChange={(e) => setForm((f) => ({ ...f, society_id: e.target.value }))}
-              disabled={callerIsSocietyAdmin}
-              className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-slate-100"
-            >
-              <option value="">Select society</option>
-              {societies
-                .filter((s) => !callerIsSocietyAdmin || s.id === session.user.societyId)
-                .map((s) => (
+            {callerIsSocietyAdmin ? (
+              <div className="border border-slate-200 rounded-lg px-3 py-2 text-sm bg-slate-50 text-slate-600">
+                {societies.find((s) => s.id === session.user.societyId)?.name ?? "Your society"}
+              </div>
+            ) : (
+              <select
+                required
+                value={form.society_id}
+                onChange={(e) => setForm((f) => ({ ...f, society_id: e.target.value }))}
+                className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select society</option>
+                {societies.map((s) => (
                   <option key={s.id} value={s.id}>{s.name}</option>
                 ))}
-            </select>
+              </select>
+            )}
           </div>
         )}
         <button
