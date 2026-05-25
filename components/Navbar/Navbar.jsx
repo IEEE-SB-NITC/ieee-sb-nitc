@@ -29,6 +29,7 @@ const Navbar = () => {
           <li><Link href="/contact">Contact Us</Link></li>
           <li><Link href="/blogs">Blogs</Link></li>
           <button className={styles.button}>Join IEEE</button>
+          <Link href="/login" className={styles.loginButton}>Login</Link>
         </ul>
         <Image
           src={NavIcon}
