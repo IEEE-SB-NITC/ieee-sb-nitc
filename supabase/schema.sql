@@ -7,23 +7,23 @@ create table societies (
   created_at timestamptz default now()
 );
 
--- Seed the 15 IEEE societies
+-- Seed the 15 IEEE SB NITC societies
 insert into societies (name, slug) values
-  ('Computer Society', 'cs'),
-  ('Women in Engineering', 'wie'),
-  ('Robotics & Automation Society', 'ras'),
-  ('Power & Energy Society', 'pes'),
-  ('Signal Processing Society', 'sps'),
-  ('Communications Society', 'comsoc'),
-  ('Industry Applications Society', 'ias'),
-  ('Engineering in Medicine & Biology Society', 'embs'),
-  ('Photonics Society', 'photonics'),
-  ('Circuits & Systems Society', 'cas'),
-  ('Control Systems Society', 'css'),
-  ('Electron Devices Society', 'eds'),
-  ('Magnetics Society', 'magnetics'),
-  ('Oceanic Engineering Society', 'oes'),
-  ('Aerospace & Electronic Systems Society', 'aess');
+  ('RAS', 'ras'),
+  ('IAS', 'ias'),
+  ('WIE', 'wie'),
+  ('EDS', 'eds'),
+  ('EDSOC', 'edsoc'),
+  ('COMSOC', 'comsoc'),
+  ('CSS', 'css'),
+  ('CS', 'cs'),
+  ('SIGHT', 'sight'),
+  ('PES', 'pes'),
+  ('PELS', 'pels'),
+  ('AESS', 'aess'),
+  ('CASS', 'cass'),
+  ('Sensor Council', 'sensor-council'),
+  ('SPS', 'sps');
 
 -- users doubles as the allowlist.
 -- A row is created by an admin before the user ever logs in.

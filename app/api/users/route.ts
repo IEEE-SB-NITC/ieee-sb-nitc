@@ -10,10 +10,20 @@ export async function GET() {
   }
 
   const supabase = createAdminClient()
-  const query = supabase
+  let query = supabase
     .from("users")
     .select("id, email, name, role, society_id, is_active, created_at, societies(name, slug)")
     .order("created_at", { ascending: false })
+
+  if (session.user.role === "society_admin") {
+    query = query
+      .eq("society_id", session.user.societyId)
+      .in("role", ["society_admin", "society_member"])
+  } else if (session.user.role === "society_member") {
+    query = query
+      .eq("society_id", session.user.societyId)
+      .eq("role", "society_member")
+  }
 
   const { data, error } = await query
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
