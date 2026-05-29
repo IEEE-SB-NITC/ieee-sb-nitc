@@ -1,5 +1,5 @@
 "use client";
-
+import EventsManager from "@/components/Admin/Events/EventsManager";
 import { useState } from "react";
 import styles from "./dashboard.module.css";
 
@@ -25,9 +25,8 @@ export default function DashboardPage() {
         {sections.map((section) => (
           <button
             key={section}
-            className={`${styles.selectorButton} ${
-              activeSection === section ? styles.activeButton : ""
-            }`}
+            className={`${styles.selectorButton} ${activeSection === section ? styles.activeButton : ""
+              }`}
             onClick={() => setActiveSection(section)}
           >
             {section}
@@ -44,14 +43,10 @@ export default function DashboardPage() {
             <div className={styles.sectionHeader}>
               <h2>Events Management</h2>
             </div>
-
             <p className={styles.description}>
-              Add, edit, delete, and manage upcoming events.
+              Add, delete, and manage upcoming events.
             </p>
-
-            <div className={styles.workspace}>
-              Event management workspace
-            </div>
+            <EventsManager />
           </section>
         )}
 
