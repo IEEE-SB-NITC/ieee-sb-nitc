@@ -1,12 +1,12 @@
 import React from "react";
 import Features from "@/components/Features/Features";
-import Slider from "@/components/Slider/Slider";
 import styles from "./root.module.css";
 import Count from "@/components/Elements/Count/Count"
 import Scroll from "@/components/Elements/Scroll/Scroll"
 import Info from "@/components/Elements/Info/Info"
 import Carousel from "@/components/Elements/Latest_events/event-carousel"
 import Reveal from "../../../components/RevealAnimation/Reveal";
+import WhatsAhead from "@/components/Elements/WhatsAhead/WhatsAhead";
 
 const page = () => {
     return (
@@ -49,11 +49,11 @@ const page = () => {
                     <button>About Us</button>
                 </div>
             </div>
-            <Reveal><Slider /></Reveal>
             <Reveal><Features /></Reveal>
             <Scroll />
             <Reveal><Count /></Reveal>
             <Reveal><Info /></Reveal>
+            <WhatsAhead />
             <Reveal><Carousel /></Reveal>
 
         </div>
