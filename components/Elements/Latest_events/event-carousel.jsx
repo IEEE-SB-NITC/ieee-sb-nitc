@@ -36,9 +36,9 @@ export default function EventsCarousel({
 
     return (
         <div className="events-carousel-container">
-            {showTitle && (
-            	<h2 className="events-carousel-title">{title}</h2>
-            )}
+          
+            {showTitle && <h2 className="events-carousel-title">{title}</h2>}
+            
 
             <div className="events-carousel-outer-wrapper">
                 <div className="events-carousel-wrapper">
