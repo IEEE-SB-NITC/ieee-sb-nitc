@@ -49,11 +49,11 @@ const page = () => {
                     <button>About Us</button>
                 </div>
             </div>
+            <Reveal><WhatsAhead /></Reveal>
             <Reveal><Features /></Reveal>
             <Scroll />
             <Reveal><Count /></Reveal>
             <Reveal><Info /></Reveal>
-            <WhatsAhead />
             <Reveal><Carousel /></Reveal>
 
         </div>
