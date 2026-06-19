@@ -1,7 +1,7 @@
 "use client";
 import EventsManager from "@/components/Admin/Events/EventsManager";
 import GalleryManager from "@/components/Admin/Gallery/GalleryManager";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./dashboard.module.css";
 
 const sections = ["Events", "Legacies", "Gallery", "Blog"];
