@@ -1,5 +1,6 @@
 "use client";
 import EventsManager from "@/components/Admin/Events/EventsManager";
+import GalleryManager from "@/components/Admin/Gallery/GalleryManager";
 import { useState } from "react";
 import styles from "./dashboard.module.css";
 
@@ -77,10 +78,7 @@ export default function DashboardPage() {
             <p className={styles.description}>
               Upload and manage public gallery images.
             </p>
-
-            <div className={styles.workspace}>
-              Gallery management workspace
-            </div>
+            <GalleryManager />
           </section>
         )}
 
