@@ -1,7 +1,14 @@
-export default function AdminLayout({ children }) {
+import { auth } from "@/lib/auth"
+import { SessionProvider } from "next-auth/react"
+import "./admin.css"
+
+export default async function AdminLayout({ children }) {
+  const session = await auth()
   return (
-    <div className="min-h-screen">
-      {children}
-    </div>
-  );
+    <SessionProvider session={session}>
+      <div className="min-h-screen">
+        {children}
+      </div>
+    </SessionProvider>
+  )
 }
