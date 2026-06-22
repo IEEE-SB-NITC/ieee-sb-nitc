@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from "react"
 import { useSession, signOut } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { managableRoles, roleLabel, ROLE_RANK } from "@/lib/roles"
+import EventsManager from "@/components/Admin/Events/EventsManager";
+import GalleryManager from "@/components/Admin/Gallery/GalleryManager";
 import styles from "./dashboard.module.css"
 
 // ─── Users Tab ────────────────────────────────────────────────────────────────
@@ -568,7 +570,17 @@ export default function DashboardPage() {
         {activeSection === "Events" && <EventsSection session={session} />}
 
         {activeSection === "Users" && canManageUsers && (
-          <UsersSection session={session} />
+          <UsersSection session={session} />}
+        {activeSection === "Events" && (
+          <section className={styles.sectionCard}>
+            <div className={styles.sectionHeader}>
+              <h2>Events Management</h2>
+            </div>
+            <p className={styles.description}>
+              Add, delete, and manage upcoming events.
+            </p>
+            <EventsManager />
+          </section>
         )}
 
         {activeSection === "Legacies" && (
@@ -581,9 +593,14 @@ export default function DashboardPage() {
 
         {activeSection === "Gallery" && (
           <section className={styles.sectionCard}>
-            <div className={styles.sectionHeader}><h2>Gallery Management</h2></div>
-            <p className={styles.description}>Upload and manage public gallery images.</p>
-            <div className={styles.workspace}>Gallery management workspace</div>
+            <div className={styles.sectionHeader}>
+              <h2>Gallery Management</h2>
+            </div>
+
+            <p className={styles.description}>
+              Upload and manage public gallery images.
+            </p>
+            <GalleryManager />
           </section>
         )}
 

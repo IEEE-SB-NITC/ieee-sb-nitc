@@ -14,7 +14,7 @@
 }
 
 .outer {
-    width: 80%;
+    width: min(1100px, 88%);
     background: linear-gradient(135deg, rgba(0, 0, 3, 0.1), rgba(0, 0, 0, 0.2));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(15px);
@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     border: 2px solid #ffffff5d;
-    padding: 1.75rem 2.5rem;
+    padding: 1.5rem 2rem;
     gap: 2rem;
     flex-wrap: wrap;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
@@ -33,42 +33,44 @@
     text-align: center;
     color: white;
     margin: 3rem 0;
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 .img {
     max-height: 400px;
-    width: 35%;
+    width: 28%;
     min-width: fit-content;
+    max-width: 280px;
     object-fit: contain;
     border-radius: 20px;
 }
 
 .info {
-    flex: 1 1;
+    flex: 1;
     color: white;
-    font-size: x-large;
+    font-size: 1.05rem;
     font-family: var(--Montserrat);
-    font-weight: 300;
-    text-align: justify;
+    font-weight: 400;
+    text-align: left;
     margin-right: 30px;
     overflow-wrap: break-word;
-    letter-spacing: 1px;
-    line-height: 1.3;
+    letter-spacing: 0.2px;
+    line-height: 1.75;
+    max-width: 680px;
 }
 
 .info span {
-    font-weight: bold;
+    font-weight: 600;
     font-family: var(--Inter);
 }
 
 .button {
     display: block;
     margin: 1.5rem auto 0;
-    font-size: large;
-    padding: 1.75rem 3rem;
+    font-size: 1rem;
+    padding: 1rem 2rem;
     color: white;
     background-color: black;
     position: relative;
