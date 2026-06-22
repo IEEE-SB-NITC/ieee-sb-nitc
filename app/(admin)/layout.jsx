@@ -1,5 +1,6 @@
 import { auth } from "@/lib/auth"
 import { SessionProvider } from "next-auth/react"
+import "./admin.css"
 
 export default async function AdminLayout({ children }) {
   const session = await auth()
