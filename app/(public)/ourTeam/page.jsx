@@ -12,430 +12,548 @@ const ourTeam = () => {
             position: "Branch Counselor",
         },
         {
-            imageSrc: "/images/ajay_suresh_sj.jpg",
-            name: "Ajay Suresh SJ",
+            imageSrc: "/images/leo_joseph.jpg",
+            name: "Leo Joseph",
             position: "Chairperson",
         },
         {
-            imageSrc: "/images/gokhul_g.jpg",
-            name: "Gokhul G",
+            imageSrc: "/images/ann_mary_abraham.jpg",
+            name: "Ann Mary Abraham",
             position: "Secretary",
         },
     ];
 
     const top3GridDatas = [
         {
-            imageSrc: "/images/sreekanth_nair_ts.jpg",
-            name: "Sreekanth Nair TS",
+            imageSrc: "/images/sankeerth_j_i.jpg",
+            name: "Sankeerth J I",
             position: "Vice Chair",
         },
         {
-            imageSrc: "/images/abhishek_a.jpg",
-            name: "Abhishek A",
+            imageSrc: "/images/kurian_mathew_c.jpg",
+            name: "Kurian Mathew C",
             position: "Joint Secretary",
         },
         {
-            imageSrc: "/images/ann_mary_abraham.jpg",
-            name: "Ann Mary Abraham",
+            imageSrc: "/images/nikita_james.png",
+            name: "Nikita James",
             position: "Joint Secretary",
         },
         {
-            imageSrc: "/images/nandan_nair.jpg",
-            name: "Nandan Nair",
+            imageSrc: "/images/sabin_binu.jpg",
+            name: "Sabin Binu",
             position: "Treasurer",
-        },
-        {
-            imageSrc: "/images/vishnu_t_s.jpg",
-            name: "Vishnu T S",
-            position: "Chief MDC",
-        },
-        {
-            imageSrc: "/images/ansan_husain.jpg",
-            name: "Ansan Husain",
-            position: "Chief Link Representative",
-        },
-        {
-            imageSrc: "/images/ajay_mahesh.jpg",
-            name: "Ajay Mahesh",
-            position: "Sub Treasurer",
         },
         {
             imageSrc: "/images/r_s_sanat_sreeram.jpg",
             name: "R S Sanat Sreeram",
+            position: "Chief MDC",
+        },
+        {
+            imageSrc: "/images/sheza_zain.jpeg",
+            name: "Sheza Zain",
+            position: "Chief Link Representative",
+        },
+        {
+            imageSrc: "/images/adhil_biju.jpg",
+            name: "Adhil Biju",
+            position: "Sub Treasurer",
+        },
+        {
+            imageSrc: "/images/adithyan_v.jpg",
+            name: "Adithyan V",
             position: "MDC",
         },
         {
-            imageSrc: "/images/sheza_zain.jpg",
-            name: "Sheza Zain",
+            imageSrc: "/images/ameekh_ajmal.jpg",
+            name: "Ameekh Ajmal",
+            position: "MDC",
+        },
+        {
+            imageSrc: "/images/amina_zeba.jpg",
+            name: "Amina Zeba",
             position: "Link Representative",
         },
     ];
 
     const topRestDatas = [
         {
-            imageSrc: "/images/paul_jimmy.jpg",
-            name: "Paul Jimmy",
+            imageSrc: "/images/paul_shibu_varghese.jpg",
+            name: "Paul Shibu Varghese",
             position: "WebMaster",
-        },
-        {
-            imageSrc: "/images/aditya_krishnan.jpg",
-            name: "Aditya Krishnan",
-            position: "Technical Consultant",
-        },
-        {
-            imageSrc: "/images/paul_varghese_shibu.jpg",
-            name: "Paul Varghese Shibu",
-            position: "Technical Coordinator",
         },
         {
             imageSrc: "/images/akhil_t.jpg",
             name: "Akhil T",
+            position: "Technical Consultant",
+        },
+        {
+            imageSrc: "/images/jefin_joji.jpg",
+            name: "Jefin Joji",
             position: "Technical Coordinator",
         },
         {
-            imageSrc: "/images/bibin_tj.png",
-            name: "Bibin TJ",
-            position: "Project Head",
-        },
-        {
-            imageSrc: "/images/adwaith_p.jpg",
-            name: "Adwaith P",
-            position: "Project Head",
-        },
-        {
-            imageSrc: "/images/jishnu_t_joseph.jpg",
-            name: "Jishnu T Joseph",
-            position: "Social Media Head",
-        },
-        {
-            imageSrc: "/images/adithya_shekhar.jpg",
-            name: "Adithya Shekhar",
-            position: "Design Head",
-        },
-    ];
-
-    const CircuitsAndSystemsSocietyDatas = [
-        {
-            imageSrc: "/images/gouri_m_kandath.jpg",
-            name: "Gouri M Kandath",
-            position: "Chairperson",
-        },
-        {
-            imageSrc: "/images/ashly_skariah.jpg",
-            name: "Ashly Skariah",
-            position: "Vice Chair",
-        },
-        {
-            imageSrc: "/images/vishnupriya_s.jpg",
-            name: "Vishnupriya S",
-            position: "Secretary",
-        },
-        {
-            imageSrc: "/images/mohammed_adil_k.jpg",
-            name: "Mohammed Adil K",
-            position: "Joint Secretary",
-        },
-        {
-            imageSrc: "/images/milan_v_raj.jpg",
-            name: "Milan V Raj",
+            imageSrc: "/images/ananthu_sankar.jpg",
+            name: "Ananthu Sankar",
             position: "Technical Coordinator",
         },
-    ];
-
-    const CommunicationSocietyDatas = [
         {
-            imageSrc: "/images/alok_sukumaran.jpg",
-            name: "Alok Sukumaran",
-            position: "Chairperson",
+            imageSrc: "/images/njanaprakasam.png",
+            name: "Njanaprakasam",
+            position: "Project Head",
         },
         {
             imageSrc: "/images/devesh_k_bharathraj.jpg",
             name: "Devesh K Bharathraj",
-            position: "Vice Chair",
+            position: "Project Head",
         },
         {
-            imageSrc: "/images/piyush_anand.jpg",
-            name: "Piyush Anand",
-            position: "Secretary",
+            imageSrc: "/images/avinash_s.jpg",
+            name: "Avinash S",
+            position: "Social Media Head",
         },
         {
             imageSrc: "/images/rahul_r.jpg",
             name: "Rahul R",
-            position: "Joint Secretary",
+            position: "Design Head",
         },
         {
-            imageSrc: "/images/akshay_t_sriram.jpg",
-            name: "Akshay T Sriram",
-            position: "Technical Coordinator",
-        },
-    ];
-
-    const ComputerSocietyDatas = [
-        {
-            imageSrc: "/images/anjay_krishna_pj.jpg",
-            name: "Anjay Krishna PJ",
-            position: "Chairperson",
+            imageSrc: "/images/shezin_muhammed.jpeg",
+            name: "Shezin Muhammed",
+            position: "Design",
         },
         {
-            imageSrc: "/images/sabin_binu.jpg",
-            name: "Sabin Binu",
-            position: "Vice Chair",
-        },
-        {
-            imageSrc: "/images/uparapu_jayachandra.jpg",
-            name: "Uparapu Jayachandra",
-            position: "Secretary",
-        },
-        {
-            imageSrc: "/images/mohammed_ryan_m.jpg",
-            name: "Mohammed Ryan M",
-            position: "Joint Secretary",
-        },
-        {
-            imageSrc: "/images/manu_paulson.jpg",
-            name: "Manu Paulson",
-            position: "Technical Coordinator",
-        },
-        {
-            imageSrc: "/images/manisha_john_varghese.jpg",
-            name: "Manisha John Varghese",
-            position: "WIC",
-        },
-    ];
-
-    const ControlSystemsSocietyDatas = [
-        {
-            imageSrc: "/images/dona_binu.jpg",
-            name: "Dona Binu",
-            position: "Chairperson",
-        },
-        {
-            imageSrc: "/images/riyan_varghese.jpg",
-            name: "Riyan Varghese",
-            position: "Vice Chair",
-        },
-        {
-            imageSrc: "/images/alok_krishna.jpg",
-            name: "Alok Krishna",
-            position: "Secretary",
-        },
-        {
-            imageSrc: "/images/rithwik_d.jpg",
-            name: "Rithwik D",
-            position: "Joint Secretary",
-        },
-        {
-            imageSrc: "/images/thrinath_s_ashok.jpg",
-            name: "Thrinath S Ashok",
-            position: "Technical Coordinator",
-        },
-    ];
-
-    const ElectronDeviceSociety = [
-        {
-            imageSrc: "/images/adithyadev_s_s.jpg",
-            name: "Adithyadev S S",
-            position: "Chairperson",
-        },
-        {
-            imageSrc: "/images/aadithya_suja.jpg",
-            name: "Aadithya Suja",
-            position: "Vice Chair",
-        },
-        {
-            imageSrc: "/images/hridya_sudhakaran.jpg",
-            name: "Hridya Sudhakaran",
-            position: "Secretary",
-        },
-        {
-            imageSrc: "/images/anand_s_b.jpg",
-            name: "Anand S B",
-            position: "Joint Secretary",
-        },
-        {
-            imageSrc: "/images/diya_susan_kuruvilla.jpg",
-            name: "Diya Susan Kuruvilla",
-            position: "Technical Coordinator",
-        },
-    ];
-
-    const EducationSociety = [
-        {
-            imageSrc: "/images/samin_murali.jpg",
-            name: "Samin Murali",
-            position: "Chairperson",
-        },
-        {
-            imageSrc: "/images/njanaprakasam_k_s.jpg",
-            name: "Njanaprakasam K S",
-            position: "Vice Chair",
-        },
-        {
-            imageSrc: "/images/pournami_j_prakash.jpg",
-            name: "Pournami J Prakash",
-            position: "Secretary",
-        },
-        {
-            imageSrc: "/images/irene_elsa_binu.jpg",
-            name: "Irene Elsa Binu",
-            position: "Joint Secretary",
-        },
-        {
-            imageSrc: "/images/aadarsh_p_b.jpg",
-            name: "Aadarsh P B",
-            position: "Technical Coordinator",
-        },
-    ];
-
-    const IndustryApplicationsSociety = [
-        {
-            imageSrc: "/images/shreya_r_nair.jpeg",
-            name: "Shreya R Nair",
-            position: "Chairperson",
-        },
-        {
-            imageSrc: "/images/sai_narayanan_u_s.jpg",
-            name: "Sai Narayanan U S",
-            position: "Vice Chair",
+            imageSrc: "/images/prajhna_n.jpg",
+            name: "Prajhna N",
+            position: "Design",
         },
         {
             imageSrc: "/images/sreeya_balu.jpg",
-            name: "Sreeya Balu",
-            position: "Secretary",
+            name: "sreeya_balu",
+            position: "SIGHT PROJECT HEAD",
         },
         {
-            imageSrc: "/images/jasna_jaison.jpg",
-            name: "Jasna Jaison",
-            position: "Joint Secretary",
-        },
-        {
-            imageSrc: "/images/madhusoodhanan_s.jpg",
-            name: "Madhusoodhanan S",
-            position: "Technical Coordinator",
+            imageSrc: "/images/sai_narayan.jpg",
+            name: "Sai Narayan",
+            position: "SIGHT PROJECT HEAD",
         },
     ];
 
     const RoboticsAndAutomationSociety = [
         {
-            imageSrc: "/images/bharadwaj_v_p.jpg",
-            name: "Bharadwaj V P",
+            imageSrc: "/images/anandhakrishnan_p_s.jpg",
+            name: "Anandhakrishnan P S",
             position: "Chairperson",
         },
         {
-            imageSrc: "/images/leo_joseph.jpg",
-            name: "Leo Joseph",
-            position: "Vice Chair",
+            imageSrc: "/images/adithyan_a_s.jpg",
+            name: "Adithyan A S",
+            position: "Member",
         },
         {
-            imageSrc: "/images/anandhakrishnan.jpg",
-            name: "Anandhakrishnan",
-            position: "Secretary",
+            imageSrc: "/images/farhana.jpg",
+            name: "Farhana",
+            position: "Member",
         },
         {
-            imageSrc: "/images/rinoofa_sherin.jpg",
-            name: "Rinoofa Sherin",
-            position: "Joint Secretary",
+            imageSrc: "/images/vivek_v_pillai.jpg",
+            name: "Vivek V Pillai",
+            position: "Member",
         },
         {
-            imageSrc: "/images/avinash_s.jpg",
-            name: "Avinash S",
-            position: "Technical Coordinator",
+            imageSrc: "/images/gauryshanker.jpg",
+            name: "Gauryshanker",
+            position: "Member",
+        },
+    ];
+
+    const IndustryApplicationsSociety = [
+        {
+            imageSrc: "/images/anand_s_b.jpg",
+            name: "Anand S B",
+            position: "Chairperson",
+        },
+        {
+            imageSrc: "/images/rashid_rahman.jpg",
+            name: "Rashid Rahman",
+            position: "Member",
+        },
+        {
+            imageSrc: "/images/adil_sha_h_s.jpg",
+            name: "Adil Sha H S",
+            position: "Member",
+        },
+        {
+            imageSrc: "/images/gautham_shanker.png",
+            name: "Gautham Shanker",
+            position: "Member",
+        },
+        {
+            imageSrc: "/images/abhijith_lal.jpg",
+            name: "Abhijith Lal",
+            position: "Member",
+        },
+    ];
+    
+    const WomenInEngineering = [
+        {
+            imageSrc: "/images/aiswarya_k_narayan.jpg",
+            name: "Aiswarya K Narayan",
+            position: "Chairperson",
+        },
+        {
+            imageSrc: "/images/fathima_nasla.jpg",
+            name: "Fathima Nasla",
+            position: "Member",
+        },
+        {
+            imageSrc: "/images/ahla_m_i.jpeg",
+            name: "Ahla M I",
+            position: "Member",
+        },
+        {
+            imageSrc: "/images/rosmi_ann.jpg",
+            name: "Rosmi Ann",
+            position: "Member",
+        },
+        {
+            imageSrc: "/images/anannya_nevin.jpg",
+            name: "Anannya Nevin",
+            position: "Member",
+        },
+    ];
+
+    const ElectronDeviceSociety = [
+        { 
+            imageSrc: "/images/aadithya_suja.jpg", 
+            name: "Aadithya Suja", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/john_joseph.jpg", 
+            name: "John Joseph", 
+            position: "Member"
+         },
+        {
+            imageSrc: "/images/adarsh_s.jpeg", 
+            name: "Adarsh S", 
+            position: "Member" 
+        },
+        {
+            imageSrc: "/images/joe_j_thannickamattam.jpeg",
+            name: "Joe J Thannickamattam",
+            position: "Member" 
+        },
+        {
+            imageSrc: "/images/alena_jaison.jpg", 
+            name: "Alena Jaison", 
+            position: "Member"
+        },
+    ];
+    
+    const EducationSociety = [
+        { 
+            imageSrc: "/images/aadarsh_p_b.jpg", 
+            name: "Aadarsh P B", 
+            position: "Chairperson" 
+        },
+        {
+            imageSrc: "/images/gowribala_a_nair.jpg", 
+            name: "Gowribala A Nair", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/sreelekshmi_p.jpg", 
+            name: "Sreelekshmi P", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/pavan_priyesh.jpg", 
+            name: "Pavan priyesh", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/vishnu_a_m.jpg", 
+            name: "Vishnu A M", 
+            position: "Member" 
+        },
+    ];
+
+    const CommunicationSocietyDatas = [
+        { 
+            imageSrc: "/images/vishnupriya_sreejish.jpg", 
+            name: "Vishnupriya Sreejish", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/anviya_shiju.jpg", 
+            name: "Anviya Shiju", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/sidharth_nambidi_sha.png", 
+            name: "Sidharth Nambidi Sha", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/amrutha_i_m.jpg", 
+            name: "Amrutha I M", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/ajey_balaganesh.jpg", 
+            name: "Ajey Balaganesh", 
+            position: "Member" 
+        },
+    ];
+
+    const ControlSystemsSocietyDatas = [
+        { 
+            imageSrc: "/images/riyan_varghese.jpg", 
+            name: "Riyan Varghese", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/aflah_m_m.jpg", 
+            name: "Aflah M M", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/akash_thekkepanakkal_jayantha.jpg", 
+            name: "Akash Thekkepanakkal Jayantha", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/mohammed_shahid.jpg", 
+            name: "Mohammed Shahid", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/rahan_m.jpg", 
+            name: "Rahan M", 
+            position: "Member" 
+        },
+    ];
+
+    const ComputerSocietyDatas = [
+        { 
+            imageSrc: "/images/ryan_m.jpg", 
+            name: "Ryan M", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/ibinu_jaleel.jpg", 
+            name: "Ibinu Jaleel", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/suryakiran_s.jpg", 
+            name: "Suryakiran S", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/falah_mohammed.jpg", 
+            name: "Falah Mohammed", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/anagha_s.jpg", 
+            name: "Anagha S", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/gouri_cv.jpeg", 
+            name: "Gouri cv", 
+            position: "Member" 
         },
     ];
 
     const SpecialInterestGroupOnHumanitarianTechnology = [
-        {
-            imageSrc: "/images/varsha_suresh.png",
-            name: "Varsha Suresh",
-            position: "Chairperson",
+        { 
+            imageSrc: "/images/abdullah_amir_p.jpg", 
+            name: "Abdullah Amir P", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/josekutty_biju.png", 
+            name: "Josekutty Biju", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/amal_s_babu.jpg", 
+            name: "Amal S Babu", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/al_muneer.jpg", 
+            name: "Al Muneer", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/devananda_mb.jpeg", 
+            name: "Devananda MB", 
+            position: "Member" 
+        },
+    ];
+
+    const PESSocietyDatas = [
+        { 
+            imageSrc: "/images/sanjay_r_senan.jpg", 
+            name: "Sanjay R Senan", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/karthik.jpg", 
+            name: "Karthik", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/alan_anil.jpg", 
+            name: "Alan Anil", 
+            position: "Member" 
+        },
+    ];
+
+    const PELSSocietyDatas = [
+        { 
+            imageSrc: "/images/rithwik_d.jpg", 
+            name: "Rithwik D", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/nephin_joe_vinod.jpg", 
+            name: "Nephin Joe Vinod", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/aiswarya_pramod.jpg", 
+            name: "Aiswarya Pramod", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/ritwik_s_nambiar.jpg", 
+            name: "Ritwik S Nambiar", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/sreenandh_p_s.jpeg", 
+            name: "Sreenandh P S", 
+            position: "Member" 
+        },
+    ];
+
+    const AESSSocietyDatas = [
+        { 
+            imageSrc: "/images/mohammed_adil_k.jpg", 
+            name: "Mohammed Adil K", 
+            position: "Chairperson" 
         },
         {
-            imageSrc: "/images/abdullah_amir_p.jpeg",
-            name: "Abdullah Amir P",
-            position: "Vice Chair",
+            imageSrc: "/images/adithyan_c_s.jpg", 
+            name: "Adithyan C S", 
+            position: "Member" 
         },
-        {
-            imageSrc: "/images/karthik_shankar_s.png",
-            name: "Karthik Shankar S",
-            position: "Secretary",
+        { 
+            imageSrc: "/images/dimel.jpg", 
+            name: "Dimel", 
+            position: "Member" 
         },
-        {
-            imageSrc: "/images/jibin_biju.jpg",
-            name: "Jibin Biju",
-            position: "Joint Secretary",
+        { 
+            imageSrc: "/images/karthik_s_pillai.jpg", 
+            name: "Karthik S Pillai", 
+            position: "Member" 
         },
-        {
-            imageSrc: "/images/abhishek_mohan.jpg",
-            name: "Abhishek Mohan",
-            position: "SIGHT Treasurer",
+        { 
+            imageSrc: "/images/muhammed_safwan_farook.jpg", 
+            name: "Muhammed Safwan Farook", 
+            position: "Member" 
         },
-        {
-            imageSrc: "/images/jovan_jacob.jpg",
-            name: "Jovan Jacob",
-            position: "Project Head",
+    ];
+
+    const CircuitsAndSystemsSocietyDatas = [
+        { 
+            imageSrc: "/images/ashly_skariah.jpg", 
+            name: "Ashly Skariah", 
+            position: "Chairperson" 
         },
-        {
-            imageSrc: "/images/vinay_m_p.jpg",
-            name: "Vinay M P",
-            position: "Associate Project Coordinator",
+        { 
+            imageSrc: "/images/sara_shameen.jpg", 
+            name: "Sara Shameen", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/lakshminarasimhan_r.jpg", 
+            name: "Lakshminarasimhan.R", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/p_pujitharam.jpg", 
+            name: "P. PujithaRam", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/neyyilla_varshitha.jpg", 
+            name: "Neyyilla Varshitha", 
+            position: "Member" 
+        },
+    ];
+
+    const SensorCouncilDatas = [
+        { 
+            imageSrc: "/images/sreekanth_t_s.jpg", 
+            name: "Sreekanth T S", 
+            position: "Chairperson" 
+        },
+        { 
+            imageSrc: "/images/neeraj_m.jpg", 
+            name: "Neeraj M", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/aadhitya_jaganath_l.jpeg", 
+            name: "Aadhitya Jaganath L", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/ganga_suresh.jpg", 
+            name: "Ganga Suresh", 
+            position: "Member" 
+        },
+        { 
+            imageSrc: "/images/dilan_a_l.jpg", 
+            name: "Dilan A L", 
+            position: "Member" 
         },
     ];
 
     const SignalProcessingSociety = [
-        {
-            imageSrc: "/images/deepak_santhosh.jpg",
-            name: "Deepak Santhosh",
-            position: "Chairperson",
+        { 
+            imageSrc: "/images/jumana_faby_khan.jpg", 
+            name: "Jumana Faby Khan", 
+            position: "Chairperson" 
         },
-        {
-            imageSrc: "/images/jumana_faby_khan.jpg",
-            name: "Jumana Faby Khan",
-            position: "Vice Chair",
+        { 
+            imageSrc: "/images/nandana_r.jpg", 
+            name: "Nandana R", 
+            position: "Member" 
         },
-        {
-            imageSrc: "/images/muhammed_shahil_k.jpg",
-            name: "Muhammed Shahil K",
-            position: "Secretary",
+        { 
+            imageSrc: "/images/sajin_sajeev.jpg", 
+            name: "Sajin Sajeev", 
+            position: "Member" 
         },
-        {
-            imageSrc: "/images/ajay_krishna_k.jpg",
-            name: "Ajay Krishna K",
-            position: "Joint Secretary",
+        { 
+            imageSrc: "/images/saaidh_sadh.jpg", 
+            name: "Saaidh Sadh", 
+            position: "Member" 
         },
-        {
-            imageSrc: "/images/sanjay_r_senan.jpg",
-            name: "Sanjay R Senan",
-            position: "Technical Coordinator",
+        { 
+            imageSrc: "/images/nithesh_narayanan_parthiban.jpg", 
+            name: "Nithesh Narayanan Parthiban", 
+            position: "Member" 
         },
     ];
 
-    const WomenInEngineering = [
-        {
-            imageSrc: "/images/gayathri_k.jpg",
-            name: "Gayathri K",
-            position: "Chairperson",
-        },
-        {
-            imageSrc: "/images/nidhi_mythily_girish.jpg",
-            name: "Nidhi Mythily Girish",
-            position: "Vice Chair",
-        },
-        {
-            imageSrc: "/images/aiswarya_k_narayan.jpg",
-            name: "Aiswarya K Narayan",
-            position: "Secretary",
-        },
-        {
-            imageSrc: "/images/keerthana_p_t.jpg",
-            name: "Keerthana P T",
-            position: "Joint Secretary",
-        },
-        {
-            imageSrc: "/images/shwetha_nair_b_s.jpg",
-            name: "Shwetha Nair B S",
-            position: "Technical Coordinator",
-        },
-    ];
 
     return (
         <div className={styles.homeContainer}>
@@ -529,6 +647,37 @@ const ourTeam = () => {
                 )}
             </div>
 
+            <HeadNameCard text="Power & Energy Society (PES)" />
+            <div className={styles.cardsGrid}>
+                {PESSocietyDatas.map((data, index) => (
+                    <Card key={index} data={data} />
+                ))}
+            </div>
+
+          
+            <HeadNameCard text="Power Electronics Society (PELS)" />
+            <div className={styles.cardsGrid}>
+                {PELSSocietyDatas.map((data, index) => (
+                    <Card key={index} data={data} />
+                ))}
+            </div>
+
+            
+            <HeadNameCard text="Aerospace and Electronic Systems Society (AESS)" />
+            <div className={styles.cardsGrid}>
+                {AESSSocietyDatas.map((data, index) => (
+                    <Card key={index} data={data} />
+                ))}
+            </div>
+
+           
+            <HeadNameCard text="Sensor Council" />
+            <div className={styles.cardsGrid}>
+                {SensorCouncilDatas.map((data, index) => (
+                    <Card key={index} data={data} />
+                ))}
+            </div>
+            
             <HeadNameCard text="Signal Processing Society (SPS)" />
             <div className={styles.cardsGrid}>
                 {SignalProcessingSociety.map((data, index) => (
@@ -536,7 +685,7 @@ const ourTeam = () => {
                 ))}
             </div>
 
-            <HeadNameCard text="Signal Processing Society (SPS)" />
+            <HeadNameCard text="Women In Engineering (WIE)" />
             <div className={styles.cardsGrid}>
                 {WomenInEngineering.map((data, index) => (
                     <Card key={index} data={data} />
