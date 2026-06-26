@@ -98,7 +98,7 @@ const ourTeam = () => {
             position: "Technical Coordinator",
         },
         {
-            imageSrc: "/images/njanaprakasam.png",
+            imageSrc: "/images/njanaprakasam.jpg",
             name: "Njanaprakasam",
             position: "Project Head",
         },
@@ -129,7 +129,7 @@ const ourTeam = () => {
         },
         {
             imageSrc: "/images/sreeya_balu.jpg",
-            name: "sreeya_balu",
+            name: "Sreeya Balu",
             position: "SIGHT PROJECT HEAD",
         },
         {
@@ -328,11 +328,6 @@ const ourTeam = () => {
             name: "Mohammed Shahid", 
             position: "Member" 
         },
-        { 
-            imageSrc: "/images/rahan_m.jpg", 
-            name: "Rahan M", 
-            position: "Member" 
-        },
     ];
 
     const ComputerSocietyDatas = [
@@ -340,11 +335,6 @@ const ourTeam = () => {
             imageSrc: "/images/ryan_m.jpg", 
             name: "Ryan M", 
             position: "Chairperson" 
-        },
-        { 
-            imageSrc: "/images/ibinu_jaleel.jpg", 
-            name: "Ibinu Jaleel", 
-            position: "Member" 
         },
         { 
             imageSrc: "/images/suryakiran_s.jpg", 
@@ -370,7 +360,7 @@ const ourTeam = () => {
 
     const SpecialInterestGroupOnHumanitarianTechnology = [
         { 
-            imageSrc: "/images/abdullah_amir_p.jpg", 
+            imageSrc: "/images/abdullah_amir_p.jpeg", 
             name: "Abdullah Amir P", 
             position: "Chairperson" 
         },
