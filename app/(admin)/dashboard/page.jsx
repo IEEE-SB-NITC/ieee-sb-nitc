@@ -326,182 +326,6 @@ function UsersSection({ session }) {
   )
 }
 
-// ─── Events Tab ───────────────────────────────────────────────────────────────
-
-function EventsSection({ session }) {
-  const [events, setEvents] = useState([])
-  const [societies, setSocieties] = useState([])
-  const [form, setForm] = useState({ title: "", description: "", date: "", society_id: "" })
-  const [saving, setSaving] = useState(false)
-  const [error, setError] = useState("")
-
-  const callerRole = session.user.role
-  const isScopedToSociety = ["society_admin", "society_member"].includes(callerRole)
-
-  const loadEvents = useCallback(async () => {
-    const url = isScopedToSociety
-      ? `/api/events?society_id=${session.user.societyId}`
-      : "/api/events"
-    const res = await fetch(url)
-    if (res.ok) setEvents(await res.json())
-  }, [isScopedToSociety, session.user.societyId])
-
-  useEffect(() => {
-    loadEvents()
-    if (!isScopedToSociety) {
-      fetch("/api/societies").then((r) => r.json()).then(setSocieties)
-    }
-  }, [loadEvents, isScopedToSociety])
-
-  async function handleAdd(e) {
-    e.preventDefault()
-    setError("")
-    setSaving(true)
-    const payload = {
-      ...form,
-      society_id: isScopedToSociety ? session.user.societyId : form.society_id,
-    }
-    const res = await fetch("/api/events", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    })
-    const data = await res.json()
-    if (!res.ok) {
-      setError(data.error)
-    } else {
-      setForm({ title: "", description: "", date: "", society_id: "" })
-      await loadEvents()
-    }
-    setSaving(false)
-  }
-
-  async function handleDelete(id) {
-    if (!confirm("Delete this event?")) return
-    const res = await fetch(`/api/events/${id}`, { method: "DELETE" })
-    const data = await res.json()
-    if (!res.ok) {
-      alert(data.error)
-    } else {
-      setEvents((prev) => prev.filter((ev) => ev.id !== id))
-    }
-  }
-
-  return (
-    <section className={styles.sectionCard}>
-      <div className={styles.sectionHeader}>
-        <h2>Events Management</h2>
-      </div>
-      <p className={styles.description}>Add and manage upcoming events.</p>
-
-      {/* Add event form */}
-      <form onSubmit={handleAdd} className="flex flex-wrap gap-3 mb-6 items-end">
-        <div className="flex flex-col gap-1">
-          <label className="text-xs text-slate-500 font-medium">Title</label>
-          <input
-            required
-            type="text"
-            placeholder="Event title"
-            value={form.title}
-            onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
-            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-48"
-          />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label className="text-xs text-slate-500 font-medium">Date</label>
-          <input
-            required
-            type="datetime-local"
-            value={form.date}
-            onChange={(e) => setForm((f) => ({ ...f, date: e.target.value }))}
-            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        {!isScopedToSociety && (
-          <div className="flex flex-col gap-1">
-            <label className="text-xs text-slate-500 font-medium">Society</label>
-            <select
-              required
-              value={form.society_id}
-              onChange={(e) => setForm((f) => ({ ...f, society_id: e.target.value }))}
-              className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="">Select society</option>
-              {societies.map((s) => (
-                <option key={s.id} value={s.id}>{s.name}</option>
-              ))}
-            </select>
-          </div>
-        )}
-        <div className="flex flex-col gap-1 flex-1 min-w-48">
-          <label className="text-xs text-slate-500 font-medium">Description (optional)</label>
-          <input
-            type="text"
-            placeholder="Short description"
-            value={form.description}
-            onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
-            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={saving}
-          className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 cursor-pointer"
-        >
-          {saving ? "Adding…" : "Add Event"}
-        </button>
-      </form>
-
-      {error && (
-        <div className="mb-4 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-2 text-sm">
-          {error}
-        </div>
-      )}
-
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-slate-200 text-left text-slate-500">
-              <th className="pb-2 font-medium">Title</th>
-              <th className="pb-2 font-medium">Society</th>
-              <th className="pb-2 font-medium">Date</th>
-              <th className="pb-2 font-medium">Added by</th>
-              <th className="pb-2 font-medium"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {events.map((ev) => (
-              <tr key={ev.id} className="border-b border-slate-100 hover:bg-slate-50">
-                <td className="py-2 pr-4 font-medium">{ev.title}</td>
-                <td className="py-2 pr-4 text-slate-500">{ev.societies?.name ?? "—"}</td>
-                <td className="py-2 pr-4 text-slate-500">
-                  {new Date(ev.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
-                </td>
-                <td className="py-2 pr-4 text-slate-400 text-xs">{ev.created_by}</td>
-                <td className="py-2 text-right">
-                  <button
-                    onClick={() => handleDelete(ev.id)}
-                    className="text-red-500 hover:text-red-700 text-xs font-medium cursor-pointer"
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {events.length === 0 && (
-              <tr>
-                <td colSpan={5} className="py-6 text-center text-slate-400 text-sm">
-                  No events yet.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-    </section>
-  )
-}
-
 // ─── Dashboard ────────────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
@@ -567,10 +391,9 @@ export default function DashboardPage() {
 
       {/* Content */}
       <div className={styles.contentArea}>
-        {activeSection === "Events" && <EventsSection session={session} />}
 
         {activeSection === "Users" && canManageUsers && (
-          <UsersSection session={session} />}
+          <UsersSection session={session} />)}
         {activeSection === "Events" && (
           <section className={styles.sectionCard}>
             <div className={styles.sectionHeader}>
@@ -579,7 +402,7 @@ export default function DashboardPage() {
             <p className={styles.description}>
               Add, delete, and manage upcoming events.
             </p>
-            <EventsManager />
+            <EventsManager session={session} />
           </section>
         )}
 

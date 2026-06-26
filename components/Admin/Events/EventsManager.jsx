@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import styles from "./EventsManager.module.css";
 
-const CHAPTERS = ["Main", "CS", "WIE", "PES", "RAS", "SIGHT"];
+const CHAPTERS = ["aess", "cass", "comsoc", "cs", "css", "eds", "edsoc", "ias", "pels", "pes", "ras", "sensor-council", "sight", "sps", "wie"];
 
-export default function EventsManager() {
+export default function EventsManager({ session }) {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
@@ -16,13 +16,16 @@ export default function EventsManager() {
     const [imagePreview, setImagePreview] = useState(null);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    
+    const callerRole = session.user.role
+    const isScopedToSociety = ["society_admin", "society_member"].includes(callerRole)
 
     const [form, setForm] = useState({
         title: "",
         description: "",
         date: "",
         venue: "",
-        chapter: "Main",
+        chapter: "aess",
     });
 
     useEffect(() => {
@@ -32,7 +35,10 @@ export default function EventsManager() {
     async function fetchEvents() {
         setLoading(true);
         try {
-            const res = await fetch("/api/events");
+            const url = isScopedToSociety
+              ? `/api/events?society_id=${session.user.societyId}`
+              : "/api/events"
+            const res = await fetch(url);
             const data = await res.json();
             if (data.success) setEvents(data.data);
         } catch (err) {
