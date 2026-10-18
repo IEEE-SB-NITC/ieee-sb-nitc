@@ -5,12 +5,16 @@
   padding: 5rem 0rem 3.5rem 2rem;
   color: white;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
-  margin: 3rem auto;
+  margin: 4rem auto;
   z-index: 1;
   overflow: hidden;
-  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 
 .left {
@@ -68,8 +72,15 @@
   flex-wrap: wrap;
   max-width: 500px;
   min-width: 65%;
-  max-height: 300px;
+  max-height: 320px;
   scroll-snap-align: start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+}
+
+.box:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .box h3 {

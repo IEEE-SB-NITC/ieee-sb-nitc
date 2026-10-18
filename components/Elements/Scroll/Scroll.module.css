@@ -1,6 +1,7 @@
 .Scroll{
     z-index: 1;
-    margin: 4rem 0rem;
+    margin: 5rem 0rem;
+    position: relative;
 }
 
 .slide img{

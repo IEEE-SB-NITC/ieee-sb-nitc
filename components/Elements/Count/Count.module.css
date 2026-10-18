@@ -1,25 +1,16 @@
 .outer {
-    /* margin: 3.5rem 0; */
-    /* display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+    margin: 4rem auto;
+    max-width: 1100px;
+    width: 92%;
+    box-sizing: border-box;
     color: white;
-    max-width: 100vw;
-    width: 100%;
-    margin: 0 auto;
+    overflow-x: hidden;
     z-index: 1;
-    flex-wrap: wrap; */
-     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem;
-  margin: 3rem auto;
-  max-width: 1400px;
-  box-sizing: border-box;
-  color: white;
-  overflow-x: hidden;
-  z-index: 1;
+    position: relative;
 }
 
 .inner {

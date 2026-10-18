@@ -1,69 +1,105 @@
+/* ============================================
+   ROOT PAGE — HOMEPAGE
+   ============================================ */
+
 .root {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 120px;
-}
-.background {
-    position: absolute;
-    z-index: -1;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.image1,
-.image2 {
-    background-size: cover;
-    background-position: center;
+/* --- BACKGROUND LAYERS --- */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
-    background-repeat: no-repeat;
+    pointer-events: none;
 }
 
 .image1 {
     background: url("/background.svg");
-    width: 120vw;
-    min-height: 2800px;
-    position: relative;
-    top: -100px;
-    /* left: 160px; */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
 .image2 {
     background: url("/background-2.svg");
-    position: absolute;
-    top: 2650px;
-    left: 0;
-    width: 100vw;
-    min-width: 100vw;
-    min-height: 1900px;
+    background-size: cover;
+    background-position: center top;
     background-repeat: no-repeat;
-    background-size: 100% 97%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
 }
 
-.mainContainer {
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.heroSection {
     position: relative;
     z-index: 1;
-}
-
-.main {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    width: 100%;
-    height: 60vh;
-    position: relative;
-    margin: 0;
-    right: 25%;
-    flex-wrap: nowrap;
-    align-content: center;
     align-items: center;
     justify-content: center;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    gap: 2.5rem;
 }
 
-.main h1 {
-    font-weight: 700;
-    font-family: var(--Montserrat);
-    color: white;
-    animation: translate 0.5s ease;
-    margin: 1.5rem 0rem;
-    font-size: 64px;
+/* Badge */
+.heroBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 50px;
+    padding: 0.4rem 1.1rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: var(--Inter);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    animation: fadeSlideDown 0.6s ease both;
+}
+
+.heroBadgeDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #a36fc3;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Hero Content */
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
 }
 
 .textWrapper {
@@ -71,298 +107,290 @@
     display: inline-block;
 }
 
-.main h1 span {
+.heroTitle {
+    font-weight: 700;
+    font-family: var(--Montserrat);
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin: 0;
+    animation: slideUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.highlight {
     font-family: var(--Montserrat);
     font-weight: 700;
-    font-size: 64px;
-    line-height: 100%;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
     display: block;
-    width: fit-content;
-    animation: translate 0.75s ease;
-    background: linear-gradient(90deg, #d17ac4 35%, #6298f9 65%);
+    background: linear-gradient(90deg, #d17ac4 30%, #6298f9 70%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-.main p {
-    font-family: Geist;
-    font-weight: 700;
-    color: white;
-    margin: 0px;
-    font-size: 18px;
-    display: block;
-    animation: translate 1s ease;
+    animation: slideUp 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 0.1s;
 }
 
-.card {
+.heroSubtitle {
+    font-family: var(--Inter);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    margin: 0;
+    max-width: 520px;
+    line-height: 1.6;
+    animation: slideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 0.2s;
+}
+
+/* CTA Buttons */
+.heroCtas {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeSlideDown 1s ease both;
+    animation-delay: 0.4s;
+}
+
+.ctaPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2.25rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #7c3fa0 0%, #5a2d82 100%);
+    color: white !important;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: var(--Inter);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 4px 20px rgba(98, 50, 128, 0.45);
+    text-decoration: none;
+}
+
+.ctaPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(98, 50, 128, 0.6);
+    background: linear-gradient(135deg, #8e4db8 0%, #6b3596 100%);
+}
+
+.ctaSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2.25rem;
+    border-radius: 50px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: var(--Inter);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+}
+
+.ctaSecondary:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.6);
+    color: white !important;
+}
+
+/* Hero Card */
+.heroCard {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    padding: 1.75rem 2.25rem;
+    max-width: 640px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    animation: fadeIn 1.1s ease both;
+    animation-delay: 0.5s;
+}
+
+.heroCard p {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-family: var(--Inter);
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}
+
+.heroCard strong {
+    color: white;
+    font-weight: 600;
+}
+
+.cardLink {
+    color: #c89fe0 !important;
+    font-size: 0.92rem;
+    font-weight: 500;
+    font-family: var(--Inter);
+    transition: color 0.2s ease, gap 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.cardLink:hover {
+    color: #d4b5f5 !important;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1.5s ease both;
+    animation-delay: 1s;
+}
+
+.scrollMouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 11px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0px auto;
-    line-height: 1.5;
-
-    background: rgba(255, 255, 255, 0.1);
-    text-align: center;
-    max-width: 80%;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 1.5rem 1rem;
-    border-radius: 50px;
+    padding-top: 5px;
 }
 
-.card p {
-    color: white;
-    font-size: larger;
+.scrollWheel {
+    width: 4px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 2px;
+    animation: scrollBob 1.6s ease infinite;
 }
 
-.card button {
-    color: #a36fc3;
-    background-color: black;
-    font-family: var(--inter);
-    font-optical-sizing: auto;
-    font-size: larger;
-    font-weight: 600;
-    padding: 1.25rem 4.5rem;
-    border: none;
-    border-radius: 50px;
+@keyframes scrollBob {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(6px); opacity: 0.3; }
 }
 
-@keyframes translate {
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes slideUp {
     from {
-        transform: translateY(100px);
+        transform: translateY(50px);
+        opacity: 0;
     }
     to {
-        transform: translateY(0px);
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-    .background {
-        width: 100vw;
-        overflow: hidden;
-        position: absolute;
+@keyframes fadeSlideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
     }
-
-    .image1 {
-        width: 100vw;
-        min-height: 240vh;
-        background-position: center top;
-        background-size: cover;
-        top: -20px;
-        left: 0;
-        position: relative;
-        transform: none;
-        background-repeat: no-repeat;
-        opacity: 0.9;
-        overflow: hidden;
-    }
-
-    .image2 {
-        width: 100vw;
-        min-height: 200vh;
-        background-position: center top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: 220vh;
-        left: 0;
-        z-index: -1;
-        opacity: 0.9;
-        position: absolute;
-        transform: none;
-        overflow: hidden;
-    }
-
-    .main {
-        height: 40vh;
-        right: 0;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2rem;
-        margin-bottom: 5rem;
-    }
-
-    .main h1,
-    .main h1 span {
-        font-size: 3.8rem;
-    }
-
-    .main p {
-        font-size: 1.2rem;
-        margin-top: 0.75rem;
-    }
-
-    .card {
-        max-width: 85%;
-        padding: 1.25rem 1.5rem;
-        border-radius: 35px;
-    }
-
-    .card p {
-        font-size: 1rem;
-        line-height: 135%;
-    }
-
-    .card button {
-        padding: 0.8rem 2.25rem;
-        border-radius: 30px;
-        font-size: 1.05rem;
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .background {
-        width: 100vw;
-        overflow: hidden;
-        position: absolute;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+    .heroSection {
+        padding: 7rem 2rem 5rem;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroSection {
+        padding: 6rem 1.25rem 4rem;
+        gap: 1.75rem;
+        min-height: 100svh;
     }
 
-    .image1 {
-        width: 100vw;
-        min-height: 200vh;
-        background-position: center top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: 0;
-        left: 0;
-        position: relative;
-        transform: none;
-        opacity: 0.9;
+    .heroTitle,
+    .highlight {
+        font-size: clamp(2rem, 8vw, 2.8rem);
     }
 
-    .image2 {
-        width: 100vw;
-        min-height: 180vh;
-        background-position: center top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: 180vh;
-        left: 0;
-        z-index: -1;
-        opacity: 0.8;
-        position: absolute;
-        transform: none;
-    }
-
-    .main {
-        right: 0;
-        height: 35vh;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
-
-    .main h1 {
-        font-size: 3.5rem;
-    }
-
-    .main h1 span {
-        font-size: 3.5rem;
-    }
-
-    .main p {
-        font-size: 1rem;
-        margin-top: 0.5rem;
-    }
-
-    .card {
-        max-width: 85%;
-        padding: 1rem 1.25rem;
-        border-radius: 30px;
-    }
-
-    .card p {
+    .heroSubtitle {
         font-size: 0.9rem;
-        line-height: 130%;
     }
 
-    .card button {
-        padding: 0.75rem 2rem;
-        border-radius: 25px;
-        font-size: 1rem;
+    .heroCtas {
+        gap: 0.75rem;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary {
+        padding: 0.75rem 1.75rem;
+        font-size: 0.9rem;
+    }
+
+    .heroCard {
+        padding: 1.25rem 1.5rem;
+        border-radius: 18px;
+        width: 95%;
+    }
+
+    .heroCard p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    .scrollIndicator {
+        bottom: 1.5rem;
     }
 }
 
-@media (width<=768px) {
-    .background {
-        width: 100vw;
-        height: 450vh;
-        overflow: hidden;
-        position: absolute;
-    }
-    .image1,
-    .image2 {
-        opacity: 0.75;
-        pointer-events: none;
+@media (max-width: 480px) {
+    .heroSection {
+        padding: 5.5rem 1rem 3.5rem;
     }
 
-    .image1 {
-        width: 100vw;
-        height: auto;
-        min-height: 220vh;
-        background-position: center top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: -20px;
-        left: 0;
-        position: relative;
+    .heroTitle,
+    .highlight {
+        font-size: 2rem;
     }
 
-    .image2 {
-        width: 100vw;
-        height: auto;
-        min-height: 180vh;
-        background-position: center top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        left: 0;
-        top: 200vh;
-        z-index: -1;
-        position: absolute;
-        transform: none;
+    .heroCard {
+        padding: 1rem 1.25rem;
     }
 
-    .main {
-        right: 0;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: nowrap;
-        height: 20vh;
-        margin-bottom: 4rem;
+    .heroCard p {
+        font-size: 0.85rem;
     }
 
-    .main h1 {
-        text-wrap-mode: nowrap;
-        font-size: 2.5rem;
+    .heroBadge {
+        font-size: 0.75rem;
     }
 
-    .main h1 span {
-        font-size: 2.5rem;
-    }
-
-    .textWrapper p {
-        text-wrap-mode: nowrap;
-        font-size: 0.6rem;
-        margin: 0 auto;
-    }
-
-    .card p {
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 120%;
-        text-align: center;
-        vertical-align: middle;
-    }
-    .card {
-        padding: 0.75rem 1rem;
-        min-width: 80vw;
-        border-radius: 20px;
-        border-width: 1px;
-    }
-
-    .card button {
-        padding: 0.25rem 1.25rem;
-        border-radius: 20px;
-        font-size: small;
+    .scrollIndicator {
+        display: none;
     }
 }

@@ -7,18 +7,26 @@ import Info from "@/components/Elements/Info/Info"
 import Carousel from "@/components/Elements/Latest_events/event-carousel"
 import Reveal from "../../../components/RevealAnimation/Reveal";
 import WhatsAhead from "@/components/Elements/WhatsAhead/WhatsAhead";
+import Link from "next/link";
 
 const page = () => {
     return (
         <div className={styles.root}>
-            <div className={styles.mainContainer}>
-                <div className={styles.background}>
-                    <div className={styles.image1}></div>
-                    <div className={styles.image2}></div>
-                </div>
-                <div className={styles.main}>
+            {/* Background decorative layers */}
+            <div className={styles.background}>
+                <div className={styles.image1}></div>
+                <div className={styles.image2}></div>
+            </div>
+
+            {/* Hero Section */}
+            <section className={styles.heroSection}>
+                <div className={styles.heroContent}>
+                    <div className={styles.heroBadge}>
+                        <span className={styles.heroBadgeDot}></span>
+                        NIT Calicut · Est. Student Branch
+                    </div>
                     <div className={styles.textWrapper}>
-                        <h1>
+                        <h1 className={styles.heroTitle}>
                             Welcome To{" "}
                             <span className={styles.highlight}>
                                 IEEE SB NITC
@@ -26,14 +34,19 @@ const page = () => {
                         </h1>
                     </div>
                     <div className={styles.textWrapper}>
-                        <p>
-                            | The Official Website Of IEEE Student Branch NIT,
-                            Calicut |
+                        <p className={styles.heroSubtitle}>
+                            The Official Website of IEEE Student Branch,{" "}
+                            National Institute of Technology Calicut
                         </p>
+                    </div>
+                    <div className={styles.heroCtas}>
+                        <Link href="/join" className={styles.ctaPrimary}>Join IEEE</Link>
+                        <Link href="/ourTeam" className={styles.ctaSecondary}>Meet the Team</Link>
                     </div>
                 </div>
 
-                <div className={styles.card}>
+                {/* Hero description card */}
+                <div className={styles.heroCard}>
                     <p>
                         IEEE SB NITC strives to{" "}
                         <strong>
@@ -42,20 +55,26 @@ const page = () => {
                         </strong>{" "}
                         among its members. Through our events, we provide a
                         platform for students to explore emerging technologies,
-                        expand their network and develop crucial skills. Join us
-                        as we embark on this exciting journey of innovation and
-                        growth!
+                        expand their network and develop crucial skills.
                     </p>
-                    <button>About Us</button>
+                    <Link href="/contact" className={styles.cardLink}>Get in Touch →</Link>
                 </div>
-            </div>
+
+                {/* Scroll indicator */}
+                <div className={styles.scrollIndicator}>
+                    <div className={styles.scrollMouse}>
+                        <div className={styles.scrollWheel}></div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Content Sections */}
             <Reveal><WhatsAhead /></Reveal>
             <Reveal><Features /></Reveal>
             <Scroll />
             <Reveal><Count /></Reveal>
             <Reveal><Info /></Reveal>
             <Reveal><Carousel /></Reveal>
-
         </div>
     );
 };

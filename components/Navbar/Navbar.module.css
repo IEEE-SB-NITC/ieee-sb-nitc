@@ -2,101 +2,216 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 1.25rem 5rem;
     width: 100%;
-    max-width: 90vw;
-    margin: 0 auto;
-    position:absolute;
+    max-width: 100vw;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+}
+
+.nav.scrolled {
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 2px 24px rgba(0,0,0,0.4);
+    padding: 0.85rem 5rem;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    display: block;
 }
 
 .ul {
     display: flex;
-    gap: 3rem;
+    gap: 2.25rem;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1rem;
     list-style: none;
-    margin-left: auto;
+    margin: 0;
+    padding: 0;
     align-items: center;
 }
 
-.ul li {
-    z-index: 2;
+.ul li a {
+    position: relative;
+    color: rgba(255,255,255,0.85);
+    transition: color 0.2s ease;
+    padding-bottom: 2px;
+}
+
+.ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, #d17ac4, #6298f9);
+    transition: width 0.25s ease;
+    border-radius: 2px;
+}
+
+.ul li a:hover {
+    color: #fff;
+}
+
+.ul li a:hover::after {
+    width: 100%;
 }
 
 .button {
-    min-width: 115px;
-    height: 39px;
-
+    min-width: 110px;
+    height: 38px;
     border-radius: 50px;
     color: white;
     background: #623280;
     border: none;
     font-weight: 500;
-    font-size: 1.25rem;
-    font-family: var(--inter);
+    font-size: 1rem;
+    font-family: var(--Inter);
     cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.button:hover {
+    background: #7a3fa0;
+    transform: translateY(-1px);
 }
 
 .loginButton {
-    min-width: 80px;
-    height: 39px;
+    min-width: 72px;
+    height: 38px;
     border-radius: 50px;
-    color: white;
+    color: rgba(255,255,255,0.9);
     background: transparent;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
     font-weight: 500;
-    font-size: 1.1rem;
-    font-family: var(--inter);
+    font-size: 1rem;
+    font-family: var(--Inter);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 1.2rem;
-    transition: background 0.2s, border-color 0.2s;
-    position: relative;
-    z-index: 2;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
 }
 
 .loginButton:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.75);
+    color: #fff;
 }
 
 .menuIcon {
     display: none;
+    cursor: pointer;
 }
 
+/* --- SIDEBAR --- */
 .sidebar {
     position: fixed;
     top: 0;
     right: -100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(2px);
-    width: 55%;
+    background: rgba(8, 4, 18, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    width: 72%;
+    max-width: 320px;
     height: 100vh;
     color: white;
     z-index: 1001;
-    padding: 2rem 1rem;
-    transition: right 0.3s ease-in-out;
+    padding: 2rem 1.5rem;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebarLogo {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .sidebarUl {
     list-style: none;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     padding: 0;
+    width: 100%;
+    flex: 1;
 }
 
 .sidebarUl li {
-    margin: 1rem 0;
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebarUl li a {
+    display: block;
+    padding: 0.9rem 0.5rem;
+    font-size: 1.05rem;
     font-family: var(--Montserrat);
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.sidebarUl li a:hover {
+    color: #fff;
+    padding-left: 1rem;
+}
+
+.sidebarActions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.sidebarJoinBtn {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    background: #623280;
+    color: white !important;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: var(--Inter);
+    transition: background 0.2s ease;
+}
+
+.sidebarJoinBtn:hover {
+    background: #7a3fa0;
+}
+
+.sidebarLoginBtn {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: var(--Inter);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebarLoginBtn:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.6);
+    color: #fff !important;
 }
 
 .closeIcon {
@@ -104,6 +219,12 @@
     top: 1.25rem;
     right: 1.25rem;
     cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.closeIcon:hover {
+    opacity: 1;
 }
 
 .backdrop {
@@ -112,12 +233,12 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    backdrop-filter: blur(2px);
-    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .backdrop.active {
@@ -129,42 +250,50 @@
     right: 0;
 }
 
+/* --- TABLET --- */
 @media (min-width: 768px) and (max-width: 1024px) {
     .nav {
-        padding: 1rem;
-        max-width: 100vw;
-        justify-content: space-between;
+        padding: 1rem 2.5rem;
+    }
+
+    .nav.scrolled {
+        padding: 0.75rem 2.5rem;
     }
 
     .ul {
-        gap: 1rem;
-        font-size: 1rem;
-        margin: 0;
-        padding-right: 1rem;
-        margin-right: 1rem;
-    }
-
-    .button {
-        min-width: 100px;
-        height: 36px;
+        gap: 1.25rem;
         font-size: 0.9rem;
     }
 
+    .button {
+        min-width: 90px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+
+    .loginButton {
+        height: 34px;
+        font-size: 0.85rem;
+        padding: 0 0.9rem;
+    }
+
     .menuIcon {
         display: none;
     }
 
-    .nav img {
-        max-width: 160px;
-        height: auto;
+    .logo {
+        width: 150px;
     }
 }
 
-@media (max-width: 768px) {
+/* --- MOBILE --- */
+@media (max-width: 767px) {
     .nav {
-        box-sizing: border-box;
-        padding: 0.75rem 0rem 0.75rem 1rem;
-        max-width: 100vw;
+        padding: 0.85rem 1.25rem;
+    }
+
+    .nav.scrolled {
+        padding: 0.6rem 1.25rem;
     }
 
     .ul {
@@ -172,17 +301,14 @@
     }
 
     .menuIcon {
-        position: relative;
-        right: 2rem;
         display: block;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
+        width: 28px;
+        height: 28px;
         z-index: 2;
+        flex-shrink: 0;
     }
 
-    .nav img {
-        max-width: 140px;
-        height: auto;
+    .logo {
+        width: 140px;
     }
 }
