@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./contact.module.css";
 import ComingSoonDesign from "../../../components/Elements/CommingSoon/CommingSoon";
+import MapWrapper from "../../../components/Elements/Map/MapWrapper";
 const page = () => {
   return (
     <div>
@@ -57,7 +58,9 @@ const page = () => {
             <div className={styles.infoT3}>ieeesb@nitc.ac.in</div>
           </div>
 
-          <img className={styles.map} src="/nitc_map.png" alt="NITC Map" />
+          <div className={styles.map}>
+            <MapWrapper />
+          </div>
         </div>
       </div>
     </div>

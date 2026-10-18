@@ -133,6 +133,9 @@
 .map {
   margin: 2rem;
   max-width: 600px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .infoT {
