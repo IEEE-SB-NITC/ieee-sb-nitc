@@ -4,9 +4,8 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 60%;
-  max-height: 500px;
-  background: linear-gradient(to bottom, #46235b, rgb(169, 113, 119), black);
+  height: 500px;
+  background: linear-gradient(to bottom, #5a2d82 0%, #7b3a8c 25%, rgb(169, 113, 119) 65%, black 100%);
 
   filter: blur(20px);
   z-index: -1;
@@ -143,8 +142,8 @@
 }
 .infoT1 {
   font-family: var(--geist);
-  font-weight: 400;
-  font-size: 45px;
+  font-weight: 700;
+  font-size: 3.5rem;
 }
 .infoT2 {
   padding-top: 25px;
@@ -224,7 +223,7 @@
   .infoT1 {
     font-family: var(--geist);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 2.5rem;
   }
   .infoT2 {
     padding-top: 25px;

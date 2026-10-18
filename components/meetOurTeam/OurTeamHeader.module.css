@@ -1,14 +1,16 @@
 .header {
-  background: linear-gradient(to bottom, #623a89, rgb(169, 113, 119), black);
+  background: linear-gradient(to bottom, #5a2d82 0%, #7b3a8c 25%, rgb(169, 113, 119) 65%, black 100%);
   gap: 30px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
+  min-height: 500px;
+  height: 500px;
   color: white;
   padding-top: 150px;
+  box-sizing: border-box;
   margin-bottom: 5%;
 }
 .main {
@@ -52,7 +54,7 @@
 
 .meet {
   /* color: white; */
-  font-size: 600%;
+  font-size: 3.5rem;
   font-weight: 700;
   background: linear-gradient(90deg, #be7cc9, #8e5a93, #845f8e, #6498fa);
 
@@ -94,6 +96,6 @@
     font-size: 50%;
   }
   .meet {
-    font-size: 800%;
+    font-size: 2.5rem;
   }
 }

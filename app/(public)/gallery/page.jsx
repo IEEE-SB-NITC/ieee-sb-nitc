@@ -40,20 +40,15 @@ export default function GalleryPage() {
       overflowX: "hidden"
     }}>
       
-      {/* NATIVE FIGMA PNG BACKGROUND OVERLAY */}
+      {/* UNIFIED GRADIENT BACKGROUND - matches Execom & Contact pages */}
       <div style={{
         position: "absolute",
         top: 0,
         left: 0,
         right: 0,
-        height: "600px",
-        backgroundImage: "url('/images/gallery-bg.png')", // Points directly to your PNG asset
-        backgroundSize: "cover",
-        backgroundPosition: "center top",
-        backgroundRepeat: "no-repeat",
-        /* Seamlessly bleeds the asset down into the pure black void */
-        maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%)",
-        WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%)",
+        height: "500px",
+        background: "linear-gradient(to bottom, #5a2d82 0%, #7b3a8c 25%, rgb(169, 113, 119) 65%, black 100%)",
+        filter: "blur(20px)",
         zIndex: 0,
         pointerEvents: "none"
       }} />
@@ -62,7 +57,7 @@ export default function GalleryPage() {
       <div style={{
         position: "relative",
         zIndex: 1,
-        padding: "9rem 2rem 5rem 2rem",
+        padding: "150px 2rem 5rem 2rem",
         textAlign: "center"
       }}>
         <h1 style={{ fontSize: "3.5rem", fontWeight: "700", letterSpacing: "-0.04em", marginBottom: "0.75rem" }}>
