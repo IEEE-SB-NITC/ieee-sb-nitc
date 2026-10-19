@@ -23,7 +23,7 @@ const page = () => {
                 <div className={styles.heroContent}>
                     <div className={styles.heroBadge}>
                         <span className={styles.heroBadgeDot}></span>
-                        NIT Calicut · Est. Student Branch
+                        IEEE Student Branch · Est. 1984
                     </div>
                     <div className={styles.textWrapper}>
                         <h1 className={styles.heroTitle}>
