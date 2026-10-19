@@ -1,12 +1,13 @@
 /* contact.module.css */
 
+/* ─── Background & Header (DO NOT TOUCH) ─────────────────────────── */
+
 .back {
   position: absolute;
   left: 0;
   width: 100%;
   height: 500px;
   background: linear-gradient(to bottom, #5a2d82 0%, #7b3a8c 25%, rgb(169, 113, 119) 65%, black 100%);
-
   filter: blur(20px);
   z-index: -1;
 }
@@ -36,234 +37,343 @@
   opacity: 0.8;
 }
 
-.container {
-  display: flex;
-  padding: 2rem;
-  color: white;
-  font-family: var(--geist);
-  font-weight: 400;
-}
-
-.formCardBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  max-width: 1200px;
-}
-
-.formCard {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(177, 90, 255, 0.3);
-  max-width: 600px;
-  width: 100%;
-  color: white;
-  height: 90%;
-  max-height: 600px;
-}
-
-.row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.inputGroup {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.input,
-.inputNnE,
-.textarea {
-  padding: 0.6rem 1rem;
-  border: 1px solid white;
-  border-radius: 20px;
-  background: transparent;
-  color: white;
-  outline: none;
-}
-
-.textarea {
-  height: 120px;
-  border-radius: 16px;
-  resize: none;
-}
-
-.button {
-  display: block;
-  margin: 1rem auto 0;
-  padding: 0.7rem 2rem;
-  border: none;
-  border-radius: 20px;
-  background: linear-gradient(to right, #a64ac9, #7b2ff7);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.5s ease;
-}
-
-.button:hover {
-  background: linear-gradient(to right, #7b2ff7, #a64ac9);
-}
-
-.contactInfo {
-  flex: 1;
-  min-width: 250px;
-  display: flex; /* Add this */
-  flex-direction: column; /* Add this */
-  justify-content: flex-end; /* Add this */
-  justify-items: center;
-}
-
-.contactInfoBox {
-  flex: 1;
-  display: flex; /* Add this */
-  flex-direction: column; /* Add this */
-  justify-content: space-between; /* Add this */
-  height: 100%; /* Add this */
-  padding-left: 20%;
-  padding-top: 30px;
-}
-
-.map {
-  margin: 2rem;
-  max-width: 600px;
-  height: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.infoT {
-  font-family: var(--geist);
-  font-weight: 400;
-  font-size: 35px;
-}
 .infoT1 {
   font-family: var(--geist);
   font-weight: 700;
   font-size: 3.5rem;
-}
-.infoT2 {
-  padding-top: 25px;
-  font-family: var(--geist);
-  font-weight: 400;
-  font-size: 30px;
-  padding-bottom: 10px;
-}
-
-.infoT3 {
-  font-family: var(--geist);
-  font-weight: 400;
-  font-size: 20px;
-}
-
-.infoT4 {
-  font-family: var(--geist);
-  font-weight: 400;
-  font-size: 25px;
-  padding-top: 40px;
-}
-
-.infoT5 {
-  font-family: var(--geist);
-  font-weight: 400;
-  font-size: 30px;
-  padding-top: 10px;
+  line-height: 1.1;
 }
 
 .infoT6 {
   font-family: var(--geist);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.15rem;
+  opacity: 0.75;
+  margin-top: 0.4rem;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
+/* ─── Page layout ─────────────────────────────────────────────────── */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  color: white;
+  font-family: var(--geist);
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+/* ─── Form Card ────────────────────────────────────────────────────── */
+
+.formCardBox {
+  display: flex;
+  align-items: stretch;
+}
+
+.formCard {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 2rem 2rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(106, 27, 154, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
+}
+
+.infoT5 {
+  font-family: var(--geist);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.6rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.infoT4 {
+  font-family: var(--geist);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.input,
+.inputNnE {
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  outline: none;
+  font-family: var(--geist);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.inputNnE:focus {
+  border-color: rgba(166, 74, 201, 0.7);
+  background: rgba(166, 74, 201, 0.08);
+}
+
+.textarea {
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  outline: none;
+  font-family: var(--geist);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  height: 130px;
+  resize: vertical;
+}
+
+.textarea:focus {
+  border-color: rgba(166, 74, 201, 0.7);
+  background: rgba(166, 74, 201, 0.08);
+}
+
+.button {
+  align-self: flex-start;
+  margin-top: 1.2rem;
+  padding: 0.65rem 2rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #a64ac9, #7b2ff7);
+  color: white;
+  font-family: var(--geist);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.15s ease;
+  letter-spacing: 0.03em;
+}
+
+.button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ─── Contact Info ─────────────────────────────────────────────────── */
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactInfoBox {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(106, 27, 154, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.infoT {
+  font-family: var(--geist);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+  color: white;
+}
+
+.infoDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.4rem;
+}
+
+.infoT2 {
+  font-family: var(--geist);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(166, 74, 201, 0.9);
+  margin-bottom: 0.2rem;
+}
+
+.infoT3 {
+  font-family: var(--geist);
+  font-weight: 400;
+  font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.8rem 0 1.4rem;
+}
+
+/* ─── Map ──────────────────────────────────────────────────────────── */
+
+.map {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(106, 27, 154, 0.2);
+  height: 260px;
+  flex-shrink: 0;
+}
+
+/* ─── Tablet (768px – 1024px) ──────────────────────────────────────── */
+
+@media (max-width: 1024px) and (min-width: 769px) {
   .container {
-    flex-direction: column;
-    padding: 1.2rem;
-    height: 100%;
+    gap: 1.8rem;
+    padding: 0 1.5rem 3rem;
   }
 
-  .formContainer,
-  .contactInfo {
-    padding: 1.5rem 1rem;
-  }
-
-  .formContainer {
-    margin-bottom: 2rem;
-  }
-
-  .row {
-    flex-direction: column;
-    gap: 0px;
-  }
-
-  .formCardBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .inputNnE {
-    width: 50%;
-  }
-  .infoT {
-    font-family: var(--geist);
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 20px;
-  }
   .infoT1 {
-    font-family: var(--geist);
-    font-weight: 700;
-    font-size: 2.5rem;
-  }
-  .infoT2 {
-    padding-top: 25px;
-    font-family: var(--geist);
-    font-weight: 400;
-    font-size: 17px;
-    padding-bottom: 10px;
+    font-size: 2.8rem;
   }
 
-  .infoT3 {
-    font-family: var(--geist);
-    font-weight: 400;
-    font-size: 20px;
+  .infoT {
+    font-size: 1.2rem;
   }
 
-  .infoT4 {
-    font-family: var(--geist);
-    font-weight: 200;
-    font-size: 15px;
-    padding-top: 10px;
+  .map {
+    height: 220px;
+  }
+}
+
+/* ─── Mobile (≤ 768px) ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 120px;
+    margin-bottom: 3%;
   }
 
-  .infoT5 {
-    font-family: var(--geist);
-    font-weight: 400;
-    font-size: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  .infoT1 {
+    font-size: 2.4rem;
+    text-align: center;
   }
 
   .infoT6 {
-    font-family: var(--geist);
-    font-weight: 400;
-    font-size: 13px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem 3rem;
+  }
+
+  .formCardBox {
+    width: 100%;
+  }
+
+  .formCard {
+    padding: 1.5rem 1.2rem 2rem;
+    border-radius: 16px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .inputNnE {
+    width: 100%;
+  }
+
+  .infoT5 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .infoT4 {
+    font-size: 0.8rem;
+  }
+
+  .input,
+  .inputNnE,
+  .textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.85rem;
+  }
+
+  .textarea {
+    height: 110px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .contactInfo {
+    gap: 1.2rem;
   }
 
   .contactInfoBox {
-    padding-left: 0%;
+    padding: 1.4rem 1.2rem;
+    border-radius: 16px;
+  }
+
+  .infoT {
+    font-size: 1.2rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .infoT2 {
+    font-size: 0.75rem;
+  }
+
+  .infoT3 {
+    font-size: 0.92rem;
+  }
+
+  .map {
+    height: 220px;
+    border-radius: 16px;
   }
 }

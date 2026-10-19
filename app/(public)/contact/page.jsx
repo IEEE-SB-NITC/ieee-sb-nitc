@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./contact.module.css";
-import ComingSoonDesign from "../../../components/Elements/CommingSoon/CommingSoon";
 import MapWrapper from "../../../components/Elements/Map/MapWrapper";
+
 const page = () => {
   return (
     <div>
@@ -12,50 +12,56 @@ const page = () => {
       </div>
 
       <div className={styles.container}>
+        {/* ── Contact Form ── */}
         <div className={styles.formCardBox}>
           <div className={styles.formCard}>
-            <div className={styles.infoT5}>SEND A MESSAGE</div>
+            <div className={styles.infoT5}>Send a Message</div>
 
             <div className={styles.row}>
               <div className={styles.inputGroup}>
-                <div className={styles.infoT4}>Name:</div>
-                <input type="text" className={styles.inputNnE} />
+                <label className={styles.infoT4}>Name</label>
+                <input type="text" className={styles.inputNnE} placeholder="Your name" />
               </div>
-
               <div className={styles.inputGroup}>
-                <div className={styles.infoT4}>Email:</div>
-                <input type="email" className={styles.inputNnE} />
+                <label className={styles.infoT4}>Email</label>
+                <input type="email" className={styles.inputNnE} placeholder="you@example.com" />
               </div>
             </div>
 
             <div className={styles.inputGroup}>
-              <div className={styles.infoT4}>Subject:</div>
-              <input type="text" className={styles.input} />
+              <label className={styles.infoT4}>Subject</label>
+              <input type="text" className={styles.input} placeholder="What's this about?" />
             </div>
 
             <div className={styles.inputGroup}>
-              <div className={styles.infoT4}>Messages:</div>
-              <textarea className={styles.textarea}></textarea>
+              <label className={styles.infoT4}>Message</label>
+              <textarea className={styles.textarea} placeholder="Write your message here…"></textarea>
             </div>
 
-            <button className={styles.button}>Contact Us</button>
+            <button className={styles.button}>Send Message</button>
           </div>
         </div>
 
+        {/* ── Contact Info + Map ── */}
         <div className={styles.contactInfo}>
           <div className={styles.contactInfoBox}>
             <div className={styles.infoT}>Contact Information</div>
-            <div className={styles.infoT2}>Address</div>
-            <div className={styles.infoT3}>
-              Mukkam Road
-              <br />
-              Kattangal
-              <br />
-              Kozhikode, Kerala
-            </div>
-            <div className={styles.infoT2}>E-mail</div>
 
-            <div className={styles.infoT3}>ieeesb@nitc.ac.in</div>
+            <div className={styles.infoDetail}>
+              <div className={styles.infoT2}>Address</div>
+              <div className={styles.infoT3}>
+                Mukkam Road, Kattangal
+                <br />
+                Kozhikode, Kerala
+              </div>
+            </div>
+
+            <div className={styles.divider}></div>
+
+            <div className={styles.infoDetail}>
+              <div className={styles.infoT2}>E-mail</div>
+              <div className={styles.infoT3}>ieeesb@nitc.ac.in</div>
+            </div>
           </div>
 
           <div className={styles.map}>
