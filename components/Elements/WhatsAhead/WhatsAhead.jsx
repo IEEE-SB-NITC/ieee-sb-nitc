@@ -1,27 +1,32 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./WhatsAhead.module.css";
 import { MdWorkHistory } from "react-icons/md";
 import { FaLocationDot, FaCalendarXmark } from "react-icons/fa6";
 
-async function getUpcomingEvents() {
-    try {
-        const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/events?type=upcoming`,
-            { cache: "no-store" }
-        );
-        const data = await res.json();
-        return data.success ? data.data : [];
-    } catch (err) {
-        return [];
-    }
-}
+export default function WhatsAhead() {
+    const [events, setEvents] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-export default async function WhatsAhead() {
-    const events = await getUpcomingEvents();
+    useEffect(() => {
+        fetch("/api/events?type=upcoming")
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) setEvents(data.data);
+            })
+            .catch(() => {})
+            .finally(() => setLoading(false));
+    }, []);
 
     return (
         <div className={styles.body}>
             <h1 className={styles.heading}>What's Ahead</h1>
-            {events.length === 0 ? (
+            {loading ? (
+                <div className={styles.emptyState}>
+                    <div className={styles.spinner}></div>
+                </div>
+            ) : events.length === 0 ? (
                 <div className={styles.emptyState}>
                     <FaCalendarXmark className={styles.emptyIcon} />
                     <p className={styles.emptyTitle}>No Upcoming Events</p>
