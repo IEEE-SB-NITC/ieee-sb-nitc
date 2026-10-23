@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react"
 import { useSearchParams } from "next/navigation"
 import { Suspense } from "react"
+import Link from "next/link"
 
 function LoginContent() {
   const searchParams = useSearchParams()
@@ -12,14 +13,14 @@ function LoginContent() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-blue-950 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl p-10 w-full max-w-md text-center">
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-4">
+          <Link href="/" className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-4 cursor-pointer hover:opacity-80 transition-opacity">
             <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none">
               <rect width="40" height="40" rx="8" fill="#006699" />
               <text x="50%" y="58%" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial">
                 IEEE
               </text>
             </svg>
-          </div>
+          </Link>
           <h1 className="text-2xl font-bold text-slate-800">IEEE SB NITC</h1>
           <p className="text-slate-500 text-sm mt-1">Admin Portal</p>
         </div>
