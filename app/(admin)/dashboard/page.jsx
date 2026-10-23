@@ -190,7 +190,7 @@ function UsersSection({ session }) {
       <p className={styles.description}>Add or remove members from the access allowlist.</p>
 
       {/* Add user form */}
-      <form onSubmit={handleAdd} className="flex flex-wrap gap-3 mb-6 items-end">
+      <form onSubmit={handleAdd} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-slate-500 font-medium">Name <span className="text-slate-400">(optional)</span></label>
           <input
@@ -198,7 +198,7 @@ function UsersSection({ session }) {
             placeholder="Full name"
             value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-44"
+            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -209,7 +209,7 @@ function UsersSection({ session }) {
             placeholder="user@example.com"
             value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-52"
+            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -218,7 +218,7 @@ function UsersSection({ session }) {
             required
             value={form.role}
             onChange={(e) => setForm((f) => ({ ...f, role: e.target.value, society_id: "" }))}
-            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
           >
             <option value="">Select role</option>
             {allowedRoles.map((r) => (
@@ -238,7 +238,7 @@ function UsersSection({ session }) {
                 required
                 value={form.society_id}
                 onChange={(e) => setForm((f) => ({ ...f, society_id: e.target.value }))}
-                className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
               >
                 <option value="">Select society</option>
                 {societies.map((s) => (
@@ -248,13 +248,15 @@ function UsersSection({ session }) {
             )}
           </div>
         )}
-        <button
-          type="submit"
-          disabled={saving}
-          className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 cursor-pointer"
-        >
-          {saving ? "Adding…" : "Add User"}
-        </button>
+        <div className="flex items-end sm:col-span-2 lg:col-span-1">
+          <button
+            type="submit"
+            disabled={saving}
+            className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 cursor-pointer w-full sm:w-auto"
+          >
+            {saving ? "Adding…" : "Add User"}
+          </button>
+        </div>
       </form>
 
       {error && (
@@ -263,8 +265,8 @@ function UsersSection({ session }) {
         </div>
       )}
 
-      {/* Users table */}
-      <div className="overflow-x-auto">
+      {/* Users table — desktop */}
+      <div className="hidden sm:block overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-slate-200 text-left text-slate-500">
@@ -285,7 +287,7 @@ function UsersSection({ session }) {
               return (
                 <tr key={u.id} className="border-b border-slate-100 hover:bg-slate-50">
                   <td className="py-2 pr-4 text-slate-500">{u.name ?? "—"}</td>
-                <td className="py-2 pr-4">{u.email}</td>
+                  <td className="py-2 pr-4">{u.email}</td>
                   <td className="py-2 pr-4">
                     <span className="inline-block bg-blue-50 text-blue-700 rounded px-2 py-0.5 text-xs font-medium">
                       {roleLabel(u.role)}
@@ -314,13 +316,53 @@ function UsersSection({ session }) {
             })}
             {users.length === 0 && (
               <tr>
-                <td colSpan={5} className="py-6 text-center text-slate-400 text-sm">
+                <td colSpan={6} className="py-6 text-center text-slate-400 text-sm">
                   No users in the allowlist yet.
                 </td>
               </tr>
             )}
           </tbody>
         </table>
+      </div>
+
+      {/* Users cards — mobile */}
+      <div className="flex flex-col gap-3 sm:hidden">
+        {users.length === 0 && (
+          <p className="py-6 text-center text-slate-400 text-sm">No users in the allowlist yet.</p>
+        )}
+        {users.map((u) => {
+          const isSelf = u.email === session.user.email
+          const canDel =
+            !isSelf &&
+            (ROLE_RANK[callerRole] ?? 0) > (ROLE_RANK[u.role] ?? 0)
+          return (
+            <div key={u.id} className="border border-slate-200 rounded-xl p-3 bg-slate-50 flex flex-col gap-1.5">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium text-slate-800 text-sm truncate">{u.name ?? u.email}</span>
+                <span className={`inline-block rounded px-2 py-0.5 text-xs font-medium flex-shrink-0 ${u.is_active ? "bg-green-50 text-green-700" : "bg-amber-50 text-amber-700"}`}>
+                  {u.is_active ? "Active" : "Pending"}
+                </span>
+              </div>
+              {u.name && <p className="text-xs text-slate-500 truncate">{u.email}</p>}
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="inline-block bg-blue-50 text-blue-700 rounded px-2 py-0.5 text-xs font-medium">
+                  {roleLabel(u.role)}
+                </span>
+                {u.societies?.name && (
+                  <span className="text-xs text-slate-500">{u.societies.name}</span>
+                )}
+              </div>
+              {canDel && (
+                <button
+                  onClick={() => handleRemove(u.id)}
+                  className="self-end text-red-500 hover:text-red-700 text-xs font-medium cursor-pointer mt-1"
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          )
+        })}
       </div>
     </section>
   )

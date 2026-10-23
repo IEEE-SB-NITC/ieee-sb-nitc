@@ -88,46 +88,61 @@ export default function GalleryManager() {
 
   return (
     <div>
-      <form onSubmit={handleUpload} style={{ border: "1px dashed #cbd5e1", padding: "2rem", borderRadius: "8px", backgroundColor: "#f8fafc", marginBottom: "3rem" }}>
-        <div style={{ maxWidth: "450px", marginBottom: "1.5rem" }}>
-          <label style={{ display: "block", fontSize: "0.875rem", fontWeight: "600", marginBottom: "0.5rem" }}>Event Name</label>
+      <form
+        onSubmit={handleUpload}
+        className="border border-dashed border-slate-300 p-6 sm:p-8 rounded-lg bg-slate-50 mb-10"
+      >
+        <div className="w-full max-w-md mb-5">
+          <label className="block text-sm font-semibold mb-1.5">Event Name</label>
           <input
             type="text"
             placeholder="e.g. Tathva '26 Inauguration"
             value={eventName}
             onChange={(e) => setEventName(e.target.value)}
-            style={{ width: "100%", padding: "0.6rem 0.75rem", borderRadius: "6px", border: "1px solid #cbd5e1", fontSize: "0.9rem" }}
+            className="w-full px-3 py-2 rounded-md border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
-        <div style={{ marginBottom: "2rem" }}>
-          <label style={{ display: "block", fontSize: "0.875rem", fontWeight: "600", marginBottom: "0.5rem" }}>Select Images</label>
-          <input type="file" multiple accept="image/*" onChange={handleFileChange} style={{ fontSize: "0.9rem", color: "#475569" }} />
+        <div className="mb-7">
+          <label className="block text-sm font-semibold mb-1.5">Select Images</label>
+          <input
+            type="file"
+            multiple
+            accept="image/*"
+            onChange={handleFileChange}
+            className="text-sm text-slate-600"
+          />
         </div>
 
         <button
           type="submit"
           disabled={uploading}
-          style={{ backgroundColor: "#1e3a8a", color: "#fff", padding: "0.6rem 1.25rem", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "0.9rem", fontWeight: "600", opacity: uploading ? 0.6 : 1 }}
+          className="bg-blue-900 text-white px-5 py-2 rounded-md text-sm font-semibold cursor-pointer transition-opacity w-full sm:w-auto"
+          style={{ opacity: uploading ? 0.6 : 1 }}
         >
           {uploading ? "Uploading..." : "Upload Gallery Event"}
         </button>
       </form>
 
-      <h3 style={{ fontSize: "1.25rem", fontWeight: "700", borderTop: "1px solid #e2e8f0", paddingTop: "2rem", marginBottom: "1rem" }}>Existing Image Collections</h3>
+      <h3 className="text-xl font-bold border-t border-slate-200 pt-7 mb-4">
+        Existing Image Collections
+      </h3>
       {existingEvents.length === 0 ? (
-        <p style={{ color: "#94a3b8", fontSize: "0.9rem", fontStyle: "italic" }}>No active image collections found.</p>
+        <p className="text-slate-400 text-sm italic">No active image collections found.</p>
       ) : (
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div className="flex flex-col gap-3">
           {existingEvents.map((event) => (
-            <div key={event.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "1.25rem", backgroundColor: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+            <div
+              key={event.id}
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 sm:p-5 bg-slate-50 rounded-lg border border-slate-200"
+            >
               <div>
-                <h4 style={{ fontWeight: "600", fontSize: "1rem", color: "#0f172a", textTransform: "capitalize" }}>{event.name}</h4>
-                <p style={{ fontSize: "0.85rem", color: "#64748b", marginTop: "0.25rem" }}>{event.images?.length || 0} image(s) hosted in collection</p>
+                <h4 className="font-semibold text-base text-slate-900 capitalize">{event.name}</h4>
+                <p className="text-sm text-slate-500 mt-0.5">{event.images?.length || 0} image(s) hosted in collection</p>
               </div>
               <button
                 onClick={() => handleDelete(event.id)}
-                style={{ backgroundColor: "#ef4444", color: "#fff", padding: "0.5rem 1rem", borderRadius: "6px", border: "none", cursor: "pointer", fontSize: "0.85rem", fontWeight: "600" }}
+                className="bg-red-500 text-white px-4 py-2 rounded-md text-sm font-semibold cursor-pointer w-full sm:w-auto text-center"
               >
                 Delete Collection
               </button>
