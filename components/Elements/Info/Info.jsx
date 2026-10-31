@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Info.module.css";
-import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import image from "../../../public/image.png"
 const Info = () => {
@@ -25,10 +24,6 @@ const Info = () => {
           </div>
         </div>
       </div>
-
-      <button className={styles.button}>
-        See more <FaArrowRight />
-      </button>
     </div>
   );
 };
