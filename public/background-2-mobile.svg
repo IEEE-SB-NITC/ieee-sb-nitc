@@ -1,0 +1,35 @@
+<svg width="430" height="5000" viewBox="0 0 430 5000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left-side hero accent (mobile) -->
+  <g filter="url(#filter_ma_blob1)">
+    <ellipse cx="-30" cy="500" rx="240" ry="220" fill="url(#paint_ma_blob1)"/>
+  </g>
+  <!-- Right mid-page accent (mobile) -->
+  <g filter="url(#filter_ma_blob2)">
+    <ellipse cx="450" cy="2200" rx="240" ry="260" fill="url(#paint_ma_blob2)"/>
+  </g>
+  <defs>
+    <!-- Accent 1: left side subtle purple -->
+    <filter id="filter_ma_blob1" x="-510" y="60" width="960" height="880" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="110" result="effect1_foregroundBlur"/>
+    </filter>
+    <linearGradient id="paint_ma_blob1" x1="-270" y1="280" x2="200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5F2E7F" stop-opacity="0.45"/>
+      <stop offset="0.55" stop-color="#b09c8b" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#a35370" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Accent 2: right mid-page purple -->
+    <filter id="filter_ma_blob2" x="0" y="1700" width="960" height="1000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="110" result="effect1_foregroundBlur"/>
+    </filter>
+    <linearGradient id="paint_ma_blob2" x1="230" y1="1950" x2="450" y2="2600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c2d82" stop-opacity="0.5"/>
+      <stop offset="0.5" stop-color="#a35370" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#5F2E7F" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+</svg>

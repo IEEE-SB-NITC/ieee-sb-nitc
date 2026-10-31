@@ -7,22 +7,32 @@
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
 }
 
 /* --- BACKGROUND LAYERS --- */
+/*
+ * The background uses two absolute-positioned SVG layers rendered at full
+ * document height so the gradient blobs stay in sync with page sections
+ * (hero, What's Ahead, Features, Legacy, Events) exactly as in the Figma.
+ * A separate set of mobile SVGs is swapped in via media query.
+ */
 .background {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
     pointer-events: none;
+    overflow: hidden;
 }
 
+/* ---- Desktop gradient blobs ---- */
+/* Blob 1: large pink/rose glow — top-right, behind hero heading */
 .image1 {
     background: url("/background.svg");
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
     position: absolute;
@@ -32,9 +42,10 @@
     height: 100%;
 }
 
+/* Blob 2: complementary purple/accent — left edge hero + mid-page right */
 .image2 {
     background: url("/background-2.svg");
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
     position: absolute;
@@ -42,7 +53,26 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.6;
+    opacity: 0.75;
+}
+
+/* ---- Mobile gradient blobs ---- */
+/* On narrow screens swap to mobile-optimised SVGs that centre the blobs */
+@media (max-width: 768px) {
+    .image1 {
+        background: url("/background-mobile.svg");
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    .image2 {
+        background: url("/background-2-mobile.svg");
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: no-repeat;
+        opacity: 0.75;
+    }
 }
 
 /* ============================================

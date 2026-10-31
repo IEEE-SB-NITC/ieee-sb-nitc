@@ -1,17 +1,53 @@
-<svg width="1806" height="2921" viewBox="0 0 1806 2921" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_833_120)">
-<path d="M1603.14 1665.92C1654.84 2240.16 649.59 2696.16 373.742 2720.99C40.1426 2415.92 300.838 2032.66 249.143 1458.42C197.448 884.188 737.237 225.748 1013.09 200.915C1288.93 176.082 1551.45 1091.69 1603.14 1665.92Z" fill="url(#paint0_linear_833_120)"/>
-</g>
-<defs>
-<filter id="filter0_f_833_120" x="0.621948" y="0.420044" width="1804.44" height="2920.57" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_833_120"/>
-</filter>
-<linearGradient id="paint0_linear_833_120" x1="592.356" y1="924.471" x2="1694.69" y2="847.146" gradientUnits="userSpaceOnUse">
-<stop stop-color="#5F2E7F"/>
-<stop offset="0.648089" stop-color="#B09C8B"/>
-<stop offset="0.789604" stop-color="#A35370"/>
-</linearGradient>
-</defs>
+<svg width="1440" height="3200" viewBox="0 0 1440 3200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top-right pink/magenta blob (Hero section) -->
+  <g filter="url(#filter_blob1)">
+    <ellipse cx="1220" cy="320" rx="520" ry="440" fill="url(#paint_blob1)"/>
+  </g>
+  <!-- Left-center purple blob (What's Ahead / Features area) -->
+  <g filter="url(#filter_blob2)">
+    <ellipse cx="200" cy="1200" rx="480" ry="520" fill="url(#paint_blob2)"/>
+  </g>
+  <!-- Subtle bottom-right accent (Legacy / Events area) -->
+  <g filter="url(#filter_blob3)">
+    <ellipse cx="1300" cy="2200" rx="400" ry="380" fill="url(#paint_blob3)"/>
+  </g>
+  <defs>
+    <!-- Blob 1: pink/rose top-right -->
+    <filter id="filter_blob1" x="450" y="-400" width="1550" height="1440" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="140" result="effect1_foregroundBlur"/>
+    </filter>
+    <linearGradient id="paint_blob1" x1="780" y1="0" x2="1440" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c94fa0"/>
+      <stop offset="0.45" stop-color="#a3416f"/>
+      <stop offset="0.78" stop-color="#7c2d82"/>
+      <stop offset="1" stop-color="#5a1e6b" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Blob 2: deep purple left-center -->
+    <filter id="filter_blob2" x="-560" y="440" width="1520" height="1520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur"/>
+    </filter>
+    <linearGradient id="paint_blob2" x1="-200" y1="700" x2="600" y2="1600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5F2E7F"/>
+      <stop offset="0.5" stop-color="#7a3e9a"/>
+      <stop offset="0.8" stop-color="#b09c8b" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#a35370" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Blob 3: subtle accent bottom-right -->
+    <filter id="filter_blob3" x="640" y="1560" width="1320" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="130" result="effect1_foregroundBlur"/>
+    </filter>
+    <linearGradient id="paint_blob3" x1="1000" y1="1900" x2="1440" y2="2500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6b2d8b" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#a35370" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#3d1a5c" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
 </svg>
