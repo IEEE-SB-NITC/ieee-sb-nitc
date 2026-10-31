@@ -60,12 +60,7 @@ const page = () => {
                     <Link href="/contact" className={styles.cardLink}>Get in Touch →</Link>
                 </div>
 
-                {/* Scroll indicator */}
-                <div className={styles.scrollIndicator}>
-                    <div className={styles.scrollMouse}>
-                        <div className={styles.scrollWheel}></div>
-                    </div>
-                </div>
+
             </section>
 
             {/* Content Sections */}
