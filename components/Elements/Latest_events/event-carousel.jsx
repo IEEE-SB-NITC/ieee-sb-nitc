@@ -77,9 +77,9 @@ export default function EventsCarousel({
                                     slideShadows: false,
                                 }}
                                 breakpoints={{
-                                    // Mobile: 3 cards at a time
+                                    // Mobile: ~1.8 cards — centre card is large & dominant
                                     0: {
-                                        slidesPerView: 3,
+                                        slidesPerView: 1.8,
                                         spaceBetween: 0,
                                         coverflowEffect: {
                                             rotate: 0,
@@ -89,7 +89,19 @@ export default function EventsCarousel({
                                             slideShadows: false,
                                         },
                                     },
-                                    // Tablet: 3 cards with slightly more spacing
+                                    // Large mobile / small tablet: 2.4 cards
+                                    480: {
+                                        slidesPerView: 2.4,
+                                        spaceBetween: 0,
+                                        coverflowEffect: {
+                                            rotate: 0,
+                                            stretch: 0,
+                                            depth: 110,
+                                            modifier: 1,
+                                            slideShadows: false,
+                                        },
+                                    },
+                                    // Tablet: 3 cards
                                     640: {
                                         slidesPerView: 3,
                                         spaceBetween: 0,
