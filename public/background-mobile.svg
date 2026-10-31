@@ -1,53 +1,53 @@
 <svg width="430" height="5000" viewBox="0 0 430 5000" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Top-right pink/magenta blob — behind hero heading (mobile) -->
+  <!-- Top-right blob: site-purple/violet — behind hero heading (mobile) -->
   <g filter="url(#filter_m_blob1)">
-    <ellipse cx="370" cy="280" rx="300" ry="260" fill="url(#paint_m_blob1)"/>
+    <ellipse cx="370" cy="270" rx="310" ry="260" fill="url(#paint_m_blob1)"/>
   </g>
-  <!-- Center-left purple blob — behind What's Ahead + Features (mobile) -->
+  <!-- Left-center blob: deep site-purple — behind What's Ahead / Features (mobile) -->
   <g filter="url(#filter_m_blob2)">
-    <ellipse cx="60" cy="1400" rx="280" ry="340" fill="url(#paint_m_blob2)"/>
+    <ellipse cx="55" cy="1420" rx="290" ry="340" fill="url(#paint_m_blob2)"/>
   </g>
-  <!-- Bottom-right subtle accent — Legacy/Events area (mobile) -->
+  <!-- Bottom-right accent — Legacy / Events area (mobile) -->
   <g filter="url(#filter_m_blob3)">
-    <ellipse cx="380" cy="3000" rx="260" ry="280" fill="url(#paint_m_blob3)"/>
+    <ellipse cx="390" cy="3100" rx="260" ry="270" fill="url(#paint_m_blob3)"/>
   </g>
   <defs>
-    <!-- Blob 1: pink/rose top-right -->
-    <filter id="filter_m_blob1" x="-180" y="-200" width="1100" height="960" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <!-- Blob 1: #7b3a8c → #a64ac9 → rgb(169,113,119) top-right -->
+    <filter id="filter_m_blob1" x="-200" y="-210" width="1140" height="960" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
       <feGaussianBlur stdDeviation="110" result="effect1_foregroundBlur"/>
     </filter>
-    <linearGradient id="paint_m_blob1" x1="80" y1="0" x2="430" y2="500" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#c94fa0"/>
-      <stop offset="0.45" stop-color="#a3416f"/>
-      <stop offset="0.78" stop-color="#7c2d82"/>
-      <stop offset="1" stop-color="#5a1e6b" stop-opacity="0.3"/>
+    <linearGradient id="paint_m_blob1" x1="70" y1="0" x2="430" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7b3a8c"/>
+      <stop offset="0.40" stop-color="#a64ac9"/>
+      <stop offset="0.72" stop-color="rgb(169,113,119)"/>
+      <stop offset="1" stop-color="#5a2d82" stop-opacity="0.25"/>
     </linearGradient>
 
-    <!-- Blob 2: deep purple left-center -->
-    <filter id="filter_m_blob2" x="-460" y="760" width="1040" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <!-- Blob 2: #5a2d82 → #7b3a8c left-center -->
+    <filter id="filter_m_blob2" x="-480" y="780" width="1060" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
       <feGaussianBlur stdDeviation="120" result="effect1_foregroundBlur"/>
     </filter>
-    <linearGradient id="paint_m_blob2" x1="-200" y1="1000" x2="350" y2="1900" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5F2E7F"/>
-      <stop offset="0.5" stop-color="#7a3e9a"/>
-      <stop offset="0.8" stop-color="#b09c8b" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#a35370" stop-opacity="0.2"/>
+    <linearGradient id="paint_m_blob2" x1="-220" y1="1020" x2="340" y2="1980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5a2d82"/>
+      <stop offset="0.45" stop-color="#7b3a8c"/>
+      <stop offset="0.80" stop-color="rgb(169,113,119)" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#5a2d82" stop-opacity="0.15"/>
     </linearGradient>
 
-    <!-- Blob 3: subtle bottom-right accent -->
-    <filter id="filter_m_blob3" x="-100" y="2480" width="960" height="1040" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <!-- Blob 3: #7b2ff7 bottom-right accent -->
+    <filter id="filter_m_blob3" x="-110" y="2580" width="1000" height="1040" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
       <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur"/>
     </filter>
-    <linearGradient id="paint_m_blob3" x1="150" y1="2750" x2="430" y2="3300" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#6b2d8b" stop-opacity="0.6"/>
-      <stop offset="0.6" stop-color="#a35370" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#3d1a5c" stop-opacity="0.1"/>
+    <linearGradient id="paint_m_blob3" x1="160" y1="2860" x2="430" y2="3380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7b2ff7" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#7b3a8c" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#5a2d82" stop-opacity="0.10"/>
     </linearGradient>
   </defs>
 </svg>

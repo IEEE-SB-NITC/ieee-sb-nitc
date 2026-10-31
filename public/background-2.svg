@@ -1,35 +1,35 @@
 <svg width="1440" height="3200" viewBox="0 0 1440 3200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Complementary left accent blob (hero left side) -->
+  <!-- Left-side hero complementary accent (desktop) -->
   <g filter="url(#filter_accent1)">
-    <ellipse cx="-60" cy="600" rx="400" ry="360" fill="url(#paint_accent1)"/>
+    <ellipse cx="-40" cy="620" rx="420" ry="360" fill="url(#paint_accent1)"/>
   </g>
-  <!-- Mid-page right accent -->
+  <!-- Right mid-page accent (desktop) -->
   <g filter="url(#filter_accent2)">
-    <ellipse cx="1380" cy="1600" rx="420" ry="400" fill="url(#paint_accent2)"/>
+    <ellipse cx="1400" cy="1700" rx="440" ry="400" fill="url(#paint_accent2)"/>
   </g>
   <defs>
-    <!-- Accent 1: left side hero purple glow -->
-    <filter id="filter_accent1" x="-680" y="0" width="1260" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <!-- Accent 1: subtle left-hero violet -->
+    <filter id="filter_accent1" x="-700" y="60" width="1320" height="1120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-      <feGaussianBlur stdDeviation="130" result="effect1_foregroundBlur"/>
+      <feGaussianBlur stdDeviation="135" result="effect1_foregroundBlur"/>
     </filter>
-    <linearGradient id="paint_accent1" x1="-400" y1="200" x2="300" y2="900" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5F2E7F" stop-opacity="0.5"/>
-      <stop offset="0.55" stop-color="#b09c8b" stop-opacity="0.3"/>
-      <stop offset="1" stop-color="#a35370" stop-opacity="0.15"/>
+    <linearGradient id="paint_accent1" x1="-420" y1="260" x2="340" y2="940" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5a2d82" stop-opacity="0.50"/>
+      <stop offset="0.55" stop-color="rgb(169,113,119)" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#7b3a8c" stop-opacity="0.12"/>
     </linearGradient>
 
-    <!-- Accent 2: right mid-page -->
-    <filter id="filter_accent2" x="700" y="960" width="1400" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <!-- Accent 2: right mid-page violet -->
+    <filter id="filter_accent2" x="720" y="1060" width="1360" height="1280" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
       <feGaussianBlur stdDeviation="130" result="effect1_foregroundBlur"/>
     </filter>
-    <linearGradient id="paint_accent2" x1="1000" y1="1200" x2="1440" y2="2000" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7c2d82" stop-opacity="0.55"/>
-      <stop offset="0.5" stop-color="#a35370" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#5F2E7F" stop-opacity="0.1"/>
+    <linearGradient id="paint_accent2" x1="1040" y1="1360" x2="1440" y2="2060" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7b2ff7" stop-opacity="0.50"/>
+      <stop offset="0.50" stop-color="#a64ac9" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#5a2d82" stop-opacity="0.10"/>
     </linearGradient>
   </defs>
 </svg>
