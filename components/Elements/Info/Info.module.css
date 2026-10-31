@@ -2,6 +2,41 @@
     z-index: 1;
     margin-top: 5%;
     max-width: 100vw;
+    position: relative;
+}
+
+/*
+ * Subtle ambient glow behind the Legacy section.
+ * Matches the site palette: #5a2d82 → #7b3a8c → rgb(169,113,119).
+ * Kept intentionally soft (low opacity) — decorative only.
+ */
+.Info::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Radial glow from bottom-left, echoing the Figma purple bloom */
+    background:
+        radial-gradient(
+            ellipse 70% 55% at 10% 80%,
+            rgba(90, 45, 130, 0.38) 0%,
+            rgba(123, 58, 140, 0.18) 45%,
+            transparent 75%
+        ),
+        radial-gradient(
+            ellipse 50% 45% at 88% 30%,
+            rgba(166, 74, 201, 0.18) 0%,
+            rgba(123, 47, 247, 0.08) 50%,
+            transparent 80%
+        );
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+/* Ensure children sit above the glow */
+.Info > * {
+    position: relative;
+    z-index: 1;
 }
 
 .container {

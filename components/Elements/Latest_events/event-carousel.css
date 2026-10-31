@@ -10,6 +10,40 @@
     max-width: 100vw;
     overflow: visible;
     box-sizing: border-box;
+    position: relative;
+}
+
+/*
+ * Subtle ambient glow behind the Latest Events section.
+ * Site palette: #5a2d82 → #7b3a8c → rgb(169,113,119).
+ * Kept controlled — soft radial bloom, not full-width.
+ */
+.events-carousel-container::before {
+    content: "";
+    position: absolute;
+    inset: -2rem 0;
+    /* Bloom from upper-right, mirroring the Figma placement */
+    background:
+        radial-gradient(
+            ellipse 65% 50% at 85% 20%,
+            rgba(123, 58, 140, 0.32) 0%,
+            rgba(90, 45, 130, 0.15) 50%,
+            transparent 78%
+        ),
+        radial-gradient(
+            ellipse 45% 40% at 15% 75%,
+            rgba(166, 74, 201, 0.18) 0%,
+            rgba(123, 47, 247, 0.07) 55%,
+            transparent 80%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure carousel children sit above the glow */
+.events-carousel-container > * {
+    position: relative;
+    z-index: 1;
 }
 
 .events-carousel-title {
