@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Card.module.css";
 
 function Card({ data }) {
