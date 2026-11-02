@@ -6,7 +6,12 @@ export default async function AdminLayout({ children }) {
   const session = await auth()
   return (
     <SessionProvider session={session}>
-      <div className="min-h-screen">
+      {/*
+        admin-scope: contains Tailwind's scoped preflight reset so it does NOT
+        bleed into the public site when the user navigates admin → home via
+        Next.js client-side navigation (CSS chunks stay loaded in the SPA).
+      */}
+      <div className="admin-scope min-h-screen">
         {children}
       </div>
     </SessionProvider>

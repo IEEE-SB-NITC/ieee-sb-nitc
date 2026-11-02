@@ -1,1 +1,71 @@
-@import "tailwindcss";
+/*
+ * Tailwind v4 for the admin panel — preflight DISABLED.
+ *
+ * Problem: @import "tailwindcss" bundles three layers: theme, preflight
+ * (base resets), and utilities.  Tailwind's preflight targets html, body,
+ * *, etc. globally.  Because Next.js does NOT unload CSS chunks on
+ * client-side navigation, those global resets stay active when the user
+ * navigates admin → home, breaking the public site's fonts, spacing, and
+ * layout.
+ *
+ * Fix (Tailwind v4): import only theme + utilities, skip preflight entirely,
+ * then add a scoped reset under .admin-scope so the admin UI still looks
+ * correct without polluting the global styles.
+ */
+
+/* Declare layers in the correct cascade order */
+@layer theme, base, components, utilities;
+
+/* Tailwind theme tokens (CSS variables) — safe, no element resets */
+@import "tailwindcss/theme.css" layer(theme);
+
+/* Tailwind utility classes only — no preflight */
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* ---------------------------------------------------------------------------
+ * Scoped reset — only applies inside the .admin-scope wrapper (layout.jsx).
+ * Replicates the parts of Tailwind preflight that the admin UI depends on,
+ * without touching html/body globally.
+ * --------------------------------------------------------------------------- */
+.admin-scope *,
+.admin-scope *::before,
+.admin-scope *::after {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-scope img,
+.admin-scope video {
+  max-width: 100%;
+  height: auto;
+}
+
+.admin-scope button,
+.admin-scope input,
+.admin-scope select,
+.admin-scope textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+.admin-scope button {
+  cursor: pointer;
+}
+
+.admin-scope ul,
+.admin-scope ol {
+  list-style: none;
+}
+
+.admin-scope a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.admin-scope table {
+  border-collapse: collapse;
+}
+
