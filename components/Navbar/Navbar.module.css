@@ -130,14 +130,18 @@
     width: 72%;
     max-width: 320px;
     height: 100vh;
+    height: 100dvh;
     color: white;
     z-index: 1001;
     padding: 2rem 1.5rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     border-left: 1px solid rgba(255,255,255,0.08);
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .sidebarLogo {
@@ -150,7 +154,7 @@
     margin-top: 2.5rem;
     padding: 0;
     width: 100%;
-    flex: 1;
+    flex-shrink: 0;
 }
 
 .sidebarUl li {
@@ -236,6 +240,7 @@
     top: 0;
     left: 0;
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
     backdrop-filter: blur(3px);
     background: rgba(0, 0, 0, 0.5);
