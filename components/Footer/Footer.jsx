@@ -22,7 +22,7 @@ const Footer = () => {
               <div>We warmly appreciate your visit and support.</div>
             </div>{" "}
             <div className={styles["box1-end"]}>
-              <a href="https://facebook.com" target="_blank" rel="noopener">
+              <a href="https://www.facebook.com/p/IEEE-SB-NITC-61560005524345/" target="_blank" rel="noopener">
                 <Image
                   src="/facebook-icon.svg"
                   alt="icon"
@@ -30,7 +30,7 @@ const Footer = () => {
                   height={30.8}
                 />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener">
+              <a href="https://www.instagram.com/ieee_nitc/" target="_blank" rel="noopener">
                 <Image
                   src="/instagram-icon.svg"
                   alt="icon"
@@ -38,7 +38,7 @@ const Footer = () => {
                   height={30.8}
                 />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener">
+              <a href="https://in.linkedin.com/company/ieee-sb-nitc" target="_blank" rel="noopener">
                 <Image
                   src="/linkedin-icon.svg"
                   alt="icon"
