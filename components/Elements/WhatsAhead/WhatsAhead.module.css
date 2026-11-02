@@ -45,6 +45,8 @@
     border-radius: 20px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .emptyIcon {
@@ -240,5 +242,17 @@
 
     .emptyState {
         padding: 2.5rem 1.25rem;
+    }
+}
+
+/* --- VERY SMALL PHONES --- */
+@media screen and (max-width: 360px) {
+    .emptyState {
+        padding: 2rem 1rem;
+        border-radius: 14px;
+    }
+
+    .emptySubtitle {
+        font-size: 0.82rem;
     }
 }

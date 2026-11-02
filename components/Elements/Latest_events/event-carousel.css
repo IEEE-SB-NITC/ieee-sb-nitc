@@ -76,6 +76,7 @@
     border-radius: 20px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 .events-empty-icon {
@@ -337,6 +338,11 @@
         padding-left: 1rem;
     }
 
+    .events-empty-state {
+        padding: 2.5rem 1.25rem;
+        width: 90%;
+    }
+
     /* Hide nav buttons on very small screens — swipe gesture suffices */
     .events-navigation-container {
         display: none;
@@ -347,5 +353,15 @@
 @media (max-width: 399px) {
     .events-carousel-outer-wrapper {
         min-height: 320px;
+    }
+
+    .events-empty-state {
+        padding: 2rem 1rem;
+        width: 92%;
+        border-radius: 14px;
+    }
+
+    .events-empty-subtitle {
+        font-size: 0.82rem;
     }
 }
