@@ -196,6 +196,18 @@
     box-shadow: 0 5px 18px rgba(98, 50, 128, 0.5);
 }
 
+.registerButtonDisabled {
+    background: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    opacity: 0.5;
+}
+
+.registerButtonDisabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 .registerText {
     font-family: var(--Inter);
     font-weight: 500;

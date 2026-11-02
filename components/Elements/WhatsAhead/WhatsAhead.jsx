@@ -61,7 +61,11 @@ export default function WhatsAhead() {
                                     <span className={styles.icon}><FaLocationDot /></span>
                                     <span>{event.venue}</span>
                                 </div>
-                                <button className={styles.registerButton}>
+                                <button
+                                    className={`${styles.registerButton} ${!event.url ? styles.registerButtonDisabled : ""}`}
+                                    disabled={!event.url}
+                                    onClick={() => event.url && window.open(event.url, "_blank", "noopener,noreferrer")}
+                                >
                                     <span className={styles.registerText}>Register Now</span>
                                 </button>
                             </div>

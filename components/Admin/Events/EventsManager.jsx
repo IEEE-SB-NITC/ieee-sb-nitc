@@ -26,6 +26,7 @@ export default function EventsManager({ session }) {
         date: "",
         venue: "",
         chapter: "aess",
+        url: "",
     });
 
     useEffect(() => {
@@ -111,6 +112,7 @@ export default function EventsManager({ session }) {
                     date: "",
                     venue: "",
                     chapter: "Main",
+                    url: "",
                 });
                 setImageFile(null);
                 setImagePreview(null);
@@ -247,6 +249,17 @@ export default function EventsManager({ session }) {
                     </div>
 
                     <div className={styles.formGroup}>
+                        <label>Registration URL <span className={styles.optionalBadge}>Optional</span></label>
+                        <input
+                            type="url"
+                            name="url"
+                            value={form.url}
+                            onChange={handleFormChange}
+                            placeholder="https://example.com/register"
+                        />
+                    </div>
+
+                    <div className={styles.formGroup}>
                         <label>Description</label>
                         <textarea
                             name="description"
@@ -321,6 +334,16 @@ export default function EventsManager({ session }) {
                                 <p className={styles.eventDescription}>
                                     {event.description}
                                 </p>
+                                {event.url && (
+                                    <a
+                                        href={event.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.eventUrl}
+                                    >
+                                        {event.url}
+                                    </a>
+                                )}
                             </div>
                             <button
                                 className={styles.deleteButton}

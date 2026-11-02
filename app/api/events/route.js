@@ -61,7 +61,7 @@ export async function POST(request) {
         await connectDB();
 
         const body = await request.json();
-        const { title, description, date, venue, chapter, imageUrl, imagePublicId } = body;
+        const { title, description, date, venue, chapter, imageUrl, imagePublicId, url } = body;
 
         if (!title || !description || !date || !venue || !chapter || !imageUrl || !imagePublicId) {
             return Response.json(
@@ -105,6 +105,7 @@ export async function POST(request) {
             chapter,
             imageUrl,
             imagePublicId,
+            url: url || "",
         });
 
         return Response.json({ success: true, data: event }, { status: 201 });

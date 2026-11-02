@@ -218,6 +218,35 @@
     overflow: hidden;
 }
 
+.eventUrl {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: #650F9B;
+    text-decoration: none;
+    word-break: break-all;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.eventUrl:hover {
+    text-decoration: underline;
+}
+
+.optionalBadge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #6b7280;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+}
+
 .deleteButton {
     padding: 0.5rem 1rem;
     background: #fee2e2;
