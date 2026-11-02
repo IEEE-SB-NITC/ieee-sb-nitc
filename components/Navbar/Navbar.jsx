@@ -46,7 +46,7 @@ const Navbar = () => {
           <li><Link href="/gallery">Gallery</Link></li>
           <li><Link href="/contact">Contact Us</Link></li>
           <li><Link href="/blogs">Blogs</Link></li>
-          <button className={styles.button}>Join IEEE</button>
+          <Link href="https://www.ieee.org/membership/join" target="_blank" rel="noopener noreferrer" className={styles.button}>Join IEEE</Link>
           <Link href="/login" className={styles.loginButton}>Login</Link>
         </ul>
         <Image
@@ -81,7 +81,7 @@ const Navbar = () => {
           <li><Link href="/blogs" onClick={toggleSidebar}>Blogs</Link></li>
         </ul>
         <div className={styles.sidebarActions}>
-          <Link href="/join" className={styles.sidebarJoinBtn} onClick={toggleSidebar}>Join IEEE</Link>
+          <Link href="https://www.ieee.org/membership/join" target="_blank" rel="noopener noreferrer" className={styles.sidebarJoinBtn} onClick={toggleSidebar}>Join IEEE</Link>
           <Link href="/login" className={styles.sidebarLoginBtn} onClick={toggleSidebar}>Login</Link>
         </div>
       </div>

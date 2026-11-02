@@ -40,7 +40,7 @@ const page = () => {
                         </p>
                     </div>
                     <div className={styles.heroCtas}>
-                        <Link href="/join" className={styles.ctaPrimary}>Join IEEE</Link>
+                        <Link href="https://www.ieee.org/membership/join" target="_blank" rel="noopener noreferrer" className={styles.ctaPrimary}>Join IEEE</Link>
                         <Link href="/ourTeam" className={styles.ctaSecondary}>Meet the Team</Link>
                     </div>
                 </div>
