@@ -1,71 +1,106 @@
 /*
- * Tailwind v4 for the admin panel — preflight DISABLED.
+ * Tailwind v4 for the admin panel — preflight DISABLED globally, re-added
+ * as a SCOPED reset inside @layer base.
  *
- * Problem: @import "tailwindcss" bundles three layers: theme, preflight
- * (base resets), and utilities.  Tailwind's preflight targets html, body,
- * *, etc. globally.  Because Next.js does NOT unload CSS chunks on
- * client-side navigation, those global resets stay active when the user
- * navigates admin → home, breaking the public site's fonts, spacing, and
- * layout.
+ * WHY: @import "tailwindcss" bundles preflight into @layer base with rules
+ * that target html, *, img etc. globally.  Because Next.js never unloads CSS
+ * chunks during client-side navigation, those resets stay active after the
+ * user navigates admin → home, breaking the public site's fonts and layout.
  *
- * Fix (Tailwind v4): import only theme + utilities, skip preflight entirely,
- * then add a scoped reset under .admin-scope so the admin UI still looks
- * correct without polluting the global styles.
+ * HOW (Tailwind v4 cascade mechanics):
+ *   Layer priority (low → high): theme < base < components < utilities < non-layered
+ *
+ *   1. We import theme + utilities only — no global preflight.
+ *   2. We re-add the preflight rules inside @layer base scoped to
+ *      .admin-scope — so they ONLY apply inside the admin wrapper.
+ *   3. Because the scoped reset is in @layer base (lower priority), utility
+ *      classes in @layer utilities (e.g. .border, .flex) still override it
+ *      correctly — this is why admin styles work again.
+ *   4. Non-layered public-site CSS (globals.css, *.module.css) is untouched
+ *      and continues to beat any layered admin CSS — no bleed.
  */
 
-/* Declare layers in the correct cascade order */
+/* ── Step 1: declare layer order ─────────────────────────────────────────── */
 @layer theme, base, components, utilities;
 
-/* Tailwind theme tokens (CSS variables) — safe, no element resets */
+/* ── Step 2: Tailwind theme tokens (CSS variables only, no element resets) ── */
 @import "tailwindcss/theme.css" layer(theme);
 
-/* Tailwind utility classes only — no preflight */
+/* ── Step 3: Tailwind utility classes (border, flex, text-*, bg-*, …) ────── */
 @import "tailwindcss/utilities.css" layer(utilities);
 
-/* ---------------------------------------------------------------------------
- * Scoped reset — only applies inside the .admin-scope wrapper (layout.jsx).
- * Replicates the parts of Tailwind preflight that the admin UI depends on,
- * without touching html/body globally.
- * --------------------------------------------------------------------------- */
-.admin-scope *,
-.admin-scope *::before,
-.admin-scope *::after {
-  box-sizing: border-box;
-  border: 0 solid;
-  margin: 0;
-  padding: 0;
-}
+/* ── Step 4: Scoped preflight replacement ────────────────────────────────── */
+/*
+ * Lives in @layer base so @layer utilities can override it.
+ * Only applies inside .admin-scope — never bleeds to the public site.
+ */
+@layer base {
+  .admin-scope *,
+  .admin-scope *::before,
+  .admin-scope *::after {
+    box-sizing: border-box;
+    /*
+     * border: 0 solid  ← the critical Tailwind preflight default.
+     * Sets border-style: solid so utility classes like .border only need to
+     * set border-width; without this, .border would produce an invisible border.
+     */
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+  }
 
-.admin-scope img,
-.admin-scope video {
-  max-width: 100%;
-  height: auto;
-}
+  .admin-scope img,
+  .admin-scope video,
+  .admin-scope svg,
+  .admin-scope canvas,
+  .admin-scope iframe {
+    display: block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+  }
 
-.admin-scope button,
-.admin-scope input,
-.admin-scope select,
-.admin-scope textarea {
-  font: inherit;
-  color: inherit;
-  background: transparent;
-}
+  .admin-scope h1,
+  .admin-scope h2,
+  .admin-scope h3,
+  .admin-scope h4,
+  .admin-scope h5,
+  .admin-scope h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
 
-.admin-scope button {
-  cursor: pointer;
-}
+  .admin-scope button,
+  .admin-scope input,
+  .admin-scope select,
+  .admin-scope textarea {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    line-height: inherit;
+  }
 
-.admin-scope ul,
-.admin-scope ol {
-  list-style: none;
-}
+  .admin-scope button {
+    cursor: pointer;
+  }
 
-.admin-scope a {
-  color: inherit;
-  text-decoration: none;
-}
+  .admin-scope ul,
+  .admin-scope ol {
+    list-style: none;
+  }
 
-.admin-scope table {
-  border-collapse: collapse;
-}
+  .admin-scope a {
+    color: inherit;
+    text-decoration: none;
+  }
 
+  .admin-scope table {
+    border-collapse: collapse;
+  }
+
+  .admin-scope hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+}

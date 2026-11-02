@@ -1,17 +1,20 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import styles from "./Reveal.module.css";
 
 export default function ScrollReveal({ children, className = "" }) {
     const ref = useRef();
 
-    useEffect(() => {
+    /*
+     * useLayoutEffect fires synchronously after DOM mutations but BEFORE the
+     * browser paints.  This means the element's transform/opacity are set to
+     * their correct values on the very first frame — no flash of the hidden
+     * (opacity:0 / translateY(200px) / scale(0.3)) state that happens with
+     * useEffect when navigating to the homepage via a client-side Link.
+     */
+    useLayoutEffect(() => {
         const el = ref.current;
 
-        // Compute the initial visibility immediately so elements that are
-        // already in the viewport on mount (e.g. after a client-side navigation
-        // where the page starts at scroll 0 but the previous scroll position
-        // may still be reflected in getBoundingClientRect) are shown correctly.
         const computeState = () => {
             const rect = el.getBoundingClientRect();
             const windowHeight = window.innerHeight;
@@ -24,8 +27,7 @@ export default function ScrollReveal({ children, className = "" }) {
             return { clamped, rect };
         };
 
-        // Apply the correct initial state synchronously so there is no flash
-        // of the "hidden" transform when arriving via client-side navigation.
+        // Set the correct initial state immediately — before first paint.
         const { clamped: initialClamped } = computeState();
         el.style.opacity = initialClamped;
         el.style.transform = `translateY(${(1 - initialClamped) * 200}px) scale(${
@@ -43,7 +45,7 @@ export default function ScrollReveal({ children, className = "" }) {
                 0.3 + 0.7 * clamped
             })`;
 
-            // Reset if scrolling up and element has left the viewport above
+            // Reset if scrolling up and element has left the top of the viewport
             const scrollY = window.scrollY;
             if (scrollY < lastScrollTop && rect.top > window.innerHeight) {
                 el.style.opacity = 0;
@@ -56,7 +58,7 @@ export default function ScrollReveal({ children, className = "" }) {
 
         rafId = requestAnimationFrame(animate);
 
-        // Clean up the RAF loop when the component unmounts (navigation away)
+        // Cancel the RAF loop on unmount to prevent zombie loops across navigations
         return () => {
             if (rafId) cancelAnimationFrame(rafId);
         };
