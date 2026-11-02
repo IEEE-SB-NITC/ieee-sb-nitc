@@ -78,6 +78,10 @@
     cursor: pointer;
     transition: background 0.2s ease, transform 0.15s ease;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .button:hover {
