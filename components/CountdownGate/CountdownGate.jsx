@@ -4,20 +4,17 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./CountdownGate.module.css";
 
 /* ─── helpers ─────────────────────────────────────────────── */
-
-/** Returns remaining ms until launchISO (clamped to 0). */
 function getRemainingMs(launchISO) {
   if (!launchISO) return null;
   const target = new Date(launchISO).getTime();
-  const now = Date.now();
-  return Math.max(0, target - now);
+  return Math.max(0, target - Date.now());
 }
 
-function msToparts(ms) {
+function msToParts(ms) {
   if (ms === null) return null;
   const totalSeconds = Math.floor(ms / 1000);
-  const days = Math.floor(totalSeconds / 86400);
-  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const days    = Math.floor(totalSeconds / 86400);
+  const hours   = Math.floor((totalSeconds % 86400) / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
   return { days, hours, minutes, seconds };
@@ -27,10 +24,22 @@ function pad(n) {
   return String(n).padStart(2, "0");
 }
 
-/* ─── digit flip component ─────────────────────────────────── */
+/* ─── static unit (no flip) ───────────────────────────────── */
+function StaticUnit({ value, label }) {
+  return (
+    <div className={styles.unit}>
+      <div className={styles.card}>
+        <span className={styles.digit}>{pad(value)}</span>
+      </div>
+      <span className={styles.label}>{label}</span>
+    </div>
+  );
+}
+
+/* ─── flipping unit (seconds only) ───────────────────────── */
 function FlipUnit({ value, label }) {
   const [displayVal, setDisplayVal] = useState(pad(value));
-  const [flipping, setFlipping] = useState(false);
+  const [flipping, setFlipping]     = useState(false);
   const prevVal = useRef(pad(value));
 
   useEffect(() => {
@@ -58,12 +67,11 @@ function FlipUnit({ value, label }) {
 
 /* ─── main component ───────────────────────────────────────── */
 export default function CountdownGate({ children }) {
-  const [launchISO, setLaunchISO] = useState(undefined); // undefined = loading
+  const [launchISO, setLaunchISO] = useState(undefined);
   const [remaining, setRemaining] = useState(null);
-  const [launched, setLaunched] = useState(false);
-  const [breaking, setBreaking] = useState(false);
+  const [launched,  setLaunched]  = useState(false);
+  const [breaking,  setBreaking]  = useState(false);
 
-  /* fetch launch time on mount */
   useEffect(() => {
     fetch("/api/launch-time")
       .then((r) => r.json())
@@ -74,23 +82,18 @@ export default function CountdownGate({ children }) {
       .catch(() => setLaunchISO(null));
   }, []);
 
-  /* tick every second */
   useEffect(() => {
     if (!launchISO) return;
-    const id = setInterval(() => {
-      const ms = getRemainingMs(launchISO);
-      setRemaining(ms);
-    }, 1000);
+    const id = setInterval(() => setRemaining(getRemainingMs(launchISO)), 1000);
     return () => clearInterval(id);
   }, [launchISO]);
 
-  /* handle "Launch" button click — shatter animation then reveal */
   const handleLaunch = useCallback(() => {
     setBreaking(true);
     setTimeout(() => setLaunched(true), 1200);
   }, []);
 
-  /* ── loading state ── */
+  /* loading */
   if (launchISO === undefined) {
     return (
       <div className={styles.loadingScreen}>
@@ -99,27 +102,23 @@ export default function CountdownGate({ children }) {
     );
   }
 
-  /* ── no launch time set OR already launched ── */
-  if (!launchISO || launched) {
-    return <>{children}</>;
-  }
+  /* no launch time set or already launched */
+  if (!launchISO || launched) return <>{children}</>;
 
-  const parts = msToparts(remaining);
+  const parts  = msToParts(remaining);
   const isZero = remaining === 0;
 
   return (
     <>
-      {/* countdown overlay */}
       <div className={`${styles.overlay} ${breaking ? styles.breaking : ""}`}>
-        {/* animated background */}
+        {/* subtle background */}
         <div className={styles.bg}>
           <div className={styles.orb1} />
           <div className={styles.orb2} />
-          <div className={styles.orb3} />
           <div className={styles.grid} />
         </div>
 
-        {/* shatter pieces (shown on breaking) */}
+        {/* shatter shards */}
         {breaking && (
           <div className={styles.shatterWrapper}>
             {Array.from({ length: 12 }).map((_, i) => (
@@ -129,57 +128,41 @@ export default function CountdownGate({ children }) {
         )}
 
         <div className={styles.content}>
-          {/* IEEE logo / branding */}
+          {/* brand */}
           <div className={styles.brand}>
             <span className={styles.brandDot} />
             <span className={styles.brandText}>IEEE SB NITC</span>
           </div>
 
-          <h1 className={styles.headline}>
-            Something <span className={styles.accent}>Exciting</span>
-            <br />
-            is Coming
-          </h1>
+          {/* single tagline */}
+          <p className={styles.tagline}>Stay tuned for the launch.</p>
 
-          <p className={styles.subtext}>
-            We&apos;re putting the final touches on our new website.
-            <br />
-            Stay tuned — it&apos;ll be worth the wait.
-          </p>
-
-          {/* countdown units */}
+          {/* countdown */}
           {parts && !isZero && (
             <div className={styles.countdown}>
-              <FlipUnit value={parts.days} label="Days" />
+              <StaticUnit value={parts.days}    label="Days" />
               <div className={styles.colon}>:</div>
-              <FlipUnit value={parts.hours} label="Hours" />
+              <StaticUnit value={parts.hours}   label="Hours" />
               <div className={styles.colon}>:</div>
-              <FlipUnit value={parts.minutes} label="Minutes" />
+              <StaticUnit value={parts.minutes} label="Minutes" />
               <div className={styles.colon}>:</div>
-              <FlipUnit value={parts.seconds} label="Seconds" />
+              <FlipUnit   value={parts.seconds} label="Seconds" />
             </div>
           )}
 
-          {/* launch button — shown only when countdown hits zero */}
+          {/* launch button — only at zero */}
           {isZero && (
             <div className={styles.launchWrapper}>
               <p className={styles.readyText}>We&apos;re live! 🚀</p>
-              <button
-                className={styles.launchBtn}
-                onClick={handleLaunch}
-              >
+              <button className={styles.launchBtn} onClick={handleLaunch}>
                 <span className={styles.launchBtnInner}>Launch Website</span>
                 <span className={styles.launchBtnGlow} />
               </button>
             </div>
           )}
-
-          {/* IST label */}
-          <p className={styles.istNote}>All times in Indian Standard Time (IST)</p>
         </div>
       </div>
 
-      {/* real site (hidden underneath until launched) */}
       <div style={{ display: "none" }}>{children}</div>
     </>
   );
