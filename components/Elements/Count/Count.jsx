@@ -54,9 +54,9 @@ const CountItem = ({ end, label }) => {
 const Count = () => {
     return (
         <div className={styles.outer}>
-            <CountItem end={680} label="Membership Count" />
-            <CountItem end={9} label="Societies" />
-            <CountItem end={75} label="Events" />
+            <CountItem end={700} label="Members" />
+            <CountItem end={15} label="Societies" />
+            <CountItem end={100} label="Events" />
             <CountItem end={300} label="Professional Members" />
         </div>
     );
