@@ -15,9 +15,7 @@
 
 .inner {
     font-family: var(--geist);
-    flex: 1;
-    min-width: 0;
-    max-width: 100%;
+    width: 100%;
     box-sizing: border-box;
     text-align: center;
     padding: 1.5rem 1rem;
@@ -32,10 +30,11 @@
     border: 2px solid rgba(255, 255, 255, 0.18);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     font-size: 1.1rem;
     font-weight: bold;
-    margin: 0 auto;
     word-break: break-word;
 }
 
@@ -53,8 +52,6 @@
         max-width: 600px;
     }
     .inner {
-        min-width: 0;
-        max-width: 100%;
         padding: 1.5rem .5rem;
         font-size: 1rem;
     }
