@@ -1,47 +1,34 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import connectDB from "@/lib/db";
+import Setting from "@/lib/models/Setting";
 
-// Store launch time in a JSON file in the project root (persists across restarts)
-const DATA_FILE = path.join(process.cwd(), "launch-time.json");
-
-function readLaunchTime() {
-  try {
-    if (fs.existsSync(DATA_FILE)) {
-      const raw = fs.readFileSync(DATA_FILE, "utf-8");
-      return JSON.parse(raw);
-    }
-  } catch {
-    // ignore
-  }
-  return { launchTimeISO: null };
-}
-
-function writeLaunchTime(launchTimeISO) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify({ launchTimeISO }), "utf-8");
-}
+const LAUNCH_KEY = "launchTimeISO";
 
 // GET /api/launch-time  — returns current launch time
 export async function GET() {
-  const data = readLaunchTime();
-  return NextResponse.json(data);
+  try {
+    await connectDB();
+    const doc = await Setting.findOne({ key: LAUNCH_KEY });
+    return NextResponse.json({ launchTimeISO: doc?.value ?? null });
+  } catch (err) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
 }
 
-// POST /api/launch-time  — body: { launchTimeISO: "<ISO string in IST>" }
+// POST /api/launch-time  — body: { launchTimeISO: "<ISO string>" | null }
 export async function POST(request) {
   try {
     const body = await request.json();
     const { launchTimeISO } = body;
 
-    // Allow explicit null to clear the launch time (disables countdown)
-    if (launchTimeISO !== null) {
-      if (!launchTimeISO) {
+    // Allow explicit null to clear (disables countdown)
+    if (launchTimeISO !== null && launchTimeISO !== undefined) {
+      if (typeof launchTimeISO !== "string") {
         return NextResponse.json(
-          { error: "launchTimeISO is required (pass null to clear)" },
+          { error: "launchTimeISO must be an ISO string or null" },
           { status: 400 }
         );
       }
-      // Validate it's a valid date
       const date = new Date(launchTimeISO);
       if (isNaN(date.getTime())) {
         return NextResponse.json(
@@ -51,8 +38,14 @@ export async function POST(request) {
       }
     }
 
-    writeLaunchTime(launchTimeISO);
-    return NextResponse.json({ success: true, launchTimeISO });
+    await connectDB();
+    await Setting.findOneAndUpdate(
+      { key: LAUNCH_KEY },
+      { key: LAUNCH_KEY, value: launchTimeISO ?? null },
+      { upsert: true, new: true }
+    );
+
+    return NextResponse.json({ success: true, launchTimeISO: launchTimeISO ?? null });
   } catch (err) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
